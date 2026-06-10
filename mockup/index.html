@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Niederrhein Nord — Reise- & Erlebnisportal · Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* Niederrhein-Palette über Airbnb-System */
+    --gruen:#4E9A3E;          /* Wiesen-/Auen-Grün — Brand-Akzent */
+    --gruen-deep:#3C7A30;     /* Hover */
+    --gruen-tint:#E9F4E4;     /* zarte grüne Fläche */
+    --rhein:#2A7DB1;          /* Rhein-Blau — Sekundär */
+    --rhein-deep:#1E5E87;
+    --rhein-tint:#E4F0F7;
+    --raps:#F4B400;           /* Raps-/Tulpen-Gelb — warmer Pop-Akzent */
+    --raps-deep:#D89A00;
+    --backstein:#9E4A38;      /* Backstein/Klinker — Niederrhein-Architektur */
+    --carbon:#222222;
+    --slate:#6a6a6a;
+    --silver:#c1c1c1;
+    --pebble:#dddddd;
+    --mist:#ebebeb;
+    --fog:#f7f7f7;
+    --cloud:#ffffff;
+    --shadow-search:rgba(0,0,0,.02) 0 0 0 1px, rgba(0,0,0,.04) 0 2px 6px 0, rgba(0,0,0,.1) 0 4px 8px 0;
+    --shadow-lift:0 18px 40px -12px rgba(30,70,40,.26);
+    --grad-brand:linear-gradient(120deg,#7FBF3F 0%,#4E9A3E 42%,#2A7DB1 115%);
+    --grad-cool:linear-gradient(120deg,#4E9A3E,#2A7DB1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--carbon);background:var(--fog);line-height:1.43;letter-spacing:-.13px}
+  h1,h2,h3,h4{font-family:'Space Grotesk','Inter',system-ui,sans-serif;letter-spacing:-.6px;font-weight:700}
+  .grad-text{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+  .sec{padding:48px 0}
+  .muted{color:var(--slate)}
+
+  /* ---------- HEADER ---------- */
+  header.top{position:sticky;top:0;z-index:50;background:var(--cloud);border-bottom:1px solid var(--mist)}
+  .topbar{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;font-size:21px;letter-spacing:-.6px}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:var(--gruen);position:relative;flex:0 0 auto;overflow:hidden}
+  /* weite Rhein-Welle + Raps-Sonne im Logo */
+  .logo .mark::before{content:"";position:absolute;left:0;right:0;bottom:6px;height:3px;background:#fff;border-radius:3px;box-shadow:0 5px 0 0 rgba(255,255,255,.55)}
+  .logo .mark::after{content:"";position:absolute;top:7px;right:8px;width:8px;height:8px;border-radius:50%;background:var(--raps);box-shadow:0 0 0 2px rgba(255,255,255,.5)}
+  .logo b{color:var(--gruen);font-weight:700}
+  .logo span{color:var(--carbon);font-weight:500}
+  nav.main{display:flex;gap:28px}
+  nav.main a{font-size:15px;font-weight:500;color:var(--carbon);padding:6px 0;position:relative}
+  nav.main a.active{color:var(--gruen)}
+  nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gruen)}
+  nav.main a:hover{color:var(--gruen)}
+  .util{display:flex;align-items:center;gap:14px}
+  .globe{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500;padding:8px 12px;border-radius:8px}
+  .globe:hover{background:var(--fog)}
+  .btn-tour{display:inline-flex;align-items:center;gap:8px;background:var(--grad-brand);color:#fff;font-weight:600;font-size:14px;padding:11px 20px;border-radius:32px;box-shadow:0 6px 16px -4px rgba(78,154,62,.45);transition:transform .15s ease,box-shadow .15s ease}
+  .btn-tour:hover{transform:translateY(-1px);box-shadow:0 10px 22px -6px rgba(78,154,62,.55)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;height:640px;overflow:hidden;background:#1d3322}
+  .hero .bg{position:absolute;inset:0}
+  .hero .bg img{filter:saturate(1.06)}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,28,16,.5) 0%,rgba(12,28,16,.08) 35%,rgba(12,28,16,.5) 100%),linear-gradient(115deg,rgba(78,154,62,.34) 0%,rgba(12,28,16,0) 45%,rgba(42,125,177,.42) 100%)}
+  .hero .inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:64px 32px;height:100%;display:flex;flex-direction:column;justify-content:center}
+  .hero .kicker{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:var(--grad-brand);color:#fff;font-weight:700;font-size:13px;letter-spacing:.3px;padding:8px 16px;border-radius:32px;margin-bottom:20px;box-shadow:0 8px 20px -6px rgba(78,154,62,.5)}
+  .hero h1{color:#fff;font-size:64px;line-height:1;font-weight:700;letter-spacing:-1.8px;max-width:860px;text-shadow:0 2px 24px rgba(0,0,0,.3)}
+  .hero h1 .hl{background:linear-gradient(100deg,#FCE38A,#A8E6A0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero p.sub{color:#fff;font-size:19px;max-width:640px;margin-top:18px;text-shadow:0 1px 12px rgba(0,0,0,.4);font-weight:400}
+
+  /* search bar */
+  .search{margin-top:34px;background:#fff;box-shadow:var(--shadow-search);display:flex;align-items:stretch;max-width:880px;overflow:hidden;border-radius:26px}
+  .search .seg{flex:1;padding:16px 22px;border-right:1px solid var(--mist);cursor:pointer}
+  .search .seg:hover{background:var(--fog)}
+  .search .seg .lab{font-size:12px;font-weight:600;letter-spacing:.3px}
+  .search .seg .ph{font-size:14px;color:var(--slate);margin-top:3px}
+  .search .seg.who{flex:1.1;border-right:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .search .go{flex:0 0 auto;align-self:center;margin:0 10px 0 0;width:54px;height:54px;border-radius:50%;background:var(--grad-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 16px -4px rgba(78,154,62,.45);transition:transform .15s ease}
+  .search .go:hover{transform:scale(1.06)}
+
+  /* ---------- CATEGORY PILLS ---------- */
+  .cats{display:flex;gap:10px;overflow-x:auto;padding:24px 0 4px}
+  .cat{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--pebble);background:#fff;color:var(--carbon);font-size:14px;font-weight:500;padding:10px 16px;border-radius:32px;cursor:pointer}
+  .cat:hover{border-color:var(--gruen);color:var(--gruen)}
+  .cat.on{background:var(--grad-brand);color:#fff;border-color:transparent;box-shadow:0 6px 16px -6px rgba(78,154,62,.5)}
+  .cat.on:hover{color:#fff}
+  .cat i{font-size:16px}
+
+  /* ---------- SECTION HEADER ---------- */
+  .shead{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+  .shead .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gruen);margin-bottom:10px}
+  .shead h2{font-size:36px;letter-spacing:-1px;line-height:1.05}
+  .shead .all{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--carbon)}
+  .shead .all:hover{color:var(--gruen)}
+
+  /* ---------- CARD GRID ---------- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .card{cursor:pointer;transition:transform .2s ease}
+  .card:hover{transform:translateY(-4px)}
+  .card .ph{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:1/1;background:var(--pebble);transition:box-shadow .2s ease}
+  .card:hover .ph{box-shadow:var(--shadow-lift)}
+  .card .ph img,.ncard .ph img,.dcard img{position:absolute;inset:0;z-index:1}
+  .card .ph img{transition:transform .4s ease}
+  .card:hover .ph img{transform:scale(1.05)}
+  .card .save{position:absolute;top:12px;right:12px;width:32px;height:32px;color:#fff;font-size:22px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.4));display:flex;align-items:center;justify-content:center}
+  .card .save:hover{transform:scale(1.1)}
+  .badge{position:absolute;top:12px;left:12px;background:#fff;color:var(--carbon);font-size:12px;font-weight:600;padding:6px 10px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.18);display:inline-flex;align-items:center;gap:5px}
+  .badge.river{color:var(--rhein)}
+  .card .body{padding:12px 2px 0}
+  .card .row1{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .card .ttl{font-size:15px;font-weight:600}
+  .card .rate{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:500;flex:0 0 auto}
+  .card .rate i{color:var(--raps-deep);font-size:13px}
+  .card .meta{font-size:14px;color:var(--slate);margin-top:2px}
+  .card .price{font-size:14px;margin-top:6px}
+  .card .price b{font-weight:700}
+
+  /* fallback tile (falls Foto fehlt) */
+  .tile{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#fff;text-align:center;padding:16px}
+  .tile i{font-size:34px;opacity:.92}
+  .tile span{font-size:14px;font-weight:600;opacity:.95}
+
+  /* ---------- GETYOURGUIDE BAND ---------- */
+  .gyg{background:#fff;border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
+  .gyg-tag{display:inline-flex;align-items:center;gap:7px;background:#FF5533;color:#fff;font-size:12px;font-weight:600;padding:5px 11px;border-radius:6px}
+  .price-pill{position:absolute;bottom:12px;left:12px;background:#fff;color:var(--carbon);font-size:13px;font-weight:600;padding:6px 11px;border-radius:32px;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+
+  /* ---------- STÄDTE & ORTE ---------- */
+  .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .dcard{position:relative;height:230px;border-radius:22px;overflow:hidden;cursor:pointer;background:var(--pebble);transition:transform .2s ease,box-shadow .2s ease}
+  .dcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  .dcard img{transition:transform .4s ease}
+  .dcard:hover img{transform:scale(1.06)}
+  .dcard .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.58))}
+  .dcard .tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.92);color:var(--gruen-deep);font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:5px 10px;border-radius:6px}
+  .dcard .txt{position:absolute;left:18px;bottom:16px;color:#fff;z-index:2}
+  .dcard .txt h3{font-size:21px;font-weight:600}
+  .dcard .txt p{font-size:13px;opacity:.92;margin-top:2px}
+
+  /* ---------- HOTELS NOTE ---------- */
+  .live{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--slate);margin-bottom:18px}
+  .live .dot{width:8px;height:8px;border-radius:50%;background:var(--gruen);box-shadow:0 0 0 4px var(--gruen-tint)}
+  /* Stay22 Live-Embed */
+  .s22-wrap{margin-top:28px;border:1px solid var(--mist);border-radius:22px;overflow:hidden;background:var(--fog);min-height:420px}
+  .s22-wrap #aff-container{width:100%;min-height:420px}
+  .s22-note{font-size:12px;color:var(--slate);margin-top:12px;max-width:760px;line-height:1.5}
+
+  /* ---------- NEWS ---------- */
+  .ncard{background:#fff;border:1px solid var(--mist);border-radius:22px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s ease,box-shadow .2s ease}
+  .ncard:hover{border-color:transparent;transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  .ncard .ph{aspect-ratio:16/10;background:var(--pebble);position:relative;overflow:hidden}
+  .ncard .body{padding:18px 20px 22px}
+  .ncard .cat{font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--gruen)}
+  .ncard h3{font-size:18px;margin:8px 0 8px;line-height:1.3}
+  .ncard p{font-size:14px;color:var(--slate)}
+  .ncard .date{font-size:13px;color:var(--silver);margin-top:14px}
+
+  /* ---------- CTA ---------- */
+  .cta{background:var(--grad-brand);border-radius:28px;padding:52px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;color:#fff;flex-wrap:wrap;position:relative;overflow:hidden}
+  .cta::after{content:"";position:absolute;right:-60px;bottom:-80px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .cta h2{color:#fff;font-size:30px;max-width:560px;position:relative;z-index:1}
+  .cta p{color:rgba(255,255,255,.92);margin-top:10px;max-width:560px;font-size:16px;position:relative;z-index:1}
+  .cta form{display:flex;gap:10px;flex:0 0 auto;position:relative;z-index:1}
+  .cta input{border:none;border-radius:12px;padding:15px 18px;font-size:15px;width:260px;font-family:inherit}
+  .cta button{background:#fff;color:var(--gruen-deep);border:none;border-radius:12px;padding:15px 24px;font-weight:600;font-size:15px;cursor:pointer}
+  .cta button:hover{background:var(--carbon);color:#fff}
+
+  /* ---------- FOOTER ---------- */
+  footer.site{background:#fff;border-top:1px solid var(--mist);margin-top:16px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;padding:56px 0 40px}
+  .fcol h4{font-size:14px;font-weight:600;margin-bottom:14px}
+  .fcol a{display:block;font-size:14px;color:var(--slate);padding:5px 0}
+  .fcol a:hover{color:var(--gruen)}
+  .fcol .logo{font-size:18px;margin-bottom:14px}
+  .fcol .desc{font-size:14px;color:var(--slate);max-width:300px;line-height:1.6}
+  .fbot{border-top:1px solid var(--mist);padding:22px 0;display:flex;justify-content:space-between;font-size:13px;color:var(--slate);flex-wrap:wrap;gap:10px}
+  .fbot a{color:var(--slate)}
+
+  @media(max-width:1024px){
+    nav.main{display:none}
+    .grid,.dgrid{grid-template-columns:repeat(2,1fr)}
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .hero h1{font-size:42px}
+    .fgrid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="top">
+  <div class="wrap topbar">
+    <a class="logo" href="#"><span class="mark"></span><span><b>niederrhein</b> nord</span></a>
+    <nav class="main">
+      <a href="#" class="active">Sehenswürdigkeiten</a>
+      <a href="#">Aktivitäten</a>
+      <a href="#">Hotels</a>
+      <a href="#">Städte &amp; Orte</a>
+      <a href="#">Radwege</a>
+      <a href="#">Magazin</a>
+    </nav>
+    <div class="util">
+      <a class="globe" href="#">🌐 DE</a>
+      <a class="btn-tour" href="#">🚲&nbsp;&nbsp;Radroute planen</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="bg">
+    <img src="img/hero.jpg" alt="Weite Niederrhein-Landschaft am Rhein im Abendlicht" onerror="this.parentNode.style.background='linear-gradient(135deg,#3C7A30,#4E9A3E 45%,#2A7DB1)';this.remove()" />
+  </div>
+  <div class="scrim"></div>
+  <div class="inner">
+    <span class="kicker">✦ Dein Reiseportal für den nördlichen Niederrhein</span>
+    <h1>Entdecke den Niederrhein —<br>flaches Land, <span class="hl">weiter Himmel.</span></h1>
+    <p class="sub">Sehenswürdigkeiten, Touren &amp; Tickets, Hotels und die schönsten Ecken zwischen Rhein, Reichswald und niederländischer Grenze — von Xanten über Kleve bis Kevelaer, alles an einem Ort.</p>
+
+    <div class="search">
+      <div class="seg">
+        <div class="lab">Wohin</div>
+        <div class="ph">Stadt, Ort oder Sehenswürdigkeit</div>
+      </div>
+      <div class="seg">
+        <div class="lab">Wann</div>
+        <div class="ph">Reisezeit hinzufügen</div>
+      </div>
+      <div class="seg who">
+        <div>
+          <div class="lab">Was</div>
+          <div class="ph">Touren, Hotels, Radwege</div>
+        </div>
+        <div class="go">⌕</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CATEGORY PILLS ===================== -->
+<div class="wrap">
+  <div class="cats">
+    <div class="cat on"><i>★</i> Highlights</div>
+    <div class="cat">🏛 Sehenswürdigkeiten</div>
+    <div class="cat">🌊 Rhein &amp; Auen</div>
+    <div class="cat">🚲 Radwege</div>
+    <div class="cat">⛪ Kultur &amp; Wallfahrt</div>
+    <div class="cat">🎟 Touren &amp; Tickets</div>
+    <div class="cat">🏨 Hotels</div>
+    <div class="cat">🍓 Genuss &amp; Hofläden</div>
+    <div class="cat">🎉 Events</div>
+  </div>
+</div>
+
+<!-- ===================== TOP SEHENSWÜRDIGKEITEN ===================== -->
+<section class="wrap sec">
+  <div class="shead">
+    <div>
+      <div class="eyebrow">Highlights</div>
+      <h2>Top-Sehenswürdigkeiten am Niederrhein</h2>
+    </div>
+    <a class="all" href="#">Alle ansehen →</a>
+  </div>
+  <div class="grid" id="sights"></div>
+</section>
+
+<!-- ===================== GETYOURGUIDE BAND ===================== -->
+<section class="gyg">
+  <div class="wrap sec">
+    <div class="shead">
+      <div>
+        <div class="eyebrow" style="color:#FF5533">Powered by GetYourGuide</div>
+        <h2>Touren, Tickets &amp; Erlebnisse</h2>
+      </div>
+      <a class="all" href="#">Alle Aktivitäten →</a>
+    </div>
+    <div class="grid-4" id="gyg"></div>
+  </div>
+</section>
+
+<!-- ===================== STÄDTE & ORTE ===================== -->
+<section class="wrap sec">
+  <div class="shead">
+    <div>
+      <div class="eyebrow">Zwischen Rhein &amp; Reichswald</div>
+      <h2>Städte &amp; Orte am Niederrhein</h2>
+    </div>
+    <a class="all" href="#">Alle Orte →</a>
+  </div>
+  <div class="dgrid" id="towns"></div>
+</section>
+
+<!-- ===================== TOP HOTELS ===================== -->
+<section class="gyg">
+  <div class="wrap sec">
+    <div class="shead">
+      <div>
+        <div class="eyebrow">Übernachten</div>
+        <h2>Top-Hotels am Niederrhein</h2>
+      </div>
+      <a class="all" href="#">Alle Hotels →</a>
+    </div>
+    <div class="live"><span class="dot"></span> Live von Booking.com — aktuelle Preise &amp; Verfügbarkeit, täglich aktualisiert <span style="color:var(--silver)">· Stay22</span></div>
+    <div class="grid-4" id="hotels"></div>
+
+    <!-- Stay22 Live-Karte (lmaID niederrhein-nord.de) -->
+    <div class="s22-wrap">
+      <div id="aff-container" data-lma-id="68793e1e7a91cb5fc4b5e142" data-lat="51.6577" data-lng="6.4530" data-maincolor="4E9A3E"></div>
+    </div>
+    <p class="s22-note">Karte &amp; Preise live über Stay22 / Booking.com · Affiliate — bei Buchung über diese Links erhalten wir eine Provision, für dich entstehen keine Mehrkosten.</p>
+  </div>
+</section>
+
+<!-- ===================== NEWS / MAGAZIN ===================== -->
+<section class="wrap sec">
+  <div class="shead">
+    <div>
+      <div class="eyebrow">Magazin</div>
+      <h2>Aktuelles vom Niederrhein</h2>
+    </div>
+    <a class="all" href="#">Alle Beiträge →</a>
+  </div>
+  <div class="grid" id="news"></div>
+</section>
+
+<!-- ===================== CTA / NEWSLETTER ===================== -->
+<section class="wrap sec">
+  <div class="cta">
+    <div>
+      <h2>Bleib am Puls des Niederrheins.</h2>
+      <p>Events, frische Touren, Radrouten und Insider-Spots zwischen Rhein und Reichswald — einmal pro Woche direkt in dein Postfach.</p>
+    </div>
+    <form onsubmit="return false">
+      <input type="email" placeholder="Deine E-Mail-Adresse" />
+      <button type="submit">Abonnieren</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site">
+  <div class="wrap fgrid">
+    <div class="fcol">
+      <a class="logo" href="#"><b style="color:var(--gruen)">niederrhein</b> <span style="font-weight:500">nord</span></a>
+      <p class="desc">Das unabhängige Reise- &amp; Erlebnisportal für den nördlichen Niederrhein. Sehenswürdigkeiten, Aktivitäten, Hotels und Orte zwischen Rhein, Reichswald und niederländischer Grenze — von Xanten über Kleve und Kalkar bis Kevelaer.</p>
+    </div>
+    <div class="fcol">
+      <h4>Entdecken</h4>
+      <a href="#">Archäologischer Park Xanten</a>
+      <a href="#">Schwanenburg Kleve</a>
+      <a href="#">Wallfahrt Kevelaer</a>
+      <a href="#">Schloss Moyland</a>
+      <a href="#">Rhein &amp; Auen</a>
+    </div>
+    <div class="fcol">
+      <h4>Planen</h4>
+      <a href="#">Touren &amp; Tickets</a>
+      <a href="#">Hotels</a>
+      <a href="#">Radwege &amp; Knotenpunkte</a>
+      <a href="#">Events</a>
+      <a href="#">Städte &amp; Orte</a>
+    </div>
+    <div class="fcol">
+      <h4>Portal</h4>
+      <a href="#">Über uns</a>
+      <a href="#">Magazin</a>
+      <a href="#">Kontakt</a>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+    </div>
+  </div>
+  <div class="wrap fbot">
+    <span>© 2026 niederrhein-nord.de — Alle Rechte vorbehalten.</span>
+    <span>Mit ❤ am Niederrhein gemacht · Affiliate-Hinweis: GetYourGuide &amp; Booking.com</span>
+  </div>
+</footer>
+
+<script>
+const img = (url) => `<img src="${url}" alt="" loading="lazy" onerror="this.style.display='none'">`;
+const tile = (icon,label,c1,c2) => `<div class="tile" style="background:linear-gradient(135deg,${c1},${c2})"><i>${icon}</i><span>${label}</span></div>`;
+
+/* ---- Affiliate-IDs (siehe niederrhein-nord.de/src/data/affiliate.ts) ---- */
+const GYG_PARTNER = "1UPZQQB";                     // geteilte GetYourGuide-Partner-ID (alle Portale)
+const STAY22_LMA  = "68793e1e7a91cb5fc4b5e142";    // Stay22-lmaID niederrhein-nord.de
+const gygUrl = (q) => `https://www.getyourguide.com/s/?q=${encodeURIComponent(q)}&partner_id=${GYG_PARTNER}&cmp=niederrhein-nord`;
+
+const sights = [
+  {t:"LVR-Archäologischer Park Xanten", m:"Römisches Reich · Hafentempel & Amphitheater", r:"4.8", n:"5.6k", b:"Wahrzeichen", g:"river", icon:"🏛", c:["#2A7DB1","#1E5E87"], u:"img/xanten.jpg"},
+  {t:"Schwanenburg Kleve", m:"Lohengrin-Sage · Schwanenturm", r:"4.6", n:"2.3k", b:"Top bewertet", icon:"🏰", c:["#9E4A38","#6f3327"], u:"img/kleve.jpg"},
+  {t:"Marienbasilika Kevelaer", m:"Größter Wallfahrtsort Nordwesteuropas", r:"4.7", n:"3.1k", icon:"⛪", c:["#4E9A3E","#3C7A30"], u:"img/kevelaer.jpg"},
+  {t:"Schloss Moyland", m:"Wasserschloss · Museum Joseph Beuys", r:"4.6", n:"2.8k", b:"Familienfavorit", icon:"💧", c:["#2A7DB1","#4E9A3E"], u:"img/moyland.jpg"},
+  {t:"Dom St. Viktor, Xanten", m:"„Kölner Dom des Niederrheins“ · Gotik", r:"4.7", n:"1.9k", icon:"⛪", c:["#1E5E87","#2A7DB1"], u:"img/xantendom.jpg"},
+  {t:"Historische Stadt Kalkar", m:"Rathaus & Hochaltäre von St. Nicolai", r:"4.5", n:"1.2k", icon:"🏘", c:["#9E4A38","#4E9A3E"], u:"img/kalkar.jpg"},
+];
+
+const gyg = [
+  {t:"APX Xanten – Eintritt & Führung", m:"Römerpark · 2,5 Std", p:"14", icon:"🏛", c:["#2A7DB1","#1E5E87"], u:"img/gyg-apx.jpg", q:"Xanten Archäologischer Park"},
+  {t:"Rheinschifffahrt Niederrhein", m:"Panorama-Fahrt ab Emmerich · 90 Min", p:"19", icon:"⛴", c:["#2A7DB1","#4E9A3E"], u:"img/gyg-schiff.jpg", q:"Niederrhein Rheinschifffahrt"},
+  {t:"Knotenpunkt-Radtour", m:"Geführte E-Bike-Tour · Auen & Höfe", p:"29", icon:"🚲", c:["#4E9A3E","#3C7A30"], u:"img/gyg-rad.jpg", q:"Niederrhein Fahrradtour"},
+  {t:"Wallfahrtsstadt Kevelaer", m:"Stadtführung & Kerzenkapelle · 1,5 Std", p:"12", icon:"🕯", c:["#F4B400","#D89A00"], u:"img/gyg-wallfahrt.jpg", q:"Kevelaer"},
+];
+
+const towns = [
+  {t:"Xanten", d:"Römerstadt · APX & Dom · Südsee", tag:"Stadt", icon:"🏛", c:["#2A7DB1","#1E5E87"], u:"img/gyg-apx.jpg"},
+  {t:"Kleve", d:"Schwanenburg · Forstgarten · Hochschule", tag:"Kreisstadt", icon:"🏰", c:["#9E4A38","#6f3327"], u:"img/kleve.jpg"},
+  {t:"Geldern", d:"Gelderland · Straßenmaler-Festival", tag:"Stadt", icon:"🎨", c:["#4E9A3E","#3C7A30"], u:"img/geldern.jpg"},
+  {t:"Emmerich am Rhein", d:"Längste Rheinpromenade · Hängebrücke", tag:"am Rhein", icon:"🌉", c:["#2A7DB1","#1E5E87"], u:"img/emmerich.jpg"},
+  {t:"Rees", d:"Älteste Stadt am unteren Niederrhein", tag:"am Rhein", icon:"🧱", c:["#9E4A38","#2A7DB1"], u:"img/rees.jpg"},
+  {t:"Goch & Weeze", d:"Steintor · Airport Weeze · Kermisdahl", tag:"Region", icon:"🚪", c:["#4E9A3E","#2A7DB1"], u:"img/goch.jpg"},
+];
+
+const hotels = [
+  {t:"Parkhotel Kleve", m:"4★ · Forstgarten / Tiergarten", r:"4.5", p:"112", icon:"🏨", c:["#4E9A3E","#3C7A30"], u:"img/hotel1.jpg"},
+  {t:"Hotel Kevelaerer Hof", m:"3★ · Nähe Basilika", r:"4.4", p:"89", icon:"🛎", c:["#F4B400","#D89A00"], u:"img/hotel2.jpg"},
+  {t:"Hotel van Bebber, Xanten", m:"Historisch · Altstadt", r:"4.6", p:"124", icon:"🏛", c:["#2A7DB1","#1E5E87"], u:"img/hotel3.jpg"},
+  {t:"Landhaus am Reichswald", m:"4★ · Natur & Wellness", r:"4.7", p:"139", icon:"🌳", c:["#3C7A30","#2A7DB1"], u:"img/hotel4.jpg"},
+];
+
+const news = [
+  {cat:"Natur", t:"Wildgänse-Saison: 180.000 Gäste am Unteren Niederrhein", d:"Von Oktober bis Februar rasten die arktischen Wildgänse in den Rheinauen — die besten Beobachtungsspots.", date:"6. Juni 2026", icon:"🦢", c:["#2A7DB1","#4E9A3E"], u:"img/wildgaense.jpg"},
+  {cat:"Genuss", t:"Spargel- & Erdbeerzeit: Hofläden zwischen Kleve und Kevelaer", d:"Der Niederrhein ist Spargelland — wo es jetzt frisch vom Feld auf den Teller kommt.", date:"2. Juni 2026", icon:"🌱", c:["#4E9A3E","#3C7A30"], u:"img/spargel.jpg"},
+  {cat:"Events", t:"Erdbeer- & Radsaison startet: Niederrhein per Knotenpunkt", d:"Selbstpflücke-Felder, Hofcafés und die schönsten Rundtouren für den Sommer 2026.", date:"28. Mai 2026", icon:"🍓", c:["#9E4A38","#4E9A3E"], u:"img/erdbeere.jpg"},
+];
+
+const star = '<i>★</i>';
+
+document.getElementById('sights').innerHTML = sights.map(s => `
+  <div class="card">
+    <div class="ph">
+      ${tile(s.icon,s.t,s.c[0],s.c[1])}${img(s.u)}
+      <div class="save">♡</div>
+      ${s.b?`<div class="badge ${s.g||''}">${s.g?'★ ':''}${s.b}</div>`:''}
+    </div>
+    <div class="body">
+      <div class="row1"><div class="ttl">${s.t}</div><div class="rate">${star} ${s.r} <span class="muted" style="font-weight:400">(${s.n})</span></div></div>
+      <div class="meta">${s.m}</div>
+    </div>
+  </div>`).join('');
+
+document.getElementById('gyg').innerHTML = gyg.map(s => `
+  <a class="card" href="${gygUrl(s.q)}" target="_blank" rel="sponsored noopener">
+    <div class="ph">
+      ${tile(s.icon,s.t,s.c[0],s.c[1])}${img(s.u)}
+      <div class="badge"><span class="gyg-tag" style="padding:3px 8px;font-size:11px">GetYourGuide</span></div>
+      <div class="price-pill">ab €${s.p}</div>
+    </div>
+    <div class="body">
+      <div class="ttl">${s.t}</div>
+      <div class="meta">${s.m}</div>
+    </div>
+  </a>`).join('');
+// "Alle Aktivitäten" → GetYourGuide-Suche für die Region (Affiliate); nur die GYG-Section, nicht die Hotels-Section
+const gygAll = document.getElementById('gyg').closest('.sec').querySelector('.shead .all');
+if (gygAll){ gygAll.href = gygUrl('Niederrhein'); gygAll.target = '_blank'; gygAll.rel = 'sponsored noopener'; }
+</script>
+
+<!-- Stay22 Embed-Loader (rendert die Live-Karte in #aff-container) -->
+<script async src="https://cdn.stay22.com/embed/init.js"></script>
+<!-- GetYourGuide Partner-Script (aktiviert Affiliate-Tracking; Partner-ID 1UPZQQB) -->
+<script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1UPZQQB"></script>
+<script>
+
+document.getElementById('towns').innerHTML = towns.map(d => `
+  <div class="dcard">
+    ${tile(d.icon,d.t,d.c[0],d.c[1])}${img(d.u)}
+    <div class="ov"></div>
+    <div class="tag">${d.tag}</div>
+    <div class="txt"><h3>${d.t}</h3><p>${d.d}</p></div>
+  </div>`).join('');
+
+document.getElementById('hotels').innerHTML = hotels.map(h => `
+  <div class="card">
+    <div class="ph">
+      ${tile(h.icon,h.t,h.c[0],h.c[1])}${img(h.u)}
+      <div class="save">♡</div>
+    </div>
+    <div class="body">
+      <div class="row1"><div class="ttl">${h.t}</div><div class="rate">${star} ${h.r}</div></div>
+      <div class="meta">${h.m}</div>
+      <div class="price"><b>€${h.p}</b> <span class="muted">/ Nacht</span></div>
+    </div>
+  </div>`).join('');
+
+document.getElementById('news').innerHTML = news.map(n => `
+  <div class="ncard">
+    <div class="ph">${tile(n.icon,n.cat,n.c[0],n.c[1])}${img(n.u)}</div>
+    <div class="body">
+      <div class="cat">${n.cat}</div>
+      <h3>${n.t}</h3>
+      <p>${n.d}</p>
+      <div class="date">${n.date}</div>
+    </div>
+  </div>`).join('');
+</script>
+</body>
+</html>
