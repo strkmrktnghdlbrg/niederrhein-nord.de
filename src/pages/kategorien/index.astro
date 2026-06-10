@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import GetYourGuideWidget from "../../components/GetYourGuideWidget.astro";
+import { categories } from "../../data/categories";
+import { sightsByCategory } from "../../data/sights";
+import { restaurantsByCategory } from "../../data/restaurants";
+import { getGygPlacement } from "../../data/gyg";
+---
+
+<BaseLayout title="Kategorien" description="Der Niederrhein nach Kategorien: Römer & Historie, Kultur & Wallfahrt, Rhein & Auen, Radwege, Natur und mehr." alternateUrls={{ de: "/kategorien/", en: "/en/categories/" }}>
+  <div class="container-page py-12">
+    <Breadcrumbs items={[{label: "Start", href: "/"}, {label: "Kategorien"}]} />
+    <header class="mb-12">
+      <p class="eyebrow mb-3">{categories.length} Themen</p>
+      <h1 class="text-4xl sm:text-6xl font-medium tracking-tight mb-4" style="color: var(--color-text);">Der Niederrhein nach Kategorien</h1>
+      <p class="text-lg max-w-3xl" style="color: var(--color-text-body);">
+        Der Niederrhein quer gelesen: Römer & Historie rund um Xanten, Kultur & Wallfahrt in Kevelaer und Moyland, Rhein & Auen mit den Wildgänsen und das schönste Radrevier Deutschlands.
+      </p>
+    </header>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {categories.map((c) => {
+        const sCount = sightsByCategory(c.slug).length;
+        const rCount = restaurantsByCategory(c.slug).length;
+        return (
+          <a href={`/kategorien/${c.slug}/`} class="card group block p-6">
+            <h3 class="text-xl font-semibold mb-2" style="color: var(--color-text);">{c.name}</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-body);">{c.shortDesc}</p>
+            <div class="flex gap-3 text-xs" style="color: var(--color-text-muted);">
+              <span><strong style="color: var(--color-text);">{sCount}</strong> Sights</span>
+              <span><strong style="color: var(--color-text);">{rCount}</strong> Restaurants</span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    <GetYourGuideWidget placement={getGygPlacement("page:categories-index")} />
+  </div>
+</BaseLayout>

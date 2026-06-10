@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import GetYourGuideWidget from "../../components/GetYourGuideWidget.astro";
+import { events, isUpcoming } from "../../data/events";
+import { getGygPlacement } from "../../data/gyg";
+import { indexUrl } from "../../i18n/config";
+
+const sorted = [...events].sort((a, b) => new Date(a.checkin).getTime() - new Date(b.checkin).getTime());
+const fmtRange = (ci: string, co: string) => {
+  const a = new Date(ci).toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" });
+  const b = new Date(co).toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" });
+  return `${a} bis ${b}`;
+};
+---
+
+<BaseLayout
+  title="Events & Termine am Niederrhein"
+  description="Niederrhein-Events 2026: Wallfahrt Kevelaer, Straßenmaler-Festival Geldern, Wildgänse-Saison und Spargelzeit. Mit aktuellen Hotelpreisen für jeden Termin."
+  alternateUrls={{ de: indexUrl("events", "de"), en: indexUrl("events", "en") }}
+>
+  <div class="container-page py-12">
+    <Breadcrumbs items={[{label: "Start", href: "/"}, {label: "Events"}]} />
+    <header class="mb-12 max-w-3xl">
+      <p class="eyebrow mb-3">Termine mit Hotelpreisen</p>
+      <h1 class="text-4xl sm:text-6xl font-medium tracking-tight mb-4" style="color: var(--color-text);">Events am Niederrhein</h1>
+      <p class="text-lg" style="color: var(--color-text-body);">
+        Die wichtigsten Anlässe am Niederrhein — von der Wallfahrt in Kevelaer über das Straßenmaler-Festival in Geldern bis zur Wildgänse-Saison in den Rheinauen. Zu jedem Termin zeigen wir aktuelle Hotelpreise für genau den Zeitraum.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {sorted.map((e) => {
+        const past = !isUpcoming(e);
+        return (
+          <a href="/hotels/" class="card group block p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="pill-accent">{e.eyebrow}</span>
+              {past && <span class="pill">vorbei</span>}
+            </div>
+            <h2 class="text-xl font-semibold mb-2" style="color: var(--color-text);">{e.title.replace("Hotels am Niederrhein ", "").replace("zu ", "").replace("zum ", "").replace("zur ", "").replace("zu den ", "")}</h2>
+            <p class="text-sm leading-relaxed mb-4" style="color: var(--color-text-body);">{e.intro}</p>
+            <p class="text-xs mb-3" style="color: var(--color-text-muted);">{fmtRange(e.checkin, e.checkout)}</p>
+            <span class="link-accent text-sm">Hotels fuer diesen Termin &rarr;</span>
+          </a>
+        );
+      })}
+    </div>
+
+    <GetYourGuideWidget placement={getGygPlacement("page:events-index")} />
+  </div>
+</BaseLayout>

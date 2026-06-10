@@ -1,0 +1,205 @@
+---
+import { Image } from "astro:assets";
+import { city } from "../data/city";
+import { features } from "../data/features";
+import { type Locale, indexUrl, detailUrl, homeUrl } from "../i18n/config";
+import { t } from "../i18n/ui";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import logo from "../assets/branding/logo.svg";
+
+interface Props {
+  locale?: Locale;
+  alternateUrls?: { de?: string; en?: string };
+}
+
+const { locale = "de", alternateUrls } = Astro.props;
+
+const navItems = [
+  { href: indexUrl("sights", locale), label: t(locale, "nav.sights"), enabled: true },
+  { href: indexUrl("hotels", locale), label: t(locale, "nav.hotels"), enabled: true },
+  { href: indexUrl("restaurants", locale), label: t(locale, "nav.restaurants"), enabled: true },
+  { href: indexUrl("districts", locale), label: t(locale, "nav.districts"), enabled: true },
+  { href: indexUrl("events", locale), label: t(locale, "nav.events"), enabled: true },
+  { href: indexUrl("guides", locale), label: t(locale, "nav.guides"), enabled: features.reiseplaner.enabled },
+  { href: indexUrl("news", locale), label: t(locale, "nav.news"), enabled: features.news.enabled },
+].filter((item) => item.enabled);
+
+const home = homeUrl(locale);
+const aboutHref = indexUrl("about", locale);
+const imprintHref = indexUrl("imprint", locale);
+const privacyHref = indexUrl("privacy", locale);
+const advertiseHref = `${locale === "de" ? "" : "/" + locale}/werben/`;
+// "Hafenrundfahrt"-CTA fuehrt zu den Touren/Aktivitaeten (Reiseplaner, sonst Sehenswuerdigkeiten).
+const tourHref = features.reiseplaner.enabled ? indexUrl("guides", locale) : indexUrl("sights", locale);
+const tourLabel = locale === "en" ? "Plan a cycle route" : "Radroute planen";
+---
+
+<header class="sticky top-0 z-40 border-b" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border-color: var(--color-border);">
+  <div class="container-page">
+    <div class="flex items-center justify-between h-16 gap-6">
+      <a href={home} class="flex items-center shrink-0" style="color: var(--color-accent);" aria-label={`${city.name}-Interaktiv Startseite`}>
+        <Image src={logo} alt={`${city.name}-Interaktiv`} width={320} height={64} class="h-10 w-auto" />
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label={t(locale, "aria.mainNav")}>
+        {navItems.map((item) => (
+          <a href={item.href} class="px-3 py-2 text-sm font-medium transition-colors" style="color: var(--color-text-muted); border-radius: 2px;" onmouseover="this.style.color='var(--color-text)'" onmouseout="this.style.color='var(--color-text-muted)'">
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-2 shrink-0">
+        {features.werben.enabled && (
+          <a href={advertiseHref} class="btn-outline hidden lg:inline-flex">{t(locale, "nav.advertise")}</a>
+        )}
+        <LanguageSwitcher locale={locale} alternateUrls={alternateUrls} />
+        <a href={tourHref} class="btn-tour hidden lg:inline-flex" aria-label={tourLabel}>
+          <span aria-hidden="true">⚓</span>
+          <span>{tourLabel}</span>
+        </a>
+        <button
+          type="button"
+          data-mobile-menu-toggle
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label={t(locale, "aria.openMenu")}
+          data-label-open={t(locale, "aria.openMenu")}
+          data-label-close={t(locale, "aria.closeMenu")}
+          class="lg:hidden inline-flex items-center justify-center w-11 h-11 border transition-colors"
+          style="color: var(--color-text); border-color: var(--color-border); border-radius: 6px;"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div data-mobile-menu-backdrop class="lg:hidden mobile-menu-backdrop" aria-hidden="true"></div>
+
+<aside
+    id="mobile-menu"
+    data-mobile-menu-panel
+    class="lg:hidden mobile-menu-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label={t(locale, "header.mobileNav")}
+    aria-hidden="true"
+  >
+    <div class="flex items-center justify-between px-5 py-4 border-b shrink-0" style="border-color: var(--color-border);">
+      <a href={home} class="flex items-center shrink-0" style="color: var(--color-accent);" aria-label={`${city.name}-Interaktiv Startseite`}>
+        <Image src={logo} alt={`${city.name}-Interaktiv`} width={320} height={64} class="h-8 w-auto" />
+      </a>
+      <button
+        type="button"
+        data-mobile-menu-close
+        aria-label={t(locale, "aria.closeMenu")}
+        class="inline-flex items-center justify-center w-10 h-10 transition-colors"
+        style="color: var(--color-text); border-radius: 6px;"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto px-3 py-4" aria-label={t(locale, "aria.mainNavMobile")}>
+      <ul class="space-y-1">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class="flex items-center justify-between px-4 py-3 text-base font-medium transition-colors" style="color: var(--color-text); border-radius: 4px;">
+              <span>{item.label}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--color-text-muted);">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="mt-6 pt-6 border-t" style="border-color: var(--color-border);">
+        <p class="px-4 mb-2 text-xs uppercase tracking-widest font-bold" style="color: var(--color-text-muted);">{t(locale, "footer.service")}</p>
+        <ul class="space-y-1">
+          <li><a href={aboutHref} class="block px-4 py-2.5 text-sm transition-colors" style="color: var(--color-text-muted); border-radius: 4px;">{t(locale, "footer.about")}</a></li>
+          <li><a href={imprintHref} class="block px-4 py-2.5 text-sm transition-colors" style="color: var(--color-text-muted); border-radius: 4px;">{t(locale, "nav.imprint")}</a></li>
+          <li><a href={privacyHref} class="block px-4 py-2.5 text-sm transition-colors" style="color: var(--color-text-muted); border-radius: 4px;">{t(locale, "nav.privacy")}</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+<script is:inline>
+  (function () {
+    function init() {
+      var toggle = document.querySelector('[data-mobile-menu-toggle]');
+      var closeBtn = document.querySelector('[data-mobile-menu-close]');
+      var menu = document.querySelector('[data-mobile-menu-panel]');
+      var backdrop = document.querySelector('[data-mobile-menu-backdrop]');
+      if (!toggle || !menu || !backdrop || !closeBtn) return;
+
+      var labelOpen = toggle.getAttribute('data-label-open') || 'Menue oeffnen';
+      var labelClose = toggle.getAttribute('data-label-close') || 'Menue schliessen';
+
+      var openState = false;
+      function setOpen(open) {
+        openState = open;
+        menu.classList.toggle('is-open', open);
+        backdrop.classList.toggle('is-open', open);
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? labelClose : labelOpen);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+
+      toggle.addEventListener('click', function () { setOpen(!openState); });
+      closeBtn.addEventListener('click', function () { setOpen(false); toggle.focus(); });
+      backdrop.addEventListener('click', function () { setOpen(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && openState) { setOpen(false); toggle.focus(); }
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+
+      var mq = window.matchMedia('(min-width: 1024px)');
+      function handleResize(e) { if (e.matches && openState) setOpen(false); }
+      if (mq.addEventListener) mq.addEventListener('change', handleResize);
+      else mq.addListener(handleResize);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+<style>
+  /* Duisburg "Hafenrundfahrt"-CTA: Brand-Gradient, runde Pill, Hover-Lift */
+  .btn-tour {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(120deg, #ff1f4b 0%, #d10a2e 45%, #0e6e96 115%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    padding: 11px 20px;
+    border-radius: 32px;
+    box-shadow: 0 6px 16px -4px rgba(209, 10, 46, 0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn-tour:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px -6px rgba(209, 10, 46, 0.55);
+  }
+  .btn-tour span[aria-hidden] {
+    font-size: 16px;
+  }
+</style>

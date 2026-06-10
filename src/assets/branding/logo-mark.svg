@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" role="img" aria-label="Niederrhein Nord">
+  <rect x="1" y="1" width="34" height="34" rx="9" fill="#4E9A3E"/>
+  <rect x="1" y="26" width="34" height="3.2" rx="1.6" fill="#fff"/>
+  <rect x="1" y="32" width="34" height="3.2" rx="1.6" fill="#fff" opacity="0.55"/>
+  <circle cx="26" cy="11" r="4.2" fill="#F4B400" stroke="#fff" stroke-opacity="0.5" stroke-width="1.5"/>
+</svg>

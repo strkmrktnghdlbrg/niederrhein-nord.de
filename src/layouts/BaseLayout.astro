@@ -1,0 +1,142 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { city } from "../data/city";
+import { affiliate, stay22Enabled, gygEnabled } from "../data/affiliate";
+import { adsense, adsenseEnabled } from "../data/adsense";
+import { analytics, gtmEnabled } from "../data/analytics";
+import { type Locale, htmlLang, ogLocale, schemaLang } from "../i18n/config";
+
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+  canonical?: string;
+  ogImage?: string;
+  locale?: Locale;
+  alternateUrls?: { de?: string; en?: string };
+}
+
+const {
+  title,
+  description = city.description.short,
+  noindex = false,
+  canonical,
+  ogImage,
+  locale = "de",
+  alternateUrls,
+} = Astro.props;
+
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, city.domain).toString();
+const fullTitle = title === city.name ? `${city.name} — Reiseportal` : `${title} · ${city.name}`;
+
+const siteName = city.name;
+const siteSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${city.domain}/#organization`,
+      name: siteName,
+      url: `${city.domain}/`,
+      logo: `${city.domain}/favicon.svg`,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${city.domain}/#website`,
+      name: siteName,
+      url: `${city.domain}/`,
+      description: city.description.short,
+      inLanguage: schemaLang[locale],
+      publisher: { "@id": `${city.domain}/#organization` },
+    },
+  ],
+};
+
+const hreflangAlternates =
+  alternateUrls && (alternateUrls.de || alternateUrls.en)
+    ? [
+        ...(alternateUrls.de ? [{ hreflang: "de", href: `${city.domain}${alternateUrls.de}` }] : []),
+        ...(alternateUrls.de ? [{ hreflang: "x-default", href: `${city.domain}${alternateUrls.de}` }] : []),
+      ]
+    : [];
+---
+
+<!doctype html>
+<html lang={htmlLang[locale]}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={canonicalUrl} />
+    {hreflangAlternates.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#4E9A3E" />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={ogLocale[locale]} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} is:inline></script>
+
+    {stay22Enabled && (
+      <script is:inline set:html={
+        `(function(s,t,a,y,twenty,two){s.Stay22=s.Stay22||{};s.Stay22.params={lmaID:'${affiliate.stay22.lmaId}'};twenty=t.createElement(a);two=t.getElementsByTagName(a)[0];twenty.async=1;twenty.src=y;two.parentNode.insertBefore(twenty,two);})(window,document,'script','https://scripts.stay22.com/letmeallez.js');`
+      } />
+    )}
+
+    {gygEnabled && (
+      <script
+        async
+        defer
+        src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
+        data-gyg-partner-id={affiliate.getYourGuide.partnerId}
+      ></script>
+    )}
+
+    {adsenseEnabled && !noindex && (
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.publisherId}`}
+        crossorigin="anonymous"
+      ></script>
+    )}
+
+    {gtmEnabled && (
+      <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${analytics.gtmId}');`} />
+    )}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    {gtmEnabled && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${analytics.gtmId}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+    )}
+    <Header locale={locale} alternateUrls={alternateUrls} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

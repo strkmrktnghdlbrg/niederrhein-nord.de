@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DistrictCard from "../../components/DistrictCard.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import GetYourGuideWidget from "../../components/GetYourGuideWidget.astro";
+import { districts } from "../../data/districts";
+import { getGygPlacement } from "../../data/gyg";
+---
+
+<BaseLayout title="Städte & Orte" description="Alle Städte & Orte am Niederrhein — von der Römerstadt Xanten über die Schwanenstadt Kleve und den Wallfahrtsort Kevelaer bis zu den Rheinstädten Emmerich und Rees." alternateUrls={{ de: "/bezirke/", en: "/en/districts/" }}>
+  <div class="container-page py-12">
+    <Breadcrumbs items={[{label: "Start", href: "/"}, {label: "Bezirke"}]} />
+    <header class="mb-12">
+      <p class="eyebrow mb-3">{districts.length} Stadtbezirke</p>
+      <h1 class="text-4xl sm:text-6xl font-medium tracking-tight mb-4" style="color: var(--color-text);">Städte & Orte am Niederrhein</h1>
+      <p class="text-lg max-w-3xl" style="color: var(--color-text-body);">
+        Von der Römerstadt Xanten über die Schwanenstadt Kleve, den Wallfahrtsort Kevelaer und das spätgotische Kalkar bis zu den Rheinstädten Emmerich und Rees — alle Orte am Niederrhein im Überblick.
+      </p>
+    </header>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {districts.map((d) => <DistrictCard district={d} />)}
+    </div>
+
+    <GetYourGuideWidget placement={getGygPlacement("page:districts-index")} />
+  </div>
+</BaseLayout>

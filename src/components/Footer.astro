@@ -1,0 +1,145 @@
+---
+import { Image } from "astro:assets";
+import { city } from "../data/city";
+import { districts } from "../data/districts";
+import { categories } from "../data/categories";
+import { features } from "../data/features";
+import { type Locale, indexUrl, detailUrl, homeUrl } from "../i18n/config";
+import { t } from "../i18n/ui";
+import { districtsEn } from "../i18n/en/districts";
+import { categoriesEn } from "../i18n/en/categories";
+import logo from "../assets/branding/logo.svg";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "de" } = Astro.props;
+const isEn = locale === "en";
+
+const year = new Date().getFullYear();
+
+// EN-Override sicher aufloesen, sonst auf deutsche Basis zuruckfallen.
+function districtLink(slug: string) {
+  const en = districtsEn[slug];
+  const targetSlug = isEn ? en?.slug ?? slug : slug;
+  return detailUrl("districts", targetSlug, locale);
+}
+function districtName(slug: string, name: string) {
+  return isEn ? districtsEn[slug]?.name ?? name : name;
+}
+function categoryLink(slug: string) {
+  const en = categoriesEn[slug];
+  const targetSlug = isEn ? en?.slug ?? slug : slug;
+  return detailUrl("categories", targetSlug, locale);
+}
+function categoryName(slug: string, name: string) {
+  return isEn ? categoriesEn[slug]?.name ?? name : name;
+}
+
+const home = homeUrl(locale);
+const advertiseHref = `${locale === "de" ? "" : "/" + locale}/werben/`;
+const guidesHref = indexUrl("guides", locale);
+const allCategoriesHref = indexUrl("categories", locale);
+const eventsHref = indexUrl("events", locale);
+const aboutHref = indexUrl("about", locale);
+const newsHref = indexUrl("news", locale);
+const techHref = indexUrl("tech", locale);
+const imprintHref = indexUrl("imprint", locale);
+const privacyHref = indexUrl("privacy", locale);
+const termsHref = indexUrl("terms", locale);
+const brandDesc = isEn ? t(locale, "footer.brandDesc") : city.description.short;
+---
+
+<footer class="mt-20 border-t" style="background: var(--color-surface); border-color: var(--color-border);">
+  <div class="container-page py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <a href={home} class="inline-flex mb-4" style="color: var(--color-accent);" aria-label={t(locale, "footer.homeAria")}>
+          <Image src={logo} alt={`${city.name}-Interaktiv`} width={320} height={64} class="h-12 w-auto" />
+        </a>
+        <p class="text-sm leading-relaxed" style="color: var(--color-text-body);">
+          {brandDesc}
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-text);">{t(locale, "footer.districts")}</h4>
+        <ul class="space-y-2">
+          {districts.slice(0, 8).map((d) => (
+            <li>
+              <a href={districtLink(d.slug)} class="text-sm transition-colors" style="color: var(--color-text-muted);">{districtName(d.slug, d.name)}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-text);">{t(locale, "footer.categories")}</h4>
+        <ul class="space-y-2">
+          {categories.slice(0, 8).map((c) => (
+            <li>
+              <a href={categoryLink(c.slug)} class="text-sm transition-colors" style="color: var(--color-text-muted);">{categoryName(c.slug, c.name)}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-text);">{t(locale, "footer.service")}</h4>
+        <ul class="space-y-2">
+          {features.werben.enabled && (
+            <li><a href={advertiseHref} class="text-sm" style="color: var(--color-text-muted);">{t(locale, "nav.advertise")}</a></li>
+          )}
+          {features.reiseplaner.enabled && (
+            <li><a href={guidesHref} class="text-sm" style="color: var(--color-text-muted);">{t(locale, "nav.guides")}</a></li>
+          )}
+          <li><a href={allCategoriesHref} class="text-sm" style="color: var(--color-text-muted);">{t(locale, "footer.allCategories")}</a></li>
+          <li><a href={eventsHref} class="text-sm" style="color: var(--color-text-muted);">{t(locale, "footer.eventsDates")}</a></li>
+          <li><a href={aboutHref} class="text-sm" style="color: var(--color-text-muted);">{t(locale, "footer.about")}</a></li>
+          {features.news.enabled && (
+            <li><a href={newsHref} class="text-sm" style="color: var(--color-text-muted);">{t(locale, "nav.news")}</a></li>
+          )}
+        </ul>
+      </div>
+    </div>
+
+    {!isEn && (
+      <div class="mt-10 pt-8 border-t" style="border-color: var(--color-border);">
+        <h4 class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-text);">Niederrhein entdecken</h4>
+        <div class="flex flex-wrap gap-x-5 gap-y-2">
+          <a href="/sehenswuerdigkeiten/archaeologischer-park-xanten/" class="text-sm" style="color: var(--color-text-muted);">Römerstadt Xanten (APX)</a>
+          <a href="/sehenswuerdigkeiten/schwanenburg-kleve/" class="text-sm" style="color: var(--color-text-muted);">Schwanenburg Kleve</a>
+          <a href="/sehenswuerdigkeiten/marienbasilika-kevelaer/" class="text-sm" style="color: var(--color-text-muted);">Wallfahrt Kevelaer</a>
+          <a href="/sehenswuerdigkeiten/schloss-moyland/" class="text-sm" style="color: var(--color-text-muted);">Schloss Moyland</a>
+          <a href="/sehenswuerdigkeiten/dom-st-viktor-xanten/" class="text-sm" style="color: var(--color-text-muted);">Dom St. Viktor</a>
+          <a href="/sehenswuerdigkeiten/rheinauen-wildgaense/" class="text-sm" style="color: var(--color-text-muted);">Wildgänse am Niederrhein</a>
+          <a href="/bezirke/xanten/" class="text-sm" style="color: var(--color-text-muted);">Xanten</a>
+          <a href="/bezirke/kleve/" class="text-sm" style="color: var(--color-text-muted);">Kleve</a>
+          <a href="/bezirke/kevelaer/" class="text-sm" style="color: var(--color-text-muted);">Kevelaer</a>
+          <a href="/bezirke/kalkar/" class="text-sm" style="color: var(--color-text-muted);">Kalkar</a>
+          <a href="/kategorien/radwege/" class="text-sm" style="color: var(--color-text-muted);">Radwege &amp; Knotenpunkte</a>
+          <a href="/kategorien/genuss/" class="text-sm" style="color: var(--color-text-muted);">Genuss &amp; Hofläden</a>
+        </div>
+      </div>
+    )}
+
+    <p class="mt-8 text-xs" style="color: var(--color-text-muted);">
+      {isEn
+        ? "Affiliate disclosure: tours & tickets via GetYourGuide, hotels via Booking.com. Booking through these links earns us a commission — at no extra cost to you."
+        : "Affiliate-Hinweis: Touren & Tickets über GetYourGuide, Hotels über Booking.com. Bei einer Buchung über diese Links erhalten wir eine Provision — für dich entstehen keine Mehrkosten."}
+    </p>
+
+    <div class="mt-6 pt-6 border-t flex flex-col md:flex-row items-start md:items-center justify-between gap-4" style="border-color: var(--color-border);">
+      <p class="text-xs" style="color: var(--color-text-muted);">
+        &copy; {year} ev-duisburg.de — {isEn ? "all rights reserved." : "alle Rechte vorbehalten."}
+      </p>
+      <div class="flex items-center gap-5">
+        <a href={aboutHref} class="text-xs" style="color: var(--color-text-muted);">{t(locale, "footer.about")}</a>
+        <a href={imprintHref} class="text-xs" style="color: var(--color-text-muted);">{t(locale, "nav.imprint")}</a>
+        <a href={privacyHref} class="text-xs" style="color: var(--color-text-muted);">{t(locale, "nav.privacy")}</a>
+        <a href={termsHref} class="text-xs" style="color: var(--color-text-muted);">{t(locale, "nav.terms")}</a>
+      </div>
+    </div>
+  </div>
+</footer>

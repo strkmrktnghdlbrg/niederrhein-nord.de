@@ -1,0 +1,115 @@
+/*
+ * niederrhein-nord.de — Brand Layer
+ * Design: Airbnb (Light / warm marketplace), Niederrhein "jung & modern".
+ * Twist: Wiesen-/Auen-Grün (#4E9A3E) als Brand-Akzent,
+ *        Rhein-Blau (#2A7DB1) als Sekundärfarbe,
+ *        Raps-/Tulpen-Gelb (#F4B400) + Backstein-Klinker (#9E4A38) als Deko.
+ *        "flaches Land, weiter Himmel", "zwischen Rhein und Reichswald".
+ *        Display-Font Space Grotesk, Body Inter.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@theme {
+  /* === Akzent (Niederrhein-Grün — SINGLE FOCAL POINT) === */
+  --color-accent: #4e9a3e;
+  --color-accent-hover: #3c7a30;
+  --color-accent-tint: rgba(78, 154, 62, 0.08);
+  --color-accent-contrast: #ffffff;
+
+  /* === Sekundär-Akzente === */
+  --color-secondary: #2a7db1;     /* Rhein-Blau */
+  --color-secondary-hover: #1e5e87;
+  --color-decorative: #9e4a38;    /* Backstein / Klinker */
+  --color-decorative-2: #f4b400;  /* Raps-/Tulpen-Gelb */
+  --color-decorative-3: #2a7db1;  /* Rhein-Blau */
+
+  /* === Text (Light Theme — Airbnb Carbon/Slate) === */
+  --color-text: #222222;
+  --color-text-body: #484848;
+  --color-text-muted: #6a6a6a;
+  --color-text-subtle: #9a9a9a;
+
+  /* === Surfaces (Light) === */
+  --color-bg: #f7f7f7;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-input: #ffffff;
+  --color-border: #ebebeb;
+  --color-border-subtle: #dddddd;
+
+  /* === Semantik === */
+  --color-success: #4e9a3e;
+  --color-emerald: #4e9a3e;
+  --color-warning: #d89a00;
+
+  /* === Fonts === */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", monospace;
+
+  /* === Brand-Gradient (Niederrhein jung — Grün → Rhein-Blau) === */
+  --grad-brand: linear-gradient(120deg, #7fbf3f 0%, #4e9a3e 42%, #2a7db1 115%);
+  --grad-cool: linear-gradient(120deg, #4e9a3e, #2a7db1);
+
+  /* === Radii === */
+  --radius-tag: 6px;
+  --radius-badge: 6px;
+  --radius-card: 22px;
+  --radius-input: 16px;
+  --radius-button: 10px;
+  --radius-pill: 9999px;
+
+  /* === Shadows === */
+  --shadow-sm: rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 2px 6px 0px;
+  --shadow-md: rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.08) 0px 4px 12px 0px;
+  --shadow-subtle: rgba(0, 0, 0, 0.04) 0px 1px 2px 0px;
+  --shadow-xl: rgba(0, 0, 0, 0.02) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 6px 0px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+  --shadow-lift: 0 18px 40px -12px rgba(30, 70, 40, 0.26);
+
+  /* === Orts-Hues (Grün / Rhein-Blau / Raps / Backstein) === */
+  --hue-1: linear-gradient(135deg, #4e9a3e 0%, #3c7a30 100%);
+  --hue-2: linear-gradient(135deg, #2a7db1 0%, #1e5e87 100%);
+  --hue-3: linear-gradient(135deg, #f4b400 0%, #d89a00 100%);
+  --hue-4: linear-gradient(135deg, #9e4a38 0%, #6f3327 100%);
+  --hue-5: linear-gradient(135deg, #2a7db1 0%, #4e9a3e 100%);
+
+  /* === Hero-Verlauf (Wiesen-/Rhein-Schimmer) === */
+  --hero-faecher: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(78, 154, 62, 0.05),
+    transparent 70%
+  );
+}
+
+@layer components {
+  .btn-primary {
+    background: var(--grad-brand);
+    color: var(--color-accent-contrast);
+    border-radius: var(--radius-button);
+    padding: 12px 22px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-text);
+    padding: 0;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .card-default {
+    background: var(--color-surface);
+    border-radius: var(--radius-card);
+    padding: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+  .card-elevated {
+    background: var(--color-surface-elevated);
+    border-radius: 22px 22px 0 0;
+    padding: 24px 0;
+    box-shadow: var(--shadow-subtle);
+  }
+}

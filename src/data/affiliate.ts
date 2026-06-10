@@ -1,13 +1,7 @@
 /**
  * Affiliate-Konfiguration niederrhein-nord.de
- *
- * Stay22-lmaID: domain-spezifisch (Account j.stark@stark.marketing).
- *   Vom Kunden bestätigt am 2026-06-10: 68793e1e7a91cb5fc4b5e142 (reaktiviert —
- *   ersetzt den älteren Eintrag 68793f63… aus STAY22-IDS-REFERENCE.md).
- * GetYourGuide-partnerId: geteilte Webmagics/Stark-Marketing-Partner-ID,
- *   in ALLEN Portalen identisch (1UPZQQB).
- *
- * Struktur gespiegelt von karlsruhe-interaktiv.de (Astro-Referenz).
+ * Stay22-lmaID: 68793e1e7a91cb5fc4b5e142 (Kunde bestätigt 2026-06-10).
+ * GetYourGuide-partnerId: 1UPZQQB (geteilte Webmagics/Stark-Marketing-ID, alle Portale).
  */
 export const affiliate = {
   stay22: {
@@ -16,10 +10,10 @@ export const affiliate = {
     mapEmbedId: "",
   },
   getYourGuide: {
-    partnerId: "1UPZQQB", // geteilte Partner-ID über alle Projekte
+    partnerId: "1UPZQQB",
     locale: "de-DE",
     enabled: true,
-    cityQuery: "Niederrhein", // Region statt einzelner Stadt
+    cityQuery: "Niederrhein",
   },
 };
 

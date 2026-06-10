@@ -1,0 +1,368 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { city } from "../data/city";
+
+const IMG = "/images/niederrhein";
+
+type Sight = { t: string; m: string; r: string; n: string; b?: string; steel?: boolean; c: [string, string]; u: string; href: string };
+type Gyg = { t: string; m: string; p: string; c: [string, string]; u: string; href: string };
+type District = { t: string; d: string; tag: string; c: [string, string]; u: string; href: string };
+type Hotel = { t: string; m: string; r: string; p: string; c: [string, string]; u: string; href: string };
+type News = { cat: string; t: string; d: string; date: string; c: [string, string]; u: string; href: string };
+
+const sights: Sight[] = [
+  { t: "LVR-Archäologischer Park Xanten", m: "Römisches Reich · Hafentempel & Amphitheater", r: "4.8", n: "5.6k", b: "Wahrzeichen", steel: true, c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/xanten.jpg`, href: "/sehenswuerdigkeiten/archaeologischer-park-xanten/" },
+  { t: "Schwanenburg Kleve", m: "Lohengrin-Sage · Schwanenturm", r: "4.6", n: "2.3k", b: "Top bewertet", c: ["#9E4A38", "#6F3327"], u: `${IMG}/kleve.jpg`, href: "/sehenswuerdigkeiten/schwanenburg-kleve/" },
+  { t: "Marienbasilika Kevelaer", m: "Größter Wallfahrtsort Nordwesteuropas", r: "4.7", n: "3.1k", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/kevelaer.jpg`, href: "/sehenswuerdigkeiten/marienbasilika-kevelaer/" },
+  { t: "Schloss Moyland", m: "Wasserschloss · Museum Joseph Beuys", r: "4.6", n: "2.8k", b: "Familienfavorit", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/moyland.jpg`, href: "/sehenswuerdigkeiten/schloss-moyland/" },
+  { t: "Dom St. Viktor, Xanten", m: "„Kölner Dom des Niederrheins“ · Gotik", r: "4.7", n: "1.9k", c: ["#1E5E87", "#2A7DB1"], u: `${IMG}/xantendom.jpg`, href: "/sehenswuerdigkeiten/dom-st-viktor-xanten/" },
+  { t: "Historische Stadt Kalkar", m: "Rathaus & Hochaltäre von St. Nicolai", r: "4.5", n: "1.2k", c: ["#9E4A38", "#4E9A3E"], u: `${IMG}/kalkar.jpg`, href: "/sehenswuerdigkeiten/rathaus-kalkar/" },
+];
+
+const gyg: Gyg[] = [
+  { t: "APX Xanten – Eintritt & Führung", m: "Römerpark · 2,5 Std", p: "14", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/gyg-apx.jpg`, href: "/reiseplaner/" },
+  { t: "Rheinschifffahrt Niederrhein", m: "Panorama-Fahrt ab Emmerich · 90 Min", p: "19", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/gyg-schiff.jpg`, href: "/reiseplaner/" },
+  { t: "Knotenpunkt-Radtour", m: "Geführte E-Bike-Tour · Auen & Höfe", p: "29", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/gyg-rad.jpg`, href: "/reiseplaner/" },
+  { t: "Wallfahrtsstadt Kevelaer", m: "Stadtführung & Kerzenkapelle · 1,5 Std", p: "12", c: ["#F4B400", "#D89A00"], u: `${IMG}/gyg-wallfahrt.jpg`, href: "/reiseplaner/" },
+];
+
+const districts: District[] = [
+  { t: "Xanten", d: "Römerstadt · APX & Dom · Südsee", tag: "Stadt", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/gyg-apx.jpg`, href: "/bezirke/xanten/" },
+  { t: "Kleve", d: "Schwanenburg · Forstgarten · Hochschule", tag: "Kreisstadt", c: ["#9E4A38", "#6F3327"], u: `${IMG}/kleve.jpg`, href: "/bezirke/kleve/" },
+  { t: "Geldern", d: "Gelderland · Straßenmaler-Festival", tag: "Stadt", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/geldern.jpg`, href: "/bezirke/geldern/" },
+  { t: "Emmerich am Rhein", d: "Längste Rheinpromenade · Hängebrücke", tag: "am Rhein", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/emmerich.jpg`, href: "/bezirke/emmerich/" },
+  { t: "Rees", d: "Älteste Stadt am unteren Niederrhein", tag: "am Rhein", c: ["#9E4A38", "#2A7DB1"], u: `${IMG}/rees.jpg`, href: "/bezirke/rees/" },
+  { t: "Goch & Weeze", d: "Steintor · Airport Weeze · Kermisdahl", tag: "Region", c: ["#4E9A3E", "#2A7DB1"], u: `${IMG}/goch.jpg`, href: "/bezirke/goch/" },
+];
+
+const hotels: Hotel[] = [
+  { t: "Parkhotel Kleve", m: "4★ · Forstgarten / Tiergarten", r: "4.5", p: "112", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/hotel1.jpg`, href: "/hotels/parkhotel-kleve/" },
+  { t: "Hotel van Bebber, Xanten", m: "Historisch · Altstadt", r: "4.6", p: "119", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/hotel3.jpg`, href: "/hotels/hotel-van-bebber-xanten/" },
+  { t: "Landhaus am Reichswald", m: "4★ · Natur & Wellness", r: "4.7", p: "139", c: ["#3C7A30", "#2A7DB1"], u: `${IMG}/hotel4.jpg`, href: "/hotels/landhaus-am-reichswald/" },
+  { t: "Hotel Kevelaerer Hof", m: "3★ · Nähe Basilika", r: "4.4", p: "89", c: ["#F4B400", "#D89A00"], u: `${IMG}/hotel2.jpg`, href: "/hotels/hotel-kevelaerer-hof/" },
+];
+
+const news: News[] = [
+  { cat: "Natur", t: "Wildgänse-Saison: 180.000 Gäste am Unteren Niederrhein", d: "Von Oktober bis Februar rasten die arktischen Wildgänse in den Rheinauen — die besten Beobachtungsspots.", date: "6. Juni 2026", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/wildgaense.jpg`, href: "/news/wildgaense-saison-2026/" },
+  { cat: "Genuss", t: "Spargel- & Erdbeerzeit: Hofläden zwischen Kleve und Kevelaer", d: "Der Niederrhein ist Spargelland — wo es jetzt frisch vom Feld auf den Teller kommt.", date: "2. Juni 2026", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/spargel.jpg`, href: "/news/spargel-erdbeerzeit-hoflaeden/" },
+  { cat: "Events", t: "Radsaison startet: Der Niederrhein per Knotenpunkt", d: "Selbstpflücke-Felder, Hofcafés und die schönsten Rundtouren für den Sommer 2026.", date: "28. Mai 2026", c: ["#9E4A38", "#4E9A3E"], u: `${IMG}/erdbeere.jpg`, href: "/news/radsaison-knotenpunkte/" },
+];
+
+const cats = [
+  "★ Highlights",
+  "Sehenswürdigkeiten",
+  "Rhein & Auen",
+  "Radwege",
+  "Kultur & Wallfahrt",
+  "Touren & Tickets",
+  "Hotels",
+  "Genuss & Hofläden",
+  "Events",
+];
+---
+
+<BaseLayout title={city.name} description={city.description.long} alternateUrls={{ de: "/" }}>
+  <!-- HERO -->
+  <section class="du-hero">
+    <div class="du-hero-bg" style={`background-image:url('${IMG}/hero.jpg')`}></div>
+    <div class="du-hero-scrim"></div>
+    <div class="container-page du-hero-inner">
+      <span class="du-kicker">✦ Dein Reiseportal für den nördlichen Niederrhein</span>
+      <h1 class="du-hero-h1">Entdecke den Niederrhein —<br />flaches Land, <span class="du-hl">weiter Himmel.</span></h1>
+      <p class="du-hero-sub">Sehenswürdigkeiten, Touren &amp; Tickets, Hotels und die schönsten Ecken zwischen Rhein, Reichswald und niederländischer Grenze — von Xanten über Kleve bis Kevelaer, alles an einem Ort.</p>
+
+      <div class="du-search">
+        <div class="du-seg"><div class="du-lab">Wohin</div><div class="du-ph">Stadt, Ort oder Sehenswürdigkeit</div></div>
+        <div class="du-seg"><div class="du-lab">Wann</div><div class="du-ph">Reisezeit hinzufügen</div></div>
+        <div class="du-seg du-who">
+          <div><div class="du-lab">Was</div><div class="du-ph">Touren, Hotels, Radwege</div></div>
+          <a href="/sehenswuerdigkeiten/" class="du-go" aria-label="Suchen">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KATEGORIE-PILLS -->
+  <div class="container-page">
+    <div class="du-cats">
+      {cats.map((c, i) => <a href="/kategorien/" class={`du-cat ${i === 0 ? "on" : ""}`}>{c}</a>)}
+    </div>
+  </div>
+
+  <!-- TOP-SEHENSWÜRDIGKEITEN -->
+  <section class="container-page section">
+    <div class="du-shead">
+      <div>
+        <p class="du-eyebrow">Highlights</p>
+        <h2 class="du-h2">Top-Sehenswürdigkeiten am Niederrhein</h2>
+      </div>
+      <a href="/sehenswuerdigkeiten/" class="du-all">Alle ansehen →</a>
+    </div>
+    <div class="du-grid">
+      {sights.map((s) => (
+        <a href={s.href} class="du-card">
+          <div class="du-ph du-sq">
+            <div class="du-tile" style={`background:linear-gradient(135deg,${s.c[0]},${s.c[1]})`}></div>
+            <img src={s.u} alt={s.t} loading="lazy" onerror="this.style.display='none'" />
+            <span class="du-save" aria-hidden="true">♡</span>
+            {s.b && <span class={`du-badge ${s.steel ? "steel" : ""}`}>{s.steel ? "★ " : ""}{s.b}</span>}
+          </div>
+          <div class="du-body">
+            <div class="du-row1"><span class="du-ttl">{s.t}</span><span class="du-rate">★ {s.r} <span class="du-muted">({s.n})</span></span></div>
+            <div class="du-meta">{s.m}</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- GETYOURGUIDE -->
+  <section class="du-band">
+    <div class="container-page section">
+      <div class="du-shead">
+        <div>
+          <p class="du-eyebrow" style="color:#FF5533">Powered by GetYourGuide</p>
+          <h2 class="du-h2">Touren, Tickets &amp; Erlebnisse</h2>
+        </div>
+        <a href="/reiseplaner/" class="du-all">Alle Aktivitäten →</a>
+      </div>
+      <div class="du-grid du-grid-4">
+        {gyg.map((g) => (
+          <a href={g.href} class="du-card">
+            <div class="du-ph du-sq">
+              <div class="du-tile" style={`background:linear-gradient(135deg,${g.c[0]},${g.c[1]})`}></div>
+              <img src={g.u} alt={g.t} loading="lazy" onerror="this.style.display='none'" />
+              <span class="du-gygtag">GetYourGuide</span>
+              <span class="du-price-pill">ab €{g.p}</span>
+            </div>
+            <div class="du-body">
+              <div class="du-ttl">{g.t}</div>
+              <div class="du-meta">{g.m}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STÄDTE & ORTE -->
+  <section class="container-page section">
+    <div class="du-shead">
+      <div>
+        <p class="du-eyebrow">Zwischen Rhein &amp; Reichswald</p>
+        <h2 class="du-h2">Städte &amp; Orte am Niederrhein</h2>
+      </div>
+      <a href="/bezirke/" class="du-all">Alle Orte →</a>
+    </div>
+    <div class="du-dgrid">
+      {districts.map((d) => (
+        <a href={d.href} class="du-dcard">
+          <div class="du-tile" style={`background:linear-gradient(135deg,${d.c[0]},${d.c[1]})`}></div>
+          <img src={d.u} alt={d.t} loading="lazy" onerror="this.style.display='none'" />
+          <div class="du-dov"></div>
+          <span class="du-dtag">{d.tag}</span>
+          <div class="du-dtxt"><h3>{d.t}</h3><p>{d.d}</p></div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- TOP-HOTELS -->
+  <section class="du-band">
+    <div class="container-page section">
+      <div class="du-shead">
+        <div>
+          <p class="du-eyebrow">Übernachten</p>
+          <h2 class="du-h2">Top-Hotels am Niederrhein</h2>
+        </div>
+        <a href="/hotels/" class="du-all">Alle Hotels →</a>
+      </div>
+      <p class="du-live"><span class="du-dot"></span> Live von Booking.com — aktuelle Preise &amp; Verfügbarkeit, täglich aktualisiert <span class="du-muted">· Stay22</span></p>
+      <div class="du-grid du-grid-4">
+        {hotels.map((h) => (
+          <a href={h.href} class="du-card">
+            <div class="du-ph du-sq">
+              <div class="du-tile" style={`background:linear-gradient(135deg,${h.c[0]},${h.c[1]})`}></div>
+              <img src={h.u} alt={h.t} loading="lazy" onerror="this.style.display='none'" />
+              <span class="du-save" aria-hidden="true">♡</span>
+            </div>
+            <div class="du-body">
+              <div class="du-row1"><span class="du-ttl">{h.t}</span><span class="du-rate">★ {h.r}</span></div>
+              <div class="du-meta">{h.m}</div>
+              <div class="du-pricel"><b>€{h.p}</b> <span class="du-muted">/ Nacht</span></div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MAGAZIN / NEWS -->
+  <section class="container-page section">
+    <div class="du-shead">
+      <div>
+        <p class="du-eyebrow">Magazin</p>
+        <h2 class="du-h2">Aktuelles vom Niederrhein</h2>
+      </div>
+      <a href="/news/" class="du-all">Alle Beiträge →</a>
+    </div>
+    <div class="du-grid">
+      {news.map((n) => (
+        <a href={n.href} class="du-ncard">
+          <div class="du-nph">
+            <div class="du-tile" style={`background:linear-gradient(135deg,${n.c[0]},${n.c[1]})`}></div>
+            <img src={n.u} alt={n.t} loading="lazy" onerror="this.style.display='none'" />
+          </div>
+          <div class="du-nbody">
+            <div class="du-ncat">{n.cat}</div>
+            <h3 class="du-nh3">{n.t}</h3>
+            <p class="du-meta">{n.d}</p>
+            <div class="du-ndate">{n.date}</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- NEWSLETTER CTA -->
+  <section class="container-page section">
+    <div class="du-cta">
+      <div>
+        <h2 class="du-cta-h2">Bleib am Puls des Niederrheins.</h2>
+        <p class="du-cta-p">Events, frische Touren, Radrouten und Insider-Spots zwischen Rhein und Reichswald — einmal pro Woche direkt in dein Postfach.</p>
+      </div>
+      <form class="du-cta-form" onsubmit="return false">
+        <input type="email" placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse" />
+        <button type="submit">Abonnieren</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  :global(:root) {
+    --du-rot: #4E9A3E;
+    --du-rot-deep: #3C7A30;
+    --du-hafen: #2A7DB1;
+    --du-hafen-deep: #1E5E87;
+    --du-hafen-tint: #E4F0F7;
+    --du-stahl: #6a6a6a;
+    --du-magic: #F4B400;
+    --du-grad-brand: linear-gradient(120deg, #7FBF3F 0%, #4E9A3E 42%, #2A7DB1 115%);
+    --du-shadow-lift: 0 18px 40px -12px rgba(30, 70, 40, .26);
+  }
+
+  .du-h2, .du-hero-h1, .du-nh3, .du-cta-h2, .du-dtxt h3 {
+    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+    letter-spacing: -.6px;
+    font-weight: 700;
+  }
+
+  .du-muted { color: var(--du-stahl); font-weight: 400; }
+
+  /* HERO */
+  .du-hero { position: relative; height: 640px; overflow: hidden; background: #1d3322; }
+  .du-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: saturate(1.06); }
+  .du-hero-scrim { position: absolute; inset: 0; background:
+    linear-gradient(180deg, rgba(12,28,16,.5) 0%, rgba(12,28,16,.08) 35%, rgba(12,28,16,.5) 100%),
+    linear-gradient(115deg, rgba(78,154,62,.34) 0%, rgba(12,28,16,0) 45%, rgba(42,125,177,.42) 100%); }
+  .du-hero-inner { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+  .du-kicker { display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: var(--du-grad-brand); color: #fff; font-weight: 700; font-size: 13px; letter-spacing: .3px; padding: 8px 16px; border-radius: 32px; margin-bottom: 20px; box-shadow: 0 8px 20px -6px rgba(78,154,62,.5); }
+  .du-hero-h1 { color: #fff; font-size: 64px; line-height: 1; max-width: 860px; text-shadow: 0 2px 24px rgba(0,0,0,.3); }
+  .du-hl { background: linear-gradient(100deg, #FCE38A, #A8E6A0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+  .du-hero-sub { color: #fff; font-size: 19px; max-width: 640px; margin-top: 18px; text-shadow: 0 1px 12px rgba(0,0,0,.4); }
+
+  /* SEARCH */
+  .du-search { margin-top: 34px; background: #fff; border-radius: 26px; box-shadow: rgba(0,0,0,.02) 0 0 0 1px, rgba(0,0,0,.04) 0 2px 6px 0, rgba(0,0,0,.1) 0 4px 8px 0; display: flex; align-items: stretch; max-width: 880px; overflow: hidden; }
+  .du-seg { flex: 1; padding: 16px 22px; border-right: 1px solid #ebebeb; cursor: pointer; }
+  .du-seg:hover { background: #f7f7f7; }
+  .du-lab { font-size: 12px; font-weight: 600; letter-spacing: .3px; }
+  .du-ph { font-size: 14px; color: var(--du-stahl); margin-top: 3px; }
+  .du-who { flex: 1.1; border-right: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .du-go { flex: 0 0 auto; align-self: center; width: 54px; height: 54px; border-radius: 50%; background: var(--du-grad-brand); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -4px rgba(78,154,62,.45); transition: transform .15s ease; }
+  .du-go:hover { transform: scale(1.06); }
+
+  /* CATEGORY PILLS */
+  .du-cats { display: flex; gap: 10px; overflow-x: auto; padding: 24px 0 4px; }
+  .du-cat { flex: 0 0 auto; border: 1px solid #dddddd; background: #fff; color: #222; font-size: 14px; font-weight: 500; padding: 10px 16px; border-radius: 32px; cursor: pointer; white-space: nowrap; }
+  .du-cat:hover { border-color: var(--du-rot); color: var(--du-rot); }
+  .du-cat.on { background: var(--du-grad-brand); color: #fff; border-color: transparent; box-shadow: 0 6px 16px -6px rgba(78,154,62,.5); }
+  .du-cat.on:hover { color: #fff; }
+
+  /* SECTION HEADERS */
+  .du-shead { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 22px; gap: 16px; }
+  .du-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--du-rot); margin-bottom: 10px; }
+  .du-h2 { font-size: 36px; letter-spacing: -1px; line-height: 1.05; color: #222; }
+  .du-all { flex: 0 0 auto; font-size: 14px; font-weight: 600; color: #222; }
+  .du-all:hover { color: var(--du-rot); }
+
+  /* CARD GRIDS */
+  .du-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .du-grid-4 { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .du-card { display: block; cursor: pointer; transition: transform .2s ease; }
+  .du-card:hover { transform: translateY(-4px); }
+  .du-ph { position: relative; border-radius: 22px; overflow: hidden; background: #dddddd; transition: box-shadow .2s ease; }
+  .du-sq { aspect-ratio: 1 / 1; }
+  .du-card:hover .du-ph { box-shadow: var(--du-shadow-lift); }
+  .du-tile { position: absolute; inset: 0; z-index: 0; }
+  .du-ph img, .du-nph img, .du-dcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform .4s ease; }
+  .du-card:hover .du-ph img { transform: scale(1.05); }
+  .du-save { position: absolute; top: 12px; right: 12px; z-index: 2; color: #fff; font-size: 22px; filter: drop-shadow(0 1px 3px rgba(0,0,0,.4)); }
+  .du-badge { position: absolute; top: 12px; left: 12px; z-index: 2; background: #fff; color: #222; font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.18); }
+  .du-badge.steel { color: var(--du-hafen); }
+  .du-body { padding: 12px 2px 0; }
+  .du-row1 { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .du-ttl { font-size: 15px; font-weight: 600; color: #222; }
+  .du-rate { flex: 0 0 auto; font-size: 14px; font-weight: 500; color: #222; }
+  .du-meta { font-size: 14px; color: var(--du-stahl); margin-top: 2px; }
+  .du-pricel { font-size: 14px; margin-top: 6px; color: #222; }
+  .du-pricel b { font-weight: 700; }
+
+  /* GETYOURGUIDE bits */
+  .du-band { background: #fff; border-top: 1px solid #ebebeb; border-bottom: 1px solid #ebebeb; }
+  .du-gygtag { position: absolute; top: 12px; left: 12px; z-index: 2; background: #FF5533; color: #fff; font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 6px; }
+  .du-price-pill { position: absolute; bottom: 12px; left: 12px; z-index: 2; background: #fff; color: #222; font-size: 13px; font-weight: 600; padding: 6px 11px; border-radius: 32px; box-shadow: 0 2px 6px rgba(0,0,0,.18); }
+
+  /* DISTRICTS */
+  .du-dgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .du-dcard { position: relative; height: 230px; border-radius: 22px; overflow: hidden; display: block; background: #dddddd; transition: transform .2s ease, box-shadow .2s ease; }
+  .du-dcard:hover { transform: translateY(-4px); box-shadow: var(--du-shadow-lift); }
+  .du-dcard:hover img { transform: scale(1.06); }
+  .du-dov { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.58)); }
+  .du-dtag { position: absolute; top: 14px; left: 14px; z-index: 3; background: rgba(255,255,255,.92); color: var(--du-rot-deep); font-size: 11px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; padding: 5px 10px; border-radius: 6px; }
+  .du-dtxt { position: absolute; left: 18px; bottom: 16px; color: #fff; z-index: 3; }
+  .du-dtxt h3 { font-size: 21px; font-weight: 600; color: #fff; }
+  .du-dtxt p { font-size: 13px; opacity: .92; margin-top: 2px; }
+
+  /* HOTELS note */
+  .du-live { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--du-stahl); margin-bottom: 18px; }
+  .du-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--du-rot); box-shadow: 0 0 0 4px rgba(78,154,62,.18); }
+
+  /* NEWS */
+  .du-ncard { display: block; background: #fff; border: 1px solid #ebebeb; border-radius: 22px; overflow: hidden; transition: border-color .2s, transform .2s ease, box-shadow .2s ease; }
+  .du-ncard:hover { border-color: transparent; transform: translateY(-4px); box-shadow: var(--du-shadow-lift); }
+  .du-nph { aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: #dddddd; }
+  .du-nbody { padding: 18px 20px 22px; }
+  .du-ncat { font-size: 12px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; color: var(--du-rot); }
+  .du-nh3 { font-size: 18px; margin: 8px 0; line-height: 1.3; color: #222; }
+  .du-ndate { font-size: 13px; color: #c1c1c1; margin-top: 14px; }
+
+  /* CTA */
+  .du-cta { background: var(--du-grad-brand); border-radius: 28px; padding: 52px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; color: #fff; flex-wrap: wrap; position: relative; overflow: hidden; }
+  .du-cta::after { content: ""; position: absolute; right: -60px; bottom: -80px; width: 340px; height: 340px; border-radius: 50%; background: rgba(255,255,255,.07); }
+  .du-cta-h2 { color: #fff; font-size: 30px; max-width: 560px; position: relative; z-index: 1; }
+  .du-cta-p { color: rgba(255,255,255,.92); margin-top: 10px; max-width: 560px; font-size: 16px; position: relative; z-index: 1; }
+  .du-cta-form { display: flex; gap: 10px; flex: 0 0 auto; position: relative; z-index: 1; }
+  .du-cta-form input { border: none; border-radius: 12px; padding: 15px 18px; font-size: 15px; width: 260px; font-family: inherit; }
+  .du-cta-form button { background: #fff; color: var(--du-rot-deep); border: none; border-radius: 12px; padding: 15px 24px; font-weight: 600; font-size: 15px; cursor: pointer; }
+  .du-cta-form button:hover { background: #222; color: #fff; }
+
+  @media (max-width: 1024px) {
+    .du-grid, .du-dgrid { grid-template-columns: repeat(2, 1fr); }
+    .du-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .du-hero-h1 { font-size: 42px; }
+    .du-search { flex-wrap: wrap; }
+  }
+</style>

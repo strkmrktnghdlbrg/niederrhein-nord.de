@@ -1,0 +1,28 @@
+Options -Indexes
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Canonical host: force HTTPS + www → https://www.niederrhein-nord.de
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^niederrhein-nord\.de$ [NC]
+  RewriteRule ^ https://www.niederrhein-nord.de%{REQUEST_URI} [L,R=301]
+
+  # === Legacy-WordPress → neuer Build (301) ===
+  RewriteRule ^blog/?$ /magazin/ [L,R=301]
+  RewriteRule ^entdecken-sie/?$ / [L,R=301]
+  RewriteRule ^beste-hotels-kreis-kleve-2/?$ /beste-hotels-kreis-kleve/ [L,R=301]
+  RewriteRule ^page/[0-9]+/?$ / [L,R=301]
+
+  # === Casino/Spam-Altlasten → 410 Gone (kein Linkjuice-Vererben) ===
+  RewriteRule (betninja|bet-ninja|moro-spin|get-lucky|aruba-bet|casino-star|bet-wild|winpot|teaspins|vavada|casino-online|casino-su-internet|gokwebsites|gokwebsite|online-casinos|internet-casino|online-slots|sister-casino|entertainment-hub|esplora-il-mondo|siti-casino|migliori-casino|superior-casino|naj-) - [G,NC]
+
+  # Serve pre-built HTML files directly
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L,QSA]
+</IfModule>
