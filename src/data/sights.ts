@@ -18,6 +18,7 @@ export type Sight = {
 export const sights: Sight[] = [
   {
     slug: "archaeologischer-park-xanten",
+    imageKey: "sight:archaeologischer-park-xanten",
     name: "LVR-Archäologischer Park Xanten (APX)",
     district: "xanten",
     type: "Museum",
@@ -33,6 +34,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "dom-st-viktor-xanten",
+    imageKey: "sight:dom-st-viktor-xanten",
     name: "Dom St. Viktor, Xanten",
     district: "xanten",
     type: "Kirche",
@@ -47,6 +49,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "schwanenburg-kleve",
+    imageKey: "sight:schwanenburg-kleve",
     name: "Schwanenburg Kleve",
     district: "kleve",
     type: "Wahrzeichen",
@@ -61,6 +64,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "marienbasilika-kevelaer",
+    imageKey: "sight:marienbasilika-kevelaer",
     name: "Marienbasilika & Kerzenkapelle Kevelaer",
     district: "kevelaer",
     type: "Kirche",
@@ -75,6 +79,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "schloss-moyland",
+    imageKey: "sight:schloss-moyland",
     name: "Museum Schloss Moyland",
     district: "kleve",
     type: "Museum",
@@ -90,6 +95,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "rathaus-kalkar",
+    imageKey: "sight:rathaus-kalkar",
     name: "Historisches Rathaus & St. Nicolai, Kalkar",
     district: "kalkar",
     type: "Wahrzeichen",
@@ -104,6 +110,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "wunderland-kalkar",
+    imageKey: "sight:wunderland-kalkar",
     name: "Wunderland Kalkar",
     district: "kalkar",
     type: "Modern",
@@ -119,6 +126,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "xantener-suedsee",
+    imageKey: "sight:xantener-suedsee",
     name: "Xantener Südsee",
     district: "xanten",
     type: "Park",
@@ -133,6 +141,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "rheinpromenade-emmerich",
+    imageKey: "sight:rheinpromenade-emmerich",
     name: "Rheinpromenade Emmerich",
     district: "emmerich",
     type: "Aussicht",
@@ -147,6 +156,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "rheinpromenade-rees",
+    imageKey: "sight:rheinpromenade-rees",
     name: "Stadtmauer & Rheinpromenade Rees",
     district: "rees",
     type: "Aussicht",
@@ -161,6 +171,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "forstgarten-kleve",
+    imageKey: "sight:forstgarten-kleve",
     name: "Forstgarten & Tiergarten Kleve",
     district: "kleve",
     type: "Park",
@@ -175,6 +186,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "reichswald",
+    imageKey: "sight:reichswald",
     name: "Reichswald",
     district: "kleve",
     type: "Park",
@@ -189,6 +201,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "steintor-goch",
+    imageKey: "sight:steintor-goch",
     name: "Steintor Goch",
     district: "goch",
     type: "Wahrzeichen",
@@ -203,6 +216,7 @@ export const sights: Sight[] = [
   },
   {
     slug: "rheinauen-wildgaense",
+    imageKey: "sight:rheinauen-wildgaense",
     name: "Rheinauen & Wildgänse am Unteren Niederrhein",
     district: "emmerich",
     type: "Park",

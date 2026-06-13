@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+const title = "Günstig übernachten: Die besten Pensionen & Gasthöfe";
+const description = "Günstig übernachten am Niederrhein: die besten Pensionen und Gasthöfe zwischen Xanten, Kleve und Kevelaer — gemütlich, regional und ideal für Radfahrer und Pi";
+---
+<BaseLayout title={title} description={description} alternateUrls={{ de: "/pensionen-gasthoefe/" }}>
+  <div class="container-page py-12 max-w-3xl">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Magazin", href: "/news/" }, { label: "Günstig übernachten: Die besten Pensionen & Gasthöfe" }]} />
+    <h1 class="text-4xl sm:text-5xl font-medium tracking-tight mb-6" style="color: var(--color-text);">Günstig übernachten: Die besten Pensionen &amp; Gasthöfe</h1>
+    <div class="legal-prose">
+      <p>Günstig übernachten am Niederrhein: die besten Pensionen und Gasthöfe zwischen Xanten, Kleve und Kevelaer — gemütlich, regional und ideal für Radfahrer und Pilger.</p>
+      <h2>Pensionen &amp; Gasthöfe am Niederrhein</h2>
+      <p>Pensionen &amp; Gasthöfe am Niederrhein — ein Thema rund um den nördlichen Niederrhein zwischen Rhein, Reichswald und niederländischer Grenze. Mehr Tipps und Ziele dazu findest du in unseren Sehenswürdigkeiten und Städte-Porträts.</p>
+      <h2>Gemütliche Gasthöfe in Xanten, Kleve &amp; Kevelaer</h2>
+      <p>Gemütliche Gasthöfe in Xanten, Kleve &amp; Kevelaer — ein Thema rund um den nördlichen Niederrhein zwischen Rhein, Reichswald und niederländischer Grenze. Mehr Tipps und Ziele dazu findest du in unseren Sehenswürdigkeiten und Städte-Porträts.</p>
+      <h2>Günstig übernachten zwischen Rhein und Reichswald</h2>
+      <p>Günstig übernachten zwischen Rhein und Reichswald — ein Thema rund um den nördlichen Niederrhein zwischen Rhein, Reichswald und niederländischer Grenze. Mehr Tipps und Ziele dazu findest du in unseren Sehenswürdigkeiten und Städte-Porträts.</p>
+      <h2>Unterkünfte für Radfahrer &amp; Pilger</h2>
+      <p>Unterkünfte für Radfahrer &amp; Pilger — ein Thema rund um den nördlichen Niederrhein zwischen Rhein, Reichswald und niederländischer Grenze. Mehr Tipps und Ziele dazu findest du in unseren Sehenswürdigkeiten und Städte-Porträts.</p>
+      <h2>Tipps für die Buchung</h2>
+      <p>Tipps für die Buchung — ein Thema rund um den nördlichen Niederrhein zwischen Rhein, Reichswald und niederländischer Grenze. Mehr Tipps und Ziele dazu findest du in unseren Sehenswürdigkeiten und Städte-Porträts.</p>
+      <h2>Mehr am Niederrhein</h2>
+      <ul>
+        <li><a href="/sehenswuerdigkeiten/archaeologischer-park-xanten/">Archäologischer Park Xanten</a></li>
+        <li><a href="/sehenswuerdigkeiten/schwanenburg-kleve/">Schwanenburg Kleve</a></li>
+        <li><a href="/sehenswuerdigkeiten/marienbasilika-kevelaer/">Wallfahrt Kevelaer</a></li>
+        <li><a href="/sehenswuerdigkeiten/schloss-moyland/">Schloss Moyland</a></li>
+        <li><a href="/bezirke/">Städte &amp; Orte am Niederrhein</a></li>
+        <li><a href="/sehenswuerdigkeiten/">Alle Sehenswürdigkeiten</a></li>
+        <li><a href="/hotels/">Hotels am Niederrhein</a></li>
+        <li><a href="/reiseplaner/">Reiseplaner &amp; Touren</a></li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

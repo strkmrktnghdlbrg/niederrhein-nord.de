@@ -12,7 +12,7 @@ ErrorDocument 404 /404.html
   RewriteRule ^ https://www.niederrhein-nord.de%{REQUEST_URI} [L,R=301]
 
   # === Legacy-WordPress → neuer Build (301) ===
-  RewriteRule ^blog/?$ /magazin/ [L,R=301]
+  RewriteRule ^blog/?$ /news/ [L,R=301]
   RewriteRule ^entdecken-sie/?$ / [L,R=301]
   RewriteRule ^beste-hotels-kreis-kleve-2/?$ /beste-hotels-kreis-kleve/ [L,R=301]
   RewriteRule ^page/[0-9]+/?$ / [L,R=301]

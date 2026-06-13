@@ -12,6 +12,7 @@ export type District = {
 export const districts: District[] = [
   {
     slug: "xanten",
+    imageKey: "district:xanten",
     name: "Xanten",
     shortDesc: "Römerstadt mit Archäologischem Park, Dom St. Viktor und der Xantener Südsee.",
     longDesc:
@@ -22,6 +23,7 @@ export const districts: District[] = [
   },
   {
     slug: "kleve",
+    imageKey: "district:kleve",
     name: "Kleve",
     shortDesc: "Schwanenstadt am Reichswald mit Schwanenburg, Forstgarten und Tiergarten.",
     longDesc:
@@ -32,6 +34,7 @@ export const districts: District[] = [
   },
   {
     slug: "kevelaer",
+    imageKey: "district:kevelaer",
     name: "Kevelaer",
     shortDesc: "Größter Marien-Wallfahrtsort Nordwesteuropas mit Basilika und Kerzenkapelle.",
     longDesc:
@@ -42,6 +45,7 @@ export const districts: District[] = [
   },
   {
     slug: "kalkar",
+    imageKey: "district:kalkar",
     name: "Kalkar",
     shortDesc: "Spätgotisches Kleinod mit Backstein-Rathaus, St. Nicolai und Wunderland Kalkar.",
     longDesc:
@@ -52,6 +56,7 @@ export const districts: District[] = [
   },
   {
     slug: "geldern",
+    imageKey: "district:geldern",
     name: "Geldern",
     shortDesc: "Lebendige Gelderland-Stadt, bekannt für das internationale Straßenmaler-Festival.",
     longDesc:
@@ -62,6 +67,7 @@ export const districts: District[] = [
   },
   {
     slug: "emmerich",
+    imageKey: "district:emmerich",
     name: "Emmerich am Rhein",
     shortDesc: "Rheinstadt mit der längsten Rheinpromenade Deutschlands und Hängebrücke.",
     longDesc:
@@ -72,6 +78,7 @@ export const districts: District[] = [
   },
   {
     slug: "rees",
+    imageKey: "district:rees",
     name: "Rees",
     shortDesc: "Älteste Stadt am unteren Niederrhein mit Stadtmauer und Rheinpromenade.",
     longDesc:
@@ -82,6 +89,7 @@ export const districts: District[] = [
   },
   {
     slug: "goch",
+    imageKey: "district:goch",
     name: "Goch & Weeze",
     shortDesc: "Steintor-Stadt an der Niers, Tor zum Reichswald und zum Airport Weeze.",
     longDesc:
