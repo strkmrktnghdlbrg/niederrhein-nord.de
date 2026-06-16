@@ -17,6 +17,16 @@ ErrorDocument 404 /404.html
   RewriteRule ^beste-hotels-kreis-kleve-2/?$ /beste-hotels-kreis-kleve/ [L,R=301]
   RewriteRule ^page/[0-9]+/?$ / [L,R=301]
 
+  # === Alt-Gastbeiträge (off-topic, kein Niederrhein-Bezug) → thematisch nächste Seite (301) ===
+  RewriteRule ^traumberuf-immobilienmakler/?$ /immobilien-niederrhein/ [L,R=301]
+  RewriteRule ^wie-finde-ich-einen-guten-fliesenverleger/?$ /unternehmen-niederrhein/ [L,R=301]
+  RewriteRule ^ausbildungsanforderungen-fuer-elektriker/?$ /unternehmen-niederrhein/ [L,R=301]
+  RewriteRule ^wie-finden-sie-eine-umzugsfirma/?$ /unternehmen-niederrhein/ [L,R=301]
+  RewriteRule ^der-umzug-rueckt-naeher/?$ /unternehmen-niederrhein/ [L,R=301]
+  RewriteRule ^eine-kurze-geschichte-von-gin/?$ /kulinarischer-roadtrip/ [L,R=301]
+  RewriteRule ^gps-hunde/?$ / [L,R=301]
+  RewriteRule ^test/?$ / [L,R=301]
+
   # === Casino/Spam-Altlasten → 410 Gone (kein Linkjuice-Vererben) ===
   RewriteRule (betninja|bet-ninja|moro-spin|get-lucky|aruba-bet|casino-star|bet-wild|winpot|teaspins|vavada|casino-online|casino-su-internet|gokwebsites|gokwebsite|online-casinos|internet-casino|online-slots|sister-casino|entertainment-hub|esplora-il-mondo|siti-casino|migliori-casino|superior-casino|naj-) - [G,NC]
 
