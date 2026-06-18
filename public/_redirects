@@ -1,0 +1,22 @@
+# Netlify-Redirects für niederrhein-nord.de (Apex ist kanonisch; www→apex macht Netlify selbst)
+# Legacy-WordPress → neuer Build (301)
+/blog                                       /news/                          301
+/blog/*                                     /news/                          301
+/entdecken-sie                              /                               301
+/beste-hotels-kreis-kleve-2                 /beste-hotels-kreis-kleve/      301
+/page/*                                     /                               301
+
+# Alt-Gastbeiträge (off-topic) → thematisch nächste Seite (301)
+/traumberuf-immobilienmakler                /immobilien-niederrhein/        301
+/wie-finde-ich-einen-guten-fliesenverleger  /unternehmen-niederrhein/       301
+/ausbildungsanforderungen-fuer-elektriker   /unternehmen-niederrhein/       301
+/wie-finden-sie-eine-umzugsfirma            /unternehmen-niederrhein/       301
+/der-umzug-rueckt-naeher                    /unternehmen-niederrhein/       301
+/eine-kurze-geschichte-von-gin              /kulinarischer-roadtrip/        301
+/gps-hunde                                  /                               301
+/test                                       /                               301
+
+# Casino/Spam-Altlasten → 410 Gone (kein Linkjuice; verschwinden aus dem Index)
+/trusted-betninja-service-your-portal-to-premium-gaming-quality   /   410
+/greetings-to-the-leading-entertainment-hub                       /   410
+/moro-spin-casino-ihre-virtuelle-gaming-statte-mit-mittelmeerischem   /   410
