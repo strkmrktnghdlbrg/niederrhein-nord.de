@@ -71,16 +71,17 @@ const cats = [
       <h1 class="du-hero-h1">Entdecke den Niederrhein —<br />flaches Land, <span class="du-hl">weiter Himmel.</span></h1>
       <p class="du-hero-sub">Sehenswürdigkeiten, Touren &amp; Tickets, Hotels und die schönsten Ecken zwischen Rhein, Reichswald und niederländischer Grenze — von Xanten über Kleve bis Kevelaer, alles an einem Ort.</p>
 
-      <div class="du-search">
-        <div class="du-seg"><div class="du-lab">Wohin</div><div class="du-ph">Stadt, Ort oder Sehenswürdigkeit</div></div>
-        <div class="du-seg"><div class="du-lab">Wann</div><div class="du-ph">Reisezeit hinzufügen</div></div>
-        <div class="du-seg du-who">
-          <div><div class="du-lab">Was</div><div class="du-ph">Touren, Hotels, Radwege</div></div>
-          <a href="/sehenswuerdigkeiten/" class="du-go" aria-label="Suchen">
+      <form class="du-search" action="/suche/" method="get" role="search">
+        <label class="du-seg du-who">
+          <div class="du-segfill">
+            <div class="du-lab">Wohin</div>
+            <input type="search" name="q" class="du-input" placeholder="Stadt, Ort oder Sehenswürdigkeit" autocomplete="off" aria-label="Suchbegriff" />
+          </div>
+          <button type="submit" class="du-go" aria-label="Suchen">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-          </a>
-        </div>
-      </div>
+          </button>
+        </label>
+      </form>
     </div>
   </section>
 
@@ -280,8 +281,11 @@ const cats = [
   .du-seg:hover { background: #f7f7f7; }
   .du-lab { font-size: 12px; font-weight: 600; letter-spacing: .3px; }
   .du-ph { font-size: 14px; color: var(--du-stahl); margin-top: 3px; }
-  .du-who { flex: 1.1; border-right: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .du-go { flex: 0 0 auto; align-self: center; width: 54px; height: 54px; border-radius: 50%; background: var(--du-grad-brand); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -4px rgba(78,154,62,.45); transition: transform .15s ease; }
+  .du-who { flex: 1.1; border-right: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: text; }
+  .du-segfill { flex: 1; min-width: 0; }
+  .du-input { width: 100%; border: none; outline: none; background: transparent; font-size: 14px; color: #222; margin-top: 3px; padding: 0; font-family: inherit; }
+  .du-input::placeholder { color: var(--du-stahl); }
+  .du-go { flex: 0 0 auto; align-self: center; width: 54px; height: 54px; border-radius: 50%; background: var(--du-grad-brand); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -4px rgba(78,154,62,.45); transition: transform .15s ease; border: none; cursor: pointer; }
   .du-go:hover { transform: scale(1.06); }
 
   /* CATEGORY PILLS */
