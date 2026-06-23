@@ -5,9 +5,12 @@ import ContentImage from "../../components/ContentImage.astro";
 import AttributionFooter from "../../components/AttributionFooter.astro";
 import { news, getNewsItem, recentNews } from "../../data/news";
 import NewsCard from "../../components/NewsCard.astro";
+import SightCard from "../../components/SightCard.astro";
 import { features } from "../../data/features";
 import { detailUrl } from "../../i18n/config";
 import { newsEn } from "../../i18n/en/news";
+import { getDistrict } from "../../data/districts";
+import { sightsByDistrict } from "../../data/sights";
 
 export function getStaticPaths() {
   return news.map((n) => ({ params: { slug: n.slug } }));
@@ -18,6 +21,8 @@ const item = getNewsItem(slug!);
 if (!item || !features.news.enabled) return Astro.redirect("/", 302);
 const date = new Date(item.publishedAt).toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" });
 const related = recentNews(4).filter((n) => n.slug !== item.slug).slice(0, 3);
+const districtData = item.district ? getDistrict(item.district) : null;
+const districtSights = item.district ? sightsByDistrict(item.district).slice(0, 4) : [];
 ---
 
 <BaseLayout title={item.title} description={item.lead} alternateUrls={{ de: detailUrl("news", item.slug, "de"), en: detailUrl("news", newsEn[item.slug].slug, "en") }}>
@@ -37,6 +42,24 @@ const related = recentNews(4).filter((n) => n.slug !== item.slug).slice(0, 3);
     </div>
 
     <AttributionFooter sourceName={item.source.name} sourceUrl={item.source.url} sourceDate={item.source.publishedAt} />
+
+    {districtData && (
+      <div class="my-12 p-6 border" style="background: var(--color-surface); border-color: var(--color-border); border-radius: var(--radius-card);">
+        <p class="eyebrow mb-2">Im Bezirk</p>
+        <h2 class="text-xl font-semibold mb-2" style="color: var(--color-text);">{districtData.name}</h2>
+        <p class="text-sm mb-3" style="color: var(--color-text-body);">{districtData.shortDesc}</p>
+        <a href={`/bezirke/${districtData.slug}/`} class="link-accent text-sm">Bezirks-Hub ansehen &rarr;</a>
+      </div>
+    )}
+
+    {districtSights.length > 0 && (
+      <section class="py-12 border-t" style="border-color: var(--color-border);">
+        <h2 class="text-2xl font-semibold tracking-tight mb-6" style="color: var(--color-text);">Sehenswuerdigkeiten in {districtData?.name}</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {districtSights.map((s) => <SightCard sight={s} />)}
+        </div>
+      </section>
+    )}
 
     {related.length > 0 && (
       <section class="mt-12 pt-8 border-t" style="border-color: var(--color-border);">

@@ -4,6 +4,7 @@ import SightCard from "../../components/SightCard.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import GetYourGuideWidget from "../../components/GetYourGuideWidget.astro";
 import { sights } from "../../data/sights";
+import { categories } from "../../data/categories";
 import { getGygPlacement } from "../../data/gyg";
 import { city } from "../../data/city";
 import { indexUrl } from "../../i18n/config";
@@ -20,6 +21,12 @@ const sorted = [...sights].sort((a, b) => a.name.localeCompare(b.name, "de"));
         Vom LVR-Archäologischen Park Xanten über die Schwanenburg Kleve, die Marienbasilika Kevelaer und Schloss Moyland bis zu den Rheinauen mit ihren Wildgänsen — alle Highlights des nördlichen Niederrheins.
       </p>
     </header>
+    <div class="flex flex-wrap gap-2 mb-8">
+      {categories.map((cat) => (
+        <a href={`/kategorien/${cat.slug}/`} class="pill">{cat.name}</a>
+      ))}
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {sorted.map((s) => <SightCard sight={s} />)}
     </div>
