@@ -31,7 +31,7 @@ export const guides: Guide[] = [
   {
     slug: "xanten-roemer-tag",
     title: "Ein Tag in der Römerstadt Xanten",
-    shortDesc: "Vom Archäologischen Park über den Dom bis zur Südsee — der perfekte Tag in Xanten.",
+    shortDesc: "Vom Archäologischen Park über den Dom bis zur Südsee - der perfekte Tag in Xanten.",
     lead: "Xanten an einem Tag: römische Geschichte am Vormittag, gotischer Dom und Altstadt am Mittag, Wasser und Strand am Nachmittag.",
     duration: 1,
     audience: "Familien & Kulturreisende",

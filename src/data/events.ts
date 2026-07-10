@@ -51,7 +51,7 @@ export const events: CityEvent[] = [
     slug: "wildgaense-saison",
     title: "Wildgänse-Saison am Unteren Niederrhein",
     eyebrow: "Naturschauspiel",
-    intro: "Von Oktober bis Februar rasten bis zu 180.000 arktische Wildgänse in den Rheinauen — Europas Top-Spot.",
+    intro: "Von Oktober bis Februar rasten bis zu 180.000 arktische Wildgänse in den Rheinauen - Europas Top-Spot.",
     description:
       "Jeden Winter wird der Untere Niederrhein zum Schlafzimmer für Hunderttausende Wildgänse. Geführte Beobachtungstouren starten in Emmerich, Rees und Bislich. Finde gemütliche Unterkünfte für dein Naturwochenende.",
     address: "Rheinauen, 46446 Emmerich am Rhein",
@@ -66,7 +66,7 @@ export const events: CityEvent[] = [
     slug: "spargel-erdbeerzeit",
     title: "Spargel- & Erdbeerzeit am Niederrhein",
     eyebrow: "Genuss",
-    intro: "Von April bis Juni hat das Niederrhein-Spargelland Hochsaison — Hofläden, Selbstpflücke und Spargelmenüs.",
+    intro: "Von April bis Juni hat das Niederrhein-Spargelland Hochsaison - Hofläden, Selbstpflücke und Spargelmenüs.",
     description:
       "Der Niederrhein ist eines der größten Spargel- und Erdbeeranbaugebiete Deutschlands. In der Saison locken Hofläden, Spargelhöfe und Erdbeer-Selbstpflückfelder zwischen Kleve, Geldern und Kevelaer. Plane dein Genusswochenende.",
     address: "Region Niederrhein Nord",

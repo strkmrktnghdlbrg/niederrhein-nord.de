@@ -49,7 +49,7 @@ export const districts: District[] = [
     name: "Kalkar",
     shortDesc: "Spätgotisches Kleinod mit Backstein-Rathaus, St. Nicolai und Wunderland Kalkar.",
     longDesc:
-      "Kalkar ist berühmt für sein spätgotisches Backstein-Rathaus am historischen Marktplatz und die Schnitzaltäre der Kirche St. Nicolai — Meisterwerke der niederrheinischen Bildschnitzkunst. Auf dem Gelände eines nie ans Netz gegangenen Kernkraftwerks lockt heute das Wunderland Kalkar als Freizeit- und Familienpark.",
+      "Kalkar ist berühmt für sein spätgotisches Backstein-Rathaus am historischen Marktplatz und die Schnitzaltäre der Kirche St. Nicolai - Meisterwerke der niederrheinischen Bildschnitzkunst. Auf dem Gelände eines nie ans Netz gegangenen Kernkraftwerks lockt heute das Wunderland Kalkar als Freizeit- und Familienpark.",
     hue: 4,
     coordinates: [51.7405, 6.2917],
     characterTags: ["Backstein", "St. Nicolai", "Wunderland"],

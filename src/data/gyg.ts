@@ -10,7 +10,7 @@ export type GygPlacement = {
 const R = "Niederrhein";
 
 export const gygPlacements: Record<string, GygPlacement> = {
-  "page:home": { key: "page:home", show: true, query: R, title: "Touren, Tickets & Erlebnisse am Niederrhein", lead: "Geführte Touren, Tickets und Aktivitäten zwischen Xanten, Kleve und Kevelaer — buchbar über GetYourGuide.", count: 4 },
+  "page:home": { key: "page:home", show: true, query: R, title: "Touren, Tickets & Erlebnisse am Niederrhein", lead: "Geführte Touren, Tickets und Aktivitäten zwischen Xanten, Kleve und Kevelaer - buchbar über GetYourGuide.", count: 4 },
   "page:sights-index": { key: "page:sights-index", show: true, query: R, title: "Erlebnisse rund um die Sehenswürdigkeiten", lead: "Führungen und Tickets zu den Highlights des nördlichen Niederrheins.", count: 4 },
   "page:guides-index": { key: "page:guides-index", show: true, query: R, title: "Aktivitäten für deinen Reiseplan", lead: "Passende Touren und Tickets für deine Tage am Niederrhein.", count: 4 },
   "page:categories-index": { key: "page:categories-index", show: true, query: R, title: "Touren & Tickets nach Kategorie", lead: "Erlebnisse am Niederrhein, thematisch sortiert.", count: 4 },
@@ -23,7 +23,7 @@ export const getGygPlacement = (key: string): GygPlacement | undefined => {
   if (gygPlacements[key]) return gygPlacements[key];
   // Fallback für Sights/Kategorien ohne eigene Platzierung: generische Region-Suche
   if (key.startsWith("sight:") || key.startsWith("category:") || key.startsWith("guide:")) {
-    return { key, show: true, query: R, title: "Touren & Tickets am Niederrhein", lead: "Geführte Touren und Tickets für die Region — über GetYourGuide.", count: 4 };
+    return { key, show: true, query: R, title: "Touren & Tickets am Niederrhein", lead: "Geführte Touren und Tickets für die Region - über GetYourGuide.", count: 4 };
   }
   return undefined;
 };

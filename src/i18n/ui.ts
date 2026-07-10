@@ -40,7 +40,7 @@ export const ui = {
   "footer.techHub": { de: "Radwege & Knotenpunkte", en: "Harbour & industry" },
   "footer.homeAria": { de: "Zur Startseite", en: "Back to home" },
   "footer.brandDesc": {
-    de: "Niederrhein Nord — dein Reise- & Erlebnisportal zwischen Rhein, Reichswald und niederländischer Grenze. Vom Archäologischen Park Xanten über die Schwanenburg Kleve und die Wallfahrtsstadt Kevelaer bis Schloss Moyland: Sehenswürdigkeiten, Hotels, Städte & Orte und Radwege auf einem Portal.",
+    de: "Niederrhein Nord - dein Reise- & Erlebnisportal zwischen Rhein, Reichswald und niederländischer Grenze. Vom Archäologischen Park Xanten über die Schwanenburg Kleve und die Wallfahrtsstadt Kevelaer bis Schloss Moyland: Sehenswürdigkeiten, Hotels, Städte & Orte und Radwege auf einem Portal.",
     en: "Duisburg interactive. City on the Rhine, Europe's largest inland port, the Inner Harbour, Landscape Park North and Tiger & Turtle. Attractions, hotels, districts and magazine on one portal.",
   },
 
@@ -52,8 +52,8 @@ export const ui = {
   "home.eyebrow": { de: "Reiseportal · Nördlicher Niederrhein · Zwischen Rhein & Reichswald", en: "City guide · City on the Rhine · City of two riverbanks" },
   "home.heroTitle": { de: "Entdecke den Niederrhein.", en: "Duisburg interactive." },
   "home.heroTagline": {
-    de: "Sehenswürdigkeiten, Touren & Tickets, Hotels und die schönsten Ecken zwischen Rhein, Reichswald und niederländischer Grenze — von Xanten über Kleve und Kalkar bis Kevelaer. Flaches Land, weiter Himmel.",
-    en: "Sights, tours & tickets, hotels and the coolest corners of the city. Everything the city on the Rhine and Europe's largest inland port has to offer — from the Inner Harbour and Landscape Park North to the Six Lakes.",
+    de: "Sehenswürdigkeiten, Touren & Tickets, Hotels und die schönsten Ecken zwischen Rhein, Reichswald und niederländischer Grenze - von Xanten über Kleve und Kalkar bis Kevelaer. Flaches Land, weiter Himmel.",
+    en: "Sights, tours & tickets, hotels and the coolest corners of the city. Everything the city on the Rhine and Europe's largest inland port has to offer - from the Inner Harbour and Landscape Park North to the Six Lakes.",
   },
   "home.ctaSights": { de: "Sehenswürdigkeiten entdecken", en: "Discover attractions" },
   "home.ctaTech": { de: "Radwege & Knotenpunkte", en: "Harbour & industrial heritage" },
@@ -71,8 +71,8 @@ export const ui = {
   "home.hotelsHeading": { de: "Top-Hotels am Niederrhein", en: "Top hotels in Duisburg" },
   "home.allHotels": { de: "Alle Hotels →", en: "All hotels →" },
   "home.hotelsLead": {
-    de: "Live von Booking.com — aktuelle Preise und Verfuegbarkeit, taeglich aktualisiert.",
-    en: "Live from Booking.com — current prices and availability, updated daily.",
+    de: "Live von Booking.com - aktuelle Preise und Verfuegbarkeit, taeglich aktualisiert.",
+    en: "Live from Booking.com - current prices and availability, updated daily.",
   },
   "home.newsEyebrow": { de: "Natur · Genuss · Kultur", en: "City · Business · Culture" },
   "home.newsHeading": { de: "Aktuelles vom Niederrhein", en: "Latest from Duisburg" },
@@ -82,40 +82,40 @@ export const ui = {
   "sights.entries": { de: "{n} Eintraege", en: "{n} entries" },
   "sights.heading": { de: "Sehenswürdigkeiten am Niederrhein", en: "Attractions in Duisburg" },
   "sights.intro": {
-    de: "Vom LVR-Archäologischen Park Xanten über die Schwanenburg Kleve, die Marienbasilika Kevelaer und Schloss Moyland bis zu den Rheinauen mit ihren Wildgänsen — alle Highlights des nördlichen Niederrheins.",
-    en: "From the Inner Harbour with its Foster architecture to the world-famous Landscape Park Duisburg-Nord, the walkable Tiger & Turtle sculpture, the Six Lakes and the zoo — all the iconic places of the city on the Rhine.",
+    de: "Vom LVR-Archäologischen Park Xanten über die Schwanenburg Kleve, die Marienbasilika Kevelaer und Schloss Moyland bis zu den Rheinauen mit ihren Wildgänsen - alle Highlights des nördlichen Niederrheins.",
+    en: "From the Inner Harbour with its Foster architecture to the world-famous Landscape Park Duisburg-Nord, the walkable Tiger & Turtle sculpture, the Six Lakes and the zoo - all the iconic places of the city on the Rhine.",
   },
   "hotels.count": { de: "{n} Haeuser", en: "{n} properties" },
   "hotels.heading": { de: "Hotels am Niederrhein", en: "Hotels in Duisburg" },
   "hotels.intro": {
-    de: "Vom Stadthotel in Xanten oder Kleve über das Landhaus am Reichswald bis zum Rheinhotel in Emmerich — geprüft, sortiert nach Gäste-Bewertung.",
-    en: "From the design hotel by the Inner Harbour to the city hotel near the main station and the quiet spots by the Six Lakes — curated, sorted by guest rating.",
+    de: "Vom Stadthotel in Xanten oder Kleve über das Landhaus am Reichswald bis zum Rheinhotel in Emmerich - geprüft, sortiert nach Gäste-Bewertung.",
+    en: "From the design hotel by the Inner Harbour to the city hotel near the main station and the quiet spots by the Six Lakes - curated, sorted by guest rating.",
   },
   "hotels.editorial": { de: "Unsere redaktionelle Hotel-Auswahl", en: "Our editorial hotel selection" },
   "hotels.topLive.title": { de: "Aktuell bestbewertete Hotels am Niederrhein", en: "Currently top-rated hotels in Duisburg" },
   "hotels.topLive.lead": {
-    de: "Live von Booking.com — aktuelle Bewertungen und Preise, aktualisiert beim letzten Build.",
-    en: "Live from Booking.com — current ratings and prices, updated at the last build.",
+    de: "Live von Booking.com - aktuelle Bewertungen und Preise, aktualisiert beim letzten Build.",
+    en: "Live from Booking.com - current ratings and prices, updated at the last build.",
   },
   "restaurants.count": { de: "{n} Lokale", en: "{n} venues" },
   "restaurants.heading": { de: "Restaurants am Niederrhein", en: "Restaurants in Duisburg" },
   "restaurants.intro": {
-    de: "Niederrheinische Küche, Spargel- & Erdbeer-Spezialitäten, Hofcafés und Rheinblick-Restaurants — eine kuratierte Auswahl der besten Lokale der Region.",
-    en: "Ruhr region classics, international variety and the currywurst cult — a curated selection of the best places to eat in Duisburg.",
+    de: "Niederrheinische Küche, Spargel- & Erdbeer-Spezialitäten, Hofcafés und Rheinblick-Restaurants - eine kuratierte Auswahl der besten Lokale der Region.",
+    en: "Ruhr region classics, international variety and the currywurst cult - a curated selection of the best places to eat in Duisburg.",
   },
   "restaurants.listLead": {
-    de: "Von der niederrheinischen Gaststube über das Hofcafé im Spargelland bis zum Fischrestaurant an der Rheinpromenade — die Gastronomie des Niederrheins auf einen Blick.",
-    en: "From Ruhr-region cooking and brewhouse tradition to the pho address and the harbour restaurant by the water — Duisburg's dining scene at a glance.",
+    de: "Von der niederrheinischen Gaststube über das Hofcafé im Spargelland bis zum Fischrestaurant an der Rheinpromenade - die Gastronomie des Niederrheins auf einen Blick.",
+    en: "From Ruhr-region cooking and brewhouse tradition to the pho address and the harbour restaurant by the water - Duisburg's dining scene at a glance.",
   },
   "restaurants.metaDescription": {
-    de: "Restaurants am Niederrhein: niederrheinisch, regional, Spargel & Erdbeeren, Hofcafés — geprüft, sortiert nach Ort und Küche.",
-    en: "Restaurants in Duisburg: Ruhr region, currywurst, Italian, Asian — curated and sorted by district and cuisine.",
+    de: "Restaurants am Niederrhein: niederrheinisch, regional, Spargel & Erdbeeren, Hofcafés - geprüft, sortiert nach Ort und Küche.",
+    en: "Restaurants in Duisburg: Ruhr region, currywurst, Italian, Asian - curated and sorted by district and cuisine.",
   },
   "districts.count": { de: "{n} Orte", en: "{n} districts" },
   "districts.heading": { de: "Städte & Orte am Niederrhein", en: "Duisburg districts" },
   "districts.intro": {
-    de: "Römerstadt Xanten, Schwanenstadt Kleve, Wallfahrtsort Kevelaer, das spätgotische Kalkar oder die Rheinstädte Emmerich und Rees — jeder Ort am Niederrhein hat sein eigenes Gesicht.",
-    en: "Urban Mitte by the Inner Harbour, the historic harbour of Ruhrort, the university quarter of Neudorf or the lakes in the south — every Duisburg district has its own character, on both banks of the Rhine.",
+    de: "Römerstadt Xanten, Schwanenstadt Kleve, Wallfahrtsort Kevelaer, das spätgotische Kalkar oder die Rheinstädte Emmerich und Rees - jeder Ort am Niederrhein hat sein eigenes Gesicht.",
+    en: "Urban Mitte by the Inner Harbour, the historic harbour of Ruhrort, the university quarter of Neudorf or the lakes in the south - every Duisburg district has its own character, on both banks of the Rhine.",
   },
   "categories.count": { de: "{n} Themen", en: "{n} topics" },
   "categories.heading": { de: "Der Niederrhein nach Kategorien", en: "Duisburg by category" },
@@ -165,8 +165,8 @@ export const ui = {
   "news.source": { de: "Quelle: {name}", en: "Source: {name}" },
   "news.title": { de: "Niederrhein-Magazin", en: "Duisburg magazine" },
   "news.metaDescription": {
-    de: "Aktuelles vom Niederrhein — Natur, Genuss und Kultur: Wildgänse in den Rheinauen, Spargel- & Erdbeerzeit, Römerstadt Xanten und Schloss Moyland.",
-    en: "Latest from Duisburg — city, business and culture: the Inner Harbour, duisport, Landscape Park North and the Duisburg Akzente festival.",
+    de: "Aktuelles vom Niederrhein - Natur, Genuss und Kultur: Wildgänse in den Rheinauen, Spargel- & Erdbeerzeit, Römerstadt Xanten und Schloss Moyland.",
+    en: "Latest from Duisburg - city, business and culture: the Inner Harbour, duisport, Landscape Park North and the Duisburg Akzente festival.",
   },
   "news.eyebrow": { de: "Natur · Genuss · Kultur", en: "City · Business · Culture" },
   "news.heading": { de: "Aktuelles vom Niederrhein", en: "Latest from Duisburg" },
@@ -186,13 +186,13 @@ export const ui = {
   "guides.routes": { de: "{n} Routen", en: "{n} routes" },
   "guides.heading": { de: "Niederrhein-Reiseplaner", en: "Duisburg Travel Planner" },
   "guides.intro": {
-    de: "Fertige Tagespläne für den Niederrhein — Römerstadt Xanten, Rad-Wochenenden, Familienausflüge. Jeder Plan verweist auf konkrete Sehenswürdigkeiten, Restaurants und Hotels.",
-    en: "Ready-made day plans for Duisburg — first-time visitors, families, rainy days. Every plan links to specific attractions, restaurants and hotels.",
+    de: "Fertige Tagespläne für den Niederrhein - Römerstadt Xanten, Rad-Wochenenden, Familienausflüge. Jeder Plan verweist auf konkrete Sehenswürdigkeiten, Restaurants und Hotels.",
+    en: "Ready-made day plans for Duisburg - first-time visitors, families, rainy days. Every plan links to specific attractions, restaurants and hotels.",
   },
   "guides.indexTitle": { de: "Reiseplaner", en: "Travel Planner" },
   "guides.indexDesc": {
-    de: "Reise-Guides für den Niederrhein: Xanten an einem Tag, Rad-Wochenende, Familienausflug — Tag-für-Tag-Routen mit Hotel- und Restaurant-Empfehlungen.",
-    en: "Travel guides for Duisburg: 3 days, with kids, in the rain — day-by-day itineraries with hotel and restaurant recommendations.",
+    de: "Reise-Guides für den Niederrhein: Xanten an einem Tag, Rad-Wochenende, Familienausflug - Tag-für-Tag-Routen mit Hotel- und Restaurant-Empfehlungen.",
+    en: "Travel guides for Duisburg: 3 days, with kids, in the rain - day-by-day itineraries with hotel and restaurant recommendations.",
   },
   "guides.day": { de: "Tag {n}", en: "Day {n}" },
   "guides.bestSeason": { de: "Beste Reisezeit:", en: "Best time to visit:" },
@@ -202,13 +202,13 @@ export const ui = {
   "events.indexTitle": { de: "Events & Termine am Niederrhein", en: "Events & dates in Duisburg" },
   "events.indexDescription": {
     de: "Niederrhein-Events 2026: Wallfahrt Kevelaer, Straßenmaler-Festival Geldern, Wildgänse-Saison und Spargelzeit. Mit aktuellen Hotelpreisen für jeden Termin.",
-    en: "Duisburg events 2026: the Traumzeit Festival at the Landscape Park, the Duisburg Akzente, the harbour festival and the Christmas market — with current hotel prices for every date.",
+    en: "Duisburg events 2026: the Traumzeit Festival at the Landscape Park, the Duisburg Akzente, the harbour festival and the Christmas market - with current hotel prices for every date.",
   },
   "events.eyebrow": { de: "Termine mit Hotelpreisen", en: "Dates with hotel prices" },
   "events.heading": { de: "Events am Niederrhein", en: "Events in Duisburg" },
   "events.intro": {
-    de: "Die wichtigsten Anlässe am Niederrhein — von der Wallfahrt in Kevelaer über das Straßenmaler-Festival in Geldern bis zur Wildgänse-Saison in den Rheinauen. Zu jedem Termin zeigen wir aktuelle Hotelpreise.",
-    en: "Duisburg's most important occasions — from the Traumzeit Festival amid the blast furnaces and the Duisburg Akzente to the harbour festival by the Rhine. For every date we show current hotel prices for exactly that period.",
+    de: "Die wichtigsten Anlässe am Niederrhein - von der Wallfahrt in Kevelaer über das Straßenmaler-Festival in Geldern bis zur Wildgänse-Saison in den Rheinauen. Zu jedem Termin zeigen wir aktuelle Hotelpreise.",
+    en: "Duisburg's most important occasions - from the Traumzeit Festival amid the blast furnaces and the Duisburg Akzente to the harbour festival by the Rhine. For every date we show current hotel prices for exactly that period.",
   },
   "events.past": { de: "vorbei", en: "past" },
   "events.hotelsForDate": { de: "Hotels fuer diesen Termin →", en: "Hotels for these dates →" },
@@ -233,8 +233,8 @@ export const ui = {
   "events.hotelIndexLink": { de: "Hotel-Index", en: "hotel index" },
   "events.fullHotelIndexLink": { de: "vollstaendigen Hotel-Index", en: "complete hotel index" },
   "events.priceNote": {
-    de: "* Preise und Verfuegbarkeit live via Stay22 → Booking.com. Bei Buchung ueber diese Links erhalten wir eine Provision — fuer dich entstehen keine Mehrkosten. Preise gelten fuer {from} bis {to}, {nights}.",
-    en: "* Prices and availability live via Stay22 → Booking.com. If you book through these links we earn a commission — at no extra cost to you. Prices apply for {from} to {to}, {nights}.",
+    de: "* Preise und Verfuegbarkeit live via Stay22 → Booking.com. Bei Buchung ueber diese Links erhalten wir eine Provision - fuer dich entstehen keine Mehrkosten. Preise gelten fuer {from} bis {to}, {nights}.",
+    en: "* Prices and availability live via Stay22 → Booking.com. If you book through these links we earn a commission - at no extra cost to you. Prices apply for {from} to {to}, {nights}.",
   },
 
   // About page
@@ -250,13 +250,13 @@ export const ui = {
   },
   "about.standardsHeading": { de: "Unser redaktioneller Anspruch", en: "Our editorial standards" },
   "about.standardsBody": {
-    de: "Jede Sehenswürdigkeit, jedes Hotel und jedes Restaurant wird redaktionell ausgewählt und mit eigenem einordnendem Text beschrieben — nicht automatisch aus Verzeichnissen zusammengezogen. Wir achten auf nachvollziehbare Kriterien: Relevanz für {site}, Lage im jeweiligen Stadtbezirk, Preis-Orientierung und eine ehrliche Einschätzung, für wen sich ein Ort lohnt. Öffnungszeiten, Preisanker und ähnliche Angaben prüfen wir nach bestem Wissen, können für ihre Aktualität aber keine Gewähr übernehmen — im Zweifel gilt immer die offizielle Quelle des jeweiligen Anbieters.",
-    en: "Every attraction, hotel and restaurant is selected editorially and described with our own contextual text — not pulled automatically from directories. We apply transparent criteria: relevance to {site}, location within its district, price orientation and an honest assessment of who a place is worth it for. We check opening hours, price anchors and similar details to the best of our knowledge, but cannot guarantee they are up to date — in case of doubt, the official source of the respective provider always applies.",
+    de: "Jede Sehenswürdigkeit, jedes Hotel und jedes Restaurant wird redaktionell ausgewählt und mit eigenem einordnendem Text beschrieben - nicht automatisch aus Verzeichnissen zusammengezogen. Wir achten auf nachvollziehbare Kriterien: Relevanz für {site}, Lage im jeweiligen Stadtbezirk, Preis-Orientierung und eine ehrliche Einschätzung, für wen sich ein Ort lohnt. Öffnungszeiten, Preisanker und ähnliche Angaben prüfen wir nach bestem Wissen, können für ihre Aktualität aber keine Gewähr übernehmen - im Zweifel gilt immer die offizielle Quelle des jeweiligen Anbieters.",
+    en: "Every attraction, hotel and restaurant is selected editorially and described with our own contextual text - not pulled automatically from directories. We apply transparent criteria: relevance to {site}, location within its district, price orientation and an honest assessment of who a place is worth it for. We check opening hours, price anchors and similar details to the best of our knowledge, but cannot guarantee they are up to date - in case of doubt, the official source of the respective provider always applies.",
   },
   "about.selectionHeading": { de: "Wie wir Inhalte auswählen", en: "How we select content" },
   "about.selectionBody": {
-    de: "Die Auswahl folgt einem kuratierten Ansatz: Wir nehmen Orte auf, die {site} charakterisieren oder für einen Aufenthalt praktisch relevant sind — vom Innenhafen über die Stadtbezirke bis zu den großen Anlässen wie dem Traumzeit-Festival oder den Duisburger Akzenten. Die Reihenfolge und Hervorhebung von Einträgen richtet sich nach redaktioneller Einschätzung, nicht nach bezahlter Platzierung.",
-    en: "Our selection follows a curated approach: we include places that characterise {site} or are practically relevant for a stay — from the Inner Harbour and the districts to the major occasions such as the Traumzeit Festival or the Duisburg Akzente. The order and prominence of entries is based on editorial judgement, not on paid placement.",
+    de: "Die Auswahl folgt einem kuratierten Ansatz: Wir nehmen Orte auf, die {site} charakterisieren oder für einen Aufenthalt praktisch relevant sind - vom Innenhafen über die Stadtbezirke bis zu den großen Anlässen wie dem Traumzeit-Festival oder den Duisburger Akzenten. Die Reihenfolge und Hervorhebung von Einträgen richtet sich nach redaktioneller Einschätzung, nicht nach bezahlter Platzierung.",
+    en: "Our selection follows a curated approach: we include places that characterise {site} or are practically relevant for a stay - from the Inner Harbour and the districts to the major occasions such as the Traumzeit Festival or the Duisburg Akzente. The order and prominence of entries is based on editorial judgement, not on paid placement.",
   },
   "about.sourcesHeading": { de: "Quellen und Bildmaterial", en: "Sources and imagery" },
   "about.sourcesBody": {
@@ -265,8 +265,8 @@ export const ui = {
   },
   "about.affiliateHeading": { de: "Transparenz bei Affiliate-Links", en: "Transparency about affiliate links" },
   "about.affiliateBody": {
-    de: "Dieses Portal finanziert sich unter anderem über Affiliate-Partnerschaften — insbesondere Stay22 (Hotel-Buchungen via Booking.com) und GetYourGuide (Touren und Tickets). Wenn du über einen solchen Link buchst, erhalten wir eine Provision; für dich ändert sich am Preis nichts. Die redaktionelle Auswahl erfolgt unabhängig von diesen Provisionen. Hinweise dazu findest du jeweils direkt an den entsprechenden Buchungs-Widgets sowie im {link}.",
-    en: "This portal is financed in part through affiliate partnerships — in particular Stay22 (hotel bookings via Booking.com) and GetYourGuide (tours and tickets). If you book through such a link, we earn a commission; the price stays the same for you. Our editorial selection is independent of these commissions. You will find notes about this directly on the relevant booking widgets as well as in our {link}.",
+    de: "Dieses Portal finanziert sich unter anderem über Affiliate-Partnerschaften - insbesondere Stay22 (Hotel-Buchungen via Booking.com) und GetYourGuide (Touren und Tickets). Wenn du über einen solchen Link buchst, erhalten wir eine Provision; für dich ändert sich am Preis nichts. Die redaktionelle Auswahl erfolgt unabhängig von diesen Provisionen. Hinweise dazu findest du jeweils direkt an den entsprechenden Buchungs-Widgets sowie im {link}.",
+    en: "This portal is financed in part through affiliate partnerships - in particular Stay22 (hotel bookings via Booking.com) and GetYourGuide (tours and tickets). If you book through such a link, we earn a commission; the price stays the same for you. Our editorial selection is independent of these commissions. You will find notes about this directly on the relevant booking widgets as well as in our {link}.",
   },
   "about.privacyLinkLabel": { de: "Datenschutz", en: "privacy policy" },
   "about.contactHeading": { de: "Kontakt", en: "Contact" },
@@ -320,8 +320,8 @@ export const ui = {
   // Privacy page
   "privacy.title": { de: "Datenschutzerklaerung", en: "Privacy Policy" },
   "privacy.metaDescription": {
-    de: "Datenschutzerklaerung — wie {site} personenbezogene Daten verarbeitet.",
-    en: "Privacy policy — how {site} processes personal data.",
+    de: "Datenschutzerklaerung - wie {site} personenbezogene Daten verarbeitet.",
+    en: "Privacy policy - how {site} processes personal data.",
   },
   "privacy.heading": { de: "Datenschutzerklaerung", en: "Privacy Policy" },
   "privacy.controllerHeading": { de: "Verantwortlicher", en: "Controller" },
@@ -425,8 +425,8 @@ export const ui = {
   "tech.breadcrumb": { de: "Hafen & Industrie", en: "Harbour & industry" },
   "tech.eyebrow": { de: "Duisburgs USP", en: "Duisburg's USP" },
   "tech.heroLead": {
-    de: "Duisburg ist nicht nur Stadt am Rhein — es ist der groesste Binnenhafen Europas und ein zentrales Logistik-Drehkreuz an Rhein und Ruhr. duisport, der Innenhafen, der Landschaftspark Nord und Tiger & Turtle machen die Stadt zum Sinnbild fuer den Wandel von Stahl zu Industriekultur.",
-    en: "Duisburg is not only a city on the Rhine — it is Europe's largest inland port and a central logistics hub on the Rhine and Ruhr. duisport, the Inner Harbour, Landscape Park North and Tiger & Turtle make the city a symbol of the shift from steel to industrial heritage.",
+    de: "Duisburg ist nicht nur Stadt am Rhein - es ist der groesste Binnenhafen Europas und ein zentrales Logistik-Drehkreuz an Rhein und Ruhr. duisport, der Innenhafen, der Landschaftspark Nord und Tiger & Turtle machen die Stadt zum Sinnbild fuer den Wandel von Stahl zu Industriekultur.",
+    en: "Duisburg is not only a city on the Rhine - it is Europe's largest inland port and a central logistics hub on the Rhine and Ruhr. duisport, the Inner Harbour, Landscape Park North and Tiger & Turtle make the city a symbol of the shift from steel to industrial heritage.",
   },
   "tech.institutionsHeading": { de: "Hafen & Industrie-Cluster", en: "Harbour & industry clusters" },
   "tech.experienceHeading": { de: "Hafen & Industriekultur erleben", en: "Experience the harbour & industrial heritage" },

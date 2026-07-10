@@ -29,7 +29,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, city.domain).toString();
-const fullTitle = title === city.name ? `${city.name} — Reiseportal` : `${title} · ${city.name}`;
+const fullTitle = title === city.name ? `${city.name} - Reiseportal` : `${title} · ${city.name}`;
 
 const siteName = city.name;
 const siteSchema = {

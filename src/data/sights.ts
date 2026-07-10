@@ -102,7 +102,7 @@ export const sights: Sight[] = [
     priceFrom: null,
     shortDesc: "Spätgotisches Backstein-Rathaus und die weltberühmten Schnitzaltäre von St. Nicolai.",
     longDesc:
-      "Kalkars Marktplatz wird vom prächtigen spätgotischen Backstein-Rathaus aus dem 15. Jahrhundert beherrscht. Nur wenige Schritte entfernt birgt die Kirche St. Nicolai neun bedeutende Schnitzaltäre — Höhepunkte der niederrheinischen Bildschnitzkunst. Das Ensemble macht Kalkar zu einem der schönsten historischen Stadtkerne der Region.",
+      "Kalkars Marktplatz wird vom prächtigen spätgotischen Backstein-Rathaus aus dem 15. Jahrhundert beherrscht. Nur wenige Schritte entfernt birgt die Kirche St. Nicolai neun bedeutende Schnitzaltäre - Höhepunkte der niederrheinischen Bildschnitzkunst. Das Ensemble macht Kalkar zu einem der schönsten historischen Stadtkerne der Region.",
     imageHue: 5,
     categories: ["wahrzeichen", "historie", "kultur-wallfahrt"],
     coordinates: [51.7405, 6.2917],
@@ -115,9 +115,9 @@ export const sights: Sight[] = [
     district: "kalkar",
     type: "Modern",
     priceFrom: 31,
-    shortDesc: "Freizeit- und Familienpark im stillgelegten „Schnellen Brüter“ — über 40 Attraktionen.",
+    shortDesc: "Freizeit- und Familienpark im stillgelegten „Schnellen Brüter“ - über 40 Attraktionen.",
     longDesc:
-      "Auf dem Gelände des nie ans Netz gegangenen Kernkraftwerks Kalkar entstand das Wunderland Kalkar: ein Freizeit- und Erlebnispark mit über 40 Fahrgeschäften, Hotel und Eventhallen. Der zur Kletterwand umgebaute Kühlturm mit dem „Vertikalen Karussell“ ist weithin sichtbares Wahrzeichen — ein ungewöhnliches Ausflugsziel für die ganze Familie.",
+      "Auf dem Gelände des nie ans Netz gegangenen Kernkraftwerks Kalkar entstand das Wunderland Kalkar: ein Freizeit- und Erlebnispark mit über 40 Fahrgeschäften, Hotel und Eventhallen. Der zur Kletterwand umgebaute Kühlturm mit dem „Vertikalen Karussell“ ist weithin sichtbares Wahrzeichen - ein ungewöhnliches Ausflugsziel für die ganze Familie.",
     imageHue: 3,
     categories: ["familie"],
     coordinates: [51.7747, 6.3219],
@@ -133,7 +133,7 @@ export const sights: Sight[] = [
     priceFrom: null,
     shortDesc: "Badesee mit Strand, Wassersportzentrum und Promenade direkt an der Römerstadt.",
     longDesc:
-      "Die Xantener Südsee ist das Freizeitparadies der Römerstadt: Strandbad, Tauchen, Segeln, SUP und ein Wassersportzentrum machen den See zum Sommermagnet. Eine Promenade verbindet See, Marina und den Archäologischen Park — perfekt für Familien und Aktivurlauber.",
+      "Die Xantener Südsee ist das Freizeitparadies der Römerstadt: Strandbad, Tauchen, Segeln, SUP und ein Wassersportzentrum machen den See zum Sommermagnet. Eine Promenade verbindet See, Marina und den Archäologischen Park - perfekt für Familien und Aktivurlauber.",
     imageHue: 2,
     categories: ["rhein-auen", "familie", "natur"],
     coordinates: [51.6536, 6.4361],
@@ -148,7 +148,7 @@ export const sights: Sight[] = [
     priceFrom: null,
     shortDesc: "Längste Rheinpromenade Deutschlands mit Blick auf die längste Hängebrücke des Landes.",
     longDesc:
-      "Über drei Kilometer zieht sich die Emmericher Rheinpromenade am breitesten Punkt des deutschen Rheins entlang — die längste ihrer Art im Land. Vom Geistmarkt bis zur Rheinbrücke (der längsten Hängebrücke Deutschlands) reihen sich Cafés, Bänke und Aussichtspunkte. Ein idealer Ort, um den großen Frachtschiffen zuzusehen.",
+      "Über drei Kilometer zieht sich die Emmericher Rheinpromenade am breitesten Punkt des deutschen Rheins entlang - die längste ihrer Art im Land. Vom Geistmarkt bis zur Rheinbrücke (der längsten Hängebrücke Deutschlands) reihen sich Cafés, Bänke und Aussichtspunkte. Ein idealer Ort, um den großen Frachtschiffen zuzusehen.",
     imageHue: 2,
     categories: ["rhein-auen", "wahrzeichen"],
     coordinates: [51.8353, 6.2447],
@@ -191,7 +191,7 @@ export const sights: Sight[] = [
     district: "kleve",
     type: "Park",
     priceFrom: null,
-    shortDesc: "Größtes zusammenhängendes Waldgebiet am Niederrhein — Wandern, Radeln, Naturerlebnis.",
+    shortDesc: "Größtes zusammenhängendes Waldgebiet am Niederrhein - Wandern, Radeln, Naturerlebnis.",
     longDesc:
       "Der Klever Reichswald ist das größte zusammenhängende Waldgebiet am unteren Niederrhein und ein ausgedehntes Naherholungsgebiet zwischen Kleve, Goch und der niederländischen Grenze. Markierte Wander- und Radwege, der Sterbusch und stille Lichtungen machen den Wald zum Rückzugsort für Naturfreunde und Familien.",
     imageHue: 1,
@@ -221,9 +221,9 @@ export const sights: Sight[] = [
     district: "emmerich",
     type: "Park",
     priceFrom: null,
-    shortDesc: "Internationales Naturschutzgebiet — Winterquartier für bis zu 180.000 arktische Wildgänse.",
+    shortDesc: "Internationales Naturschutzgebiet - Winterquartier für bis zu 180.000 arktische Wildgänse.",
     longDesc:
-      "Die weiten Rheinauen zwischen Emmerich, Rees und Bislich gehören zu den bedeutendsten Feuchtgebieten Mitteleuropas. Von Oktober bis Februar rasten hier bis zu 180.000 arktische Wildgänse — ein Naturschauspiel von europaweitem Rang. Beobachtungspunkte, geführte Touren und die Naturschutzstation laden zum Staunen ein.",
+      "Die weiten Rheinauen zwischen Emmerich, Rees und Bislich gehören zu den bedeutendsten Feuchtgebieten Mitteleuropas. Von Oktober bis Februar rasten hier bis zu 180.000 arktische Wildgänse - ein Naturschauspiel von europaweitem Rang. Beobachtungspunkte, geführte Touren und die Naturschutzstation laden zum Staunen ein.",
     imageHue: 2,
     categories: ["natur", "rhein-auen"],
     coordinates: [51.82, 6.43],

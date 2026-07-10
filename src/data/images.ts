@@ -28,7 +28,7 @@ const sight = (slug: string, alt: string): ImageEntry => ({ src: asset("sights",
 const district = (slug: string, alt: string): ImageEntry => ({ src: asset("districts", slug), alt, source: "wikimedia", credit: cc() });
 
 export const images: Record<string, ImageEntry> = {
-  "sight:archaeologischer-park-xanten": sight("archaeologischer-park-xanten", "LVR-Archäologischer Park Xanten — Hafentempel"),
+  "sight:archaeologischer-park-xanten": sight("archaeologischer-park-xanten", "LVR-Archäologischer Park Xanten - Hafentempel"),
   "sight:dom-st-viktor-xanten": sight("dom-st-viktor-xanten", "Dom St. Viktor in Xanten"),
   "sight:schwanenburg-kleve": sight("schwanenburg-kleve", "Schwanenburg Kleve über der Stadt"),
   "sight:marienbasilika-kevelaer": sight("marienbasilika-kevelaer", "Marienbasilika Kevelaer"),
@@ -42,9 +42,9 @@ export const images: Record<string, ImageEntry> = {
   "sight:xantener-suedsee": sight("xantener-suedsee", "Xantener Südsee"),
   "sight:forstgarten-kleve": sight("forstgarten-kleve", "Forstgarten Kleve"),
   "sight:reichswald": sight("reichswald", "Reichswald bei Kleve"),
-  "district:xanten": district("xanten", "Xanten — Römerstadt am Niederrhein"),
-  "district:kleve": district("kleve", "Kleve — Schwanenstadt"),
-  "district:kevelaer": district("kevelaer", "Kevelaer — Wallfahrtsstadt"),
+  "district:xanten": district("xanten", "Xanten - Römerstadt am Niederrhein"),
+  "district:kleve": district("kleve", "Kleve - Schwanenstadt"),
+  "district:kevelaer": district("kevelaer", "Kevelaer - Wallfahrtsstadt"),
   "district:kalkar": district("kalkar", "Kalkar am Niederrhein"),
   "district:geldern": district("geldern", "Geldern im Gelderland"),
   "district:emmerich": district("emmerich", "Emmerich am Rhein"),
