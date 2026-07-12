@@ -1,11 +1,11 @@
 /**
  * AdSense niederrhein-nord.de
- * publisherId noch offen — Kunde liefert ca-pub eines anderen/neuen Kontos.
- * Solange leer ⇒ adsenseEnabled=false, kein Script, keine ads.txt.
+ * publisherId gesetzt ⇒ Script lädt ungated (kein Consent-Gating).
+ * ads.txt liegt in public/ads.txt.
  */
 export const adsense = {
-  publisherId: "", // TODO: ca-pub-… vom Kunden eintragen, dann public/ads.txt anlegen
-  enabled: false,
+  publisherId: "ca-pub-3946820918041547",
+  enabled: true,
   slots: {
     newsInArticle: "",
     districtSidebar: "",
