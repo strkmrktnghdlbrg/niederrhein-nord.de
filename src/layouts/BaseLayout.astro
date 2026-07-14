@@ -47,7 +47,7 @@ const siteSchema = {
       "@id": `${city.domain}/#website`,
       name: siteName,
       url: `${city.domain}/`,
-      description: city.description.short,
+      description: locale === "en" ? city.description.shortEn : city.description.short,
       inLanguage: schemaLang[locale],
       publisher: { "@id": `${city.domain}/#organization` },
     },
@@ -58,6 +58,7 @@ const hreflangAlternates =
   alternateUrls && (alternateUrls.de || alternateUrls.en)
     ? [
         ...(alternateUrls.de ? [{ hreflang: "de", href: `${city.domain}${alternateUrls.de}` }] : []),
+        ...(alternateUrls.en ? [{ hreflang: "en", href: `${city.domain}${alternateUrls.en}` }] : []),
         ...(alternateUrls.de ? [{ hreflang: "x-default", href: `${city.domain}${alternateUrls.de}` }] : []),
       ]
     : [];

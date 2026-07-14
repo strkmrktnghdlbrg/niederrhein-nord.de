@@ -9,9 +9,9 @@ export const ui = {
   "nav.sights": { de: "Sehenswuerdigkeiten", en: "Attractions" },
   "nav.hotels": { de: "Hotels", en: "Hotels" },
   "nav.restaurants": { de: "Restaurants", en: "Restaurants" },
-  "nav.districts": { de: "Städte & Orte", en: "Districts" },
+  "nav.districts": { de: "Städte & Orte", en: "Towns" },
   "nav.events": { de: "Events", en: "Events" },
-  "nav.tech": { de: "Radwege", en: "Harbour" },
+  "nav.tech": { de: "Radwege", en: "Cycling" },
   "nav.guides": { de: "Reiseplaner", en: "Travel Planner" },
   "nav.news": { de: "Magazin", en: "Magazine" },
   "nav.categories": { de: "Kategorien", en: "Categories" },
@@ -30,18 +30,18 @@ export const ui = {
   "aria.langSwitch": { de: "Sprache wechseln", en: "Switch language" },
 
   // Footer
-  "footer.districts": { de: "Städte & Orte", en: "Districts" },
+  "footer.districts": { de: "Städte & Orte", en: "Towns" },
   "footer.categories": { de: "Kategorien", en: "Categories" },
   "footer.service": { de: "Service", en: "Service" },
   "footer.allCategories": { de: "Alle Kategorien", en: "All categories" },
   "footer.eventsDates": { de: "Events & Termine", en: "Events & dates" },
   "footer.copyright": { de: "{year} {site}. Inhalte unter Quellenangabe.", en: "{year} {site}. Content with source attribution." },
   "footer.about": { de: "Über uns", en: "About" },
-  "footer.techHub": { de: "Radwege & Knotenpunkte", en: "Harbour & industry" },
+  "footer.techHub": { de: "Radwege & Knotenpunkte", en: "Cycling routes & hubs" },
   "footer.homeAria": { de: "Zur Startseite", en: "Back to home" },
   "footer.brandDesc": {
     de: "Niederrhein Nord - dein Reise- & Erlebnisportal zwischen Rhein, Reichswald und niederländischer Grenze. Vom Archäologischen Park Xanten über die Schwanenburg Kleve und die Wallfahrtsstadt Kevelaer bis Schloss Moyland: Sehenswürdigkeiten, Hotels, Städte & Orte und Radwege auf einem Portal.",
-    en: "Duisburg interactive. City on the Rhine, Europe's largest inland port, the Inner Harbour, Landscape Park North and Tiger & Turtle. Attractions, hotels, districts and magazine on one portal.",
+    en: "Your travel guide to the northern Lower Rhine, between the Rhine, the Reichswald forest and the Dutch border. From the Xanten Archaeological Park and Kleve's Swan Castle to the pilgrimage town of Kevelaer and Moyland Castle: attractions, hotels, towns and cycling routes on one portal.",
   },
 
   // Header
@@ -49,79 +49,79 @@ export const ui = {
   "header.mobileNav": { de: "Mobile Navigation", en: "Mobile navigation" },
 
   // Home
-  "home.eyebrow": { de: "Reiseportal · Nördlicher Niederrhein · Zwischen Rhein & Reichswald", en: "City guide · City on the Rhine · City of two riverbanks" },
-  "home.heroTitle": { de: "Entdecke den Niederrhein.", en: "Duisburg interactive." },
+  "home.eyebrow": { de: "Reiseportal · Nördlicher Niederrhein · Zwischen Rhein & Reichswald", en: "Travel guide · Northern Lower Rhine · Between the Rhine & the Reichswald" },
+  "home.heroTitle": { de: "Entdecke den Niederrhein.", en: "Discover the Lower Rhine." },
   "home.heroTagline": {
     de: "Sehenswürdigkeiten, Touren & Tickets, Hotels und die schönsten Ecken zwischen Rhein, Reichswald und niederländischer Grenze - von Xanten über Kleve und Kalkar bis Kevelaer. Flaches Land, weiter Himmel.",
-    en: "Sights, tours & tickets, hotels and the coolest corners of the city. Everything the city on the Rhine and Europe's largest inland port has to offer - from the Inner Harbour and Landscape Park North to the Six Lakes.",
+    en: "Sights, tours & tickets, hotels and the loveliest corners between the Rhine, the Reichswald forest and the Dutch border - from Xanten and Kleve to Kalkar and Kevelaer. Flat land, wide skies.",
   },
   "home.ctaSights": { de: "Sehenswürdigkeiten entdecken", en: "Discover attractions" },
-  "home.ctaTech": { de: "Radwege & Knotenpunkte", en: "Harbour & industrial heritage" },
+  "home.ctaTech": { de: "Radwege & Knotenpunkte", en: "Cycling routes & hubs" },
   "home.statSights": { de: "Sehenswuerdigkeiten", en: "Attractions" },
   "home.statHotels": { de: "Hotels", en: "Hotels" },
   "home.statRestaurants": { de: "Restaurants", en: "Restaurants" },
-  "home.statDistricts": { de: "Städte & Orte", en: "Districts" },
+  "home.statDistricts": { de: "Städte & Orte", en: "Towns" },
   "home.highlights": { de: "Highlights", en: "Highlights" },
-  "home.sightsHeading": { de: "Top-Sehenswürdigkeiten am Niederrhein", en: "Top attractions in Duisburg" },
+  "home.sightsHeading": { de: "Top-Sehenswürdigkeiten am Niederrhein", en: "Top attractions on the Lower Rhine" },
   "home.seeAll": { de: "Alle ansehen →", en: "See all →" },
-  "home.faecherEyebrow": { de: "Zwischen Rhein & Reichswald", en: "City of two riverbanks" },
-  "home.districtsHeading": { de: "Städte & Orte am Niederrhein", en: "Duisburg districts" },
-  "home.allDistricts": { de: "Alle Orte →", en: "All districts →" },
+  "home.faecherEyebrow": { de: "Zwischen Rhein & Reichswald", en: "Between the Rhine & the Reichswald" },
+  "home.districtsHeading": { de: "Städte & Orte am Niederrhein", en: "Towns & places on the Lower Rhine" },
+  "home.allDistricts": { de: "Alle Orte →", en: "All towns →" },
   "home.stayEyebrow": { de: "Uebernachten", en: "Where to stay" },
-  "home.hotelsHeading": { de: "Top-Hotels am Niederrhein", en: "Top hotels in Duisburg" },
+  "home.hotelsHeading": { de: "Top-Hotels am Niederrhein", en: "Top hotels on the Lower Rhine" },
   "home.allHotels": { de: "Alle Hotels →", en: "All hotels →" },
   "home.hotelsLead": {
     de: "Live von Booking.com - aktuelle Preise und Verfuegbarkeit, taeglich aktualisiert.",
     en: "Live from Booking.com - current prices and availability, updated daily.",
   },
-  "home.newsEyebrow": { de: "Natur · Genuss · Kultur", en: "City · Business · Culture" },
-  "home.newsHeading": { de: "Aktuelles vom Niederrhein", en: "Latest from Duisburg" },
+  "home.newsEyebrow": { de: "Natur · Genuss · Kultur", en: "Nature · Food · Culture" },
+  "home.newsHeading": { de: "Aktuelles vom Niederrhein", en: "Latest from the Lower Rhine" },
   "home.allNews": { de: "Alle Beitraege →", en: "All articles →" },
 
   // Listing pages
   "sights.entries": { de: "{n} Eintraege", en: "{n} entries" },
-  "sights.heading": { de: "Sehenswürdigkeiten am Niederrhein", en: "Attractions in Duisburg" },
+  "sights.heading": { de: "Sehenswürdigkeiten am Niederrhein", en: "Attractions on the Lower Rhine" },
   "sights.intro": {
     de: "Vom LVR-Archäologischen Park Xanten über die Schwanenburg Kleve, die Marienbasilika Kevelaer und Schloss Moyland bis zu den Rheinauen mit ihren Wildgänsen - alle Highlights des nördlichen Niederrheins.",
-    en: "From the Inner Harbour with its Foster architecture to the world-famous Landscape Park Duisburg-Nord, the walkable Tiger & Turtle sculpture, the Six Lakes and the zoo - all the iconic places of the city on the Rhine.",
+    en: "From the LVR Archaeological Park in Xanten and Kleve's Swan Castle to the Basilica of Kevelaer, Moyland Castle and the Rhine meadows with their wild geese - all the highlights of the northern Lower Rhine.",
   },
   "hotels.count": { de: "{n} Haeuser", en: "{n} properties" },
-  "hotels.heading": { de: "Hotels am Niederrhein", en: "Hotels in Duisburg" },
+  "hotels.heading": { de: "Hotels am Niederrhein", en: "Hotels on the Lower Rhine" },
   "hotels.intro": {
     de: "Vom Stadthotel in Xanten oder Kleve über das Landhaus am Reichswald bis zum Rheinhotel in Emmerich - geprüft, sortiert nach Gäste-Bewertung.",
-    en: "From the design hotel by the Inner Harbour to the city hotel near the main station and the quiet spots by the Six Lakes - curated, sorted by guest rating.",
+    en: "From a town hotel in Xanten or Kleve and a country house by the Reichswald to a Rhine-view hotel in Emmerich - curated, sorted by guest rating.",
   },
   "hotels.editorial": { de: "Unsere redaktionelle Hotel-Auswahl", en: "Our editorial hotel selection" },
-  "hotels.topLive.title": { de: "Aktuell bestbewertete Hotels am Niederrhein", en: "Currently top-rated hotels in Duisburg" },
+  "hotels.topLive.title": { de: "Aktuell bestbewertete Hotels am Niederrhein", en: "Currently top-rated hotels on the Lower Rhine" },
   "hotels.topLive.lead": {
     de: "Live von Booking.com - aktuelle Bewertungen und Preise, aktualisiert beim letzten Build.",
     en: "Live from Booking.com - current ratings and prices, updated at the last build.",
   },
   "restaurants.count": { de: "{n} Lokale", en: "{n} venues" },
-  "restaurants.heading": { de: "Restaurants am Niederrhein", en: "Restaurants in Duisburg" },
+  "restaurants.heading": { de: "Restaurants am Niederrhein", en: "Restaurants on the Lower Rhine" },
   "restaurants.intro": {
     de: "Niederrheinische Küche, Spargel- & Erdbeer-Spezialitäten, Hofcafés und Rheinblick-Restaurants - eine kuratierte Auswahl der besten Lokale der Region.",
-    en: "Ruhr region classics, international variety and the currywurst cult - a curated selection of the best places to eat in Duisburg.",
+    en: "Lower Rhine cuisine, asparagus & strawberry specialties, farm cafés and Rhine-view restaurants - a curated selection of the region's best places to eat.",
   },
   "restaurants.listLead": {
     de: "Von der niederrheinischen Gaststube über das Hofcafé im Spargelland bis zum Fischrestaurant an der Rheinpromenade - die Gastronomie des Niederrheins auf einen Blick.",
-    en: "From Ruhr-region cooking and brewhouse tradition to the pho address and the harbour restaurant by the water - Duisburg's dining scene at a glance.",
+    en: "From a Lower Rhine tavern and a farm café in asparagus country to a fish restaurant on the Rhine promenade - the region's dining scene at a glance.",
   },
   "restaurants.metaDescription": {
     de: "Restaurants am Niederrhein: niederrheinisch, regional, Spargel & Erdbeeren, Hofcafés - geprüft, sortiert nach Ort und Küche.",
-    en: "Restaurants in Duisburg: Ruhr region, currywurst, Italian, Asian - curated and sorted by district and cuisine.",
+    en: "Restaurants on the Lower Rhine: regional Lower Rhine cuisine, asparagus & strawberries, farm cafés - curated and sorted by town and cuisine.",
   },
-  "districts.count": { de: "{n} Orte", en: "{n} districts" },
-  "districts.heading": { de: "Städte & Orte am Niederrhein", en: "Duisburg districts" },
+  "districts.count": { de: "{n} Orte", en: "{n} towns" },
+  "districts.heading": { de: "Städte & Orte am Niederrhein", en: "Towns & places on the Lower Rhine" },
   "districts.intro": {
     de: "Römerstadt Xanten, Schwanenstadt Kleve, Wallfahrtsort Kevelaer, das spätgotische Kalkar oder die Rheinstädte Emmerich und Rees - jeder Ort am Niederrhein hat sein eigenes Gesicht.",
-    en: "Urban Mitte by the Inner Harbour, the historic harbour of Ruhrort, the university quarter of Neudorf or the lakes in the south - every Duisburg district has its own character, on both banks of the Rhine.",
+    en: "The Roman town of Xanten, the swan city of Kleve, the pilgrimage town of Kevelaer, late-Gothic Kalkar or the Rhine towns of Emmerich and Rees - every place on the Lower Rhine has its own character.",
   },
   "categories.count": { de: "{n} Themen", en: "{n} topics" },
-  "categories.heading": { de: "Der Niederrhein nach Kategorien", en: "Duisburg by category" },
+  "categories.heading": { de: "Der Niederrhein nach Kategorien", en: "The Lower Rhine by category" },
   "categories.intro": {
     de: "Der Niederrhein quer gelesen: Römer & Historie rund um Xanten, Kultur & Wallfahrt in Kevelaer und Moyland, Rhein & Auen mit den Wildgänsen und das schönste Radrevier Deutschlands.",
-    en: "Duisburg across the board: industrial heritage around Landscape Park North, harbours & the Rhine as the city's lifeline, lakes & nature at the Six Lakes.",
+    en: "The Lower Rhine at a glance: Romans & history around Xanten, culture & pilgrimage in Kevelaer and Moyland, the Rhine & its meadows with the wild geese, and one of Germany's finest cycling regions.",
   },
 
   // Categories detail / index
@@ -130,12 +130,12 @@ export const ui = {
   "categories.restaurantsHeading": { de: "Restaurants", en: "Restaurants" },
   "categories.cardSights": { de: "Sights", en: "Sights" },
   "categories.cardRestaurants": { de: "Restaurants", en: "Restaurants" },
-  "categories.detailHeading": { de: "{name} am Niederrhein", en: "{name} in Duisburg" },
-  "categories.metaDescription": { de: "{name} am Niederrhein: {desc}", en: "{name} in Duisburg: {desc}" },
+  "categories.detailHeading": { de: "{name} am Niederrhein", en: "{name} on the Lower Rhine" },
+  "categories.metaDescription": { de: "{name} am Niederrhein: {desc}", en: "{name} on the Lower Rhine: {desc}" },
   "categories.indexTitle": { de: "Kategorien", en: "Categories" },
   "categories.indexDescription": {
     de: "Der Niederrhein nach Kategorien: Römer & Historie, Kultur & Wallfahrt, Rhein & Auen, Radwege, Natur und mehr.",
-    en: "Duisburg by category: industrial heritage, harbours & the Rhine, lakes & nature, architecture, art & museums and more.",
+    en: "The Lower Rhine by category: Romans & history, culture & pilgrimage, the Rhine & its meadows, cycling routes, nature and more.",
   },
 
   // Detail pages
@@ -143,10 +143,10 @@ export const ui = {
   "detail.priceFrom": { de: "ab {n} EUR", en: "from {n} EUR" },
   "detail.officialWebsite": { de: "Offizielle Website →", en: "Official website →" },
   "detail.website": { de: "Website →", en: "Website →" },
-  "detail.inDistrict": { de: "Im Stadtbezirk", en: "In the district" },
-  "detail.district": { de: "Stadtbezirk", en: "District" },
+  "detail.inDistrict": { de: "Im Stadtbezirk", en: "In the town" },
+  "detail.district": { de: "Stadtbezirk", en: "Town" },
   "detail.category": { de: "Kategorie", en: "Category" },
-  "detail.districtHub": { de: "Stadtbezirks-Hub ansehen →", en: "View district hub →" },
+  "detail.districtHub": { de: "Stadtbezirks-Hub ansehen →", en: "View town guide →" },
   "detail.guestReviews": { de: "{n} Gaeste-Bewertungen", en: "{n} guest reviews" },
   "detail.guestFavorite": { de: "Gaesteliebling", en: "Guest favorite" },
   "detail.reservationRecommended": { de: "Reservierung empfohlen", en: "Reservation recommended" },
@@ -154,25 +154,25 @@ export const ui = {
   "detail.sightsIn": { de: "Sehenswuerdigkeiten in {name}", en: "Attractions in {name}" },
   "detail.hotelsIn": { de: "Hotels in {name}", en: "Hotels in {name}" },
   "detail.restaurantsIn": { de: "Restaurants in {name}", en: "Restaurants in {name}" },
-  "detail.categoryHeading": { de: "{name} am Niederrhein", en: "{name} in Duisburg" },
+  "detail.categoryHeading": { de: "{name} am Niederrhein", en: "{name} on the Lower Rhine" },
 
   // Related
-  "related.sights": { de: "Weitere Sehenswuerdigkeiten im Stadtbezirk", en: "More attractions in the district" },
-  "related.hotels": { de: "Hotels im Stadtbezirk", en: "Hotels in the district" },
-  "related.restaurants": { de: "Restaurants im Stadtbezirk", en: "Restaurants in the district" },
+  "related.sights": { de: "Weitere Sehenswuerdigkeiten im Stadtbezirk", en: "More attractions nearby" },
+  "related.hotels": { de: "Hotels im Stadtbezirk", en: "Hotels nearby" },
+  "related.restaurants": { de: "Restaurants im Stadtbezirk", en: "Restaurants nearby" },
 
   // News
   "news.source": { de: "Quelle: {name}", en: "Source: {name}" },
-  "news.title": { de: "Niederrhein-Magazin", en: "Duisburg magazine" },
+  "news.title": { de: "Niederrhein-Magazin", en: "Lower Rhine Magazine" },
   "news.metaDescription": {
     de: "Aktuelles vom Niederrhein - Natur, Genuss und Kultur: Wildgänse in den Rheinauen, Spargel- & Erdbeerzeit, Römerstadt Xanten und Schloss Moyland.",
-    en: "Latest from Duisburg - city, business and culture: the Inner Harbour, duisport, Landscape Park North and the Duisburg Akzente festival.",
+    en: "Latest from the Lower Rhine - nature, food and culture: wild geese in the Rhine meadows, asparagus & strawberry season, the Roman town of Xanten and Moyland Castle.",
   },
-  "news.eyebrow": { de: "Natur · Genuss · Kultur", en: "City · Business · Culture" },
-  "news.heading": { de: "Aktuelles vom Niederrhein", en: "Latest from Duisburg" },
+  "news.eyebrow": { de: "Natur · Genuss · Kultur", en: "Nature · Food · Culture" },
+  "news.heading": { de: "Aktuelles vom Niederrhein", en: "Latest from the Lower Rhine" },
   "news.intro": {
     de: "Kuratierte Beiträge rund um Natur, Genuss und Kultur am Niederrhein: Wildgänse, Spargel- & Erdbeerzeit, Radsaison und die Highlights von Xanten bis Kevelaer.",
-    en: "Curated articles focused on city affairs, business around the duisport harbour, industrial heritage and the Duisburg Akzente festival. Concise summaries with a link to the original source.",
+    en: "Curated articles about nature, food and culture on the Lower Rhine: wild geese, asparagus & strawberry season, the cycling season and the highlights from Xanten to Kevelaer.",
   },
   "news.related": { de: "Weitere Beitraege", en: "More articles" },
   "news.attributionEyebrow": { de: "Quelle", en: "Source" },
@@ -184,31 +184,31 @@ export const ui = {
 
   // Guides / travel planner
   "guides.routes": { de: "{n} Routen", en: "{n} routes" },
-  "guides.heading": { de: "Niederrhein-Reiseplaner", en: "Duisburg Travel Planner" },
+  "guides.heading": { de: "Niederrhein-Reiseplaner", en: "Lower Rhine Travel Planner" },
   "guides.intro": {
     de: "Fertige Tagespläne für den Niederrhein - Römerstadt Xanten, Rad-Wochenenden, Familienausflüge. Jeder Plan verweist auf konkrete Sehenswürdigkeiten, Restaurants und Hotels.",
-    en: "Ready-made day plans for Duisburg - first-time visitors, families, rainy days. Every plan links to specific attractions, restaurants and hotels.",
+    en: "Ready-made day plans for the Lower Rhine - the Roman town of Xanten, cycling weekends and family outings. Every plan links to specific attractions, restaurants and hotels.",
   },
   "guides.indexTitle": { de: "Reiseplaner", en: "Travel Planner" },
   "guides.indexDesc": {
     de: "Reise-Guides für den Niederrhein: Xanten an einem Tag, Rad-Wochenende, Familienausflug - Tag-für-Tag-Routen mit Hotel- und Restaurant-Empfehlungen.",
-    en: "Travel guides for Duisburg: 3 days, with kids, in the rain - day-by-day itineraries with hotel and restaurant recommendations.",
+    en: "Travel guides for the Lower Rhine: Xanten in a day and a cycling weekend - day-by-day itineraries with hotel and restaurant recommendations.",
   },
   "guides.day": { de: "Tag {n}", en: "Day {n}" },
   "guides.bestSeason": { de: "Beste Reisezeit:", en: "Best time to visit:" },
   "guides.tip": { de: "Tipp:", en: "Tip:" },
 
   // Events
-  "events.indexTitle": { de: "Events & Termine am Niederrhein", en: "Events & dates in Duisburg" },
+  "events.indexTitle": { de: "Events & Termine am Niederrhein", en: "Events & dates on the Lower Rhine" },
   "events.indexDescription": {
     de: "Niederrhein-Events 2026: Wallfahrt Kevelaer, Straßenmaler-Festival Geldern, Wildgänse-Saison und Spargelzeit. Mit aktuellen Hotelpreisen für jeden Termin.",
-    en: "Duisburg events 2026: the Traumzeit Festival at the Landscape Park, the Duisburg Akzente, the harbour festival and the Christmas market - with current hotel prices for every date.",
+    en: "Lower Rhine events 2026: the Kevelaer pilgrimage, the Geldern street-painting festival, the wild-geese season and asparagus time - with current hotel prices for every date.",
   },
   "events.eyebrow": { de: "Termine mit Hotelpreisen", en: "Dates with hotel prices" },
-  "events.heading": { de: "Events am Niederrhein", en: "Events in Duisburg" },
+  "events.heading": { de: "Events am Niederrhein", en: "Events on the Lower Rhine" },
   "events.intro": {
     de: "Die wichtigsten Anlässe am Niederrhein - von der Wallfahrt in Kevelaer über das Straßenmaler-Festival in Geldern bis zur Wildgänse-Saison in den Rheinauen. Zu jedem Termin zeigen wir aktuelle Hotelpreise.",
-    en: "Duisburg's most important occasions - from the Traumzeit Festival amid the blast furnaces and the Duisburg Akzente to the harbour festival by the Rhine. For every date we show current hotel prices for exactly that period.",
+    en: "The most important occasions on the Lower Rhine - from the pilgrimage in Kevelaer and the street-painting festival in Geldern to the wild-geese season in the Rhine meadows. For every date we show current hotel prices for exactly that period.",
   },
   "events.past": { de: "vorbei", en: "past" },
   "events.hotelsForDate": { de: "Hotels fuer diesen Termin →", en: "Hotels for these dates →" },
@@ -217,7 +217,7 @@ export const ui = {
   "events.checkout": { de: "Abreise: {date}", en: "Check-out: {date}" },
   "events.nights": { de: "{n} Naechte", en: "{n} nights" },
   "events.night": { de: "{n} Nacht", en: "{n} night" },
-  "events.otherHeading": { de: "Weitere Anlässe am Niederrhein", en: "More occasions in Duisburg" },
+  "events.otherHeading": { de: "Weitere Anlässe am Niederrhein", en: "More occasions on the Lower Rhine" },
   "events.pastNotice": {
     de: "Dieses Event liegt in der Vergangenheit. Sobald der Termin fuer die naechste Saison feststeht, aktualisieren wir die Preise hier. Schau dir solange unseren {link} an.",
     en: "This event has already taken place. As soon as the date for the next season is confirmed, we will update the prices here. In the meantime, take a look at our {link}.",
@@ -246,7 +246,7 @@ export const ui = {
   "about.heading": { de: "Über {site}", en: "About {site}" },
   "about.lead": {
     de: "{site} ist ein unabhängiges Stadtportal für die Stadt am Rhein und am größten Binnenhafen Europas. Wir bündeln an einem Ort, was Besucher und Einheimische über {site} wirklich wissen wollen: Sehenswürdigkeiten, Hotels, Restaurants, Stadtbezirke, Veranstaltungen und das kulturelle Leben rund um den Innenhafen, den Landschaftspark Nord und Tiger & Turtle. Ziel ist ein schneller, werblich klar gekennzeichneter Überblick statt unübersichtlicher Linklisten.",
-    en: "{site} is an independent city portal for the city on the Rhine and Europe's largest inland port. We bring together in one place what visitors and locals really want to know about {site}: attractions, hotels, restaurants, districts, events and the cultural life around the Inner Harbour, Landscape Park North and Tiger & Turtle. Our goal is a fast, clearly labelled overview instead of confusing link lists.",
+    en: "{site} is an independent travel guide for the northern Lower Rhine, between the Rhine, the Reichswald forest and the Dutch border. In one place we bring together what visitors and locals really want to know about the region: attractions, hotels, restaurants, towns, events and cultural life - from the Roman town of Xanten and Kleve's Swan Castle to the pilgrimage town of Kevelaer and Moyland Castle. Our goal is a fast, clearly labeled overview instead of confusing link lists.",
   },
   "about.standardsHeading": { de: "Unser redaktioneller Anspruch", en: "Our editorial standards" },
   "about.standardsBody": {
@@ -256,12 +256,12 @@ export const ui = {
   "about.selectionHeading": { de: "Wie wir Inhalte auswählen", en: "How we select content" },
   "about.selectionBody": {
     de: "Die Auswahl folgt einem kuratierten Ansatz: Wir nehmen Orte auf, die {site} charakterisieren oder für einen Aufenthalt praktisch relevant sind - vom Innenhafen über die Stadtbezirke bis zu den großen Anlässen wie dem Traumzeit-Festival oder den Duisburger Akzenten. Die Reihenfolge und Hervorhebung von Einträgen richtet sich nach redaktioneller Einschätzung, nicht nach bezahlter Platzierung.",
-    en: "Our selection follows a curated approach: we include places that characterise {site} or are practically relevant for a stay - from the Inner Harbour and the districts to the major occasions such as the Traumzeit Festival or the Duisburg Akzente. The order and prominence of entries is based on editorial judgement, not on paid placement.",
+    en: "Our selection follows a curated approach: we include places that characterize the Lower Rhine or are practically relevant for a stay - from the Archaeological Park in Xanten and the towns to the major occasions such as the Kevelaer pilgrimage or the Geldern street-painting festival. The order and prominence of entries is based on editorial judgment, not on paid placement.",
   },
   "about.sourcesHeading": { de: "Quellen und Bildmaterial", en: "Sources and imagery" },
   "about.sourcesBody": {
     de: "Bilder stammen, sofern nicht anders ausgewiesen, von Wikimedia Commons unter Creative-Commons-Lizenzen. Der jeweilige Autor und die Lizenz werden unter jedem Bild ausgewiesen. Faktische Angaben recherchieren wir aus öffentlich zugänglichen, möglichst offiziellen Quellen.",
-    en: "Unless otherwise stated, images are sourced from Wikimedia Commons under Creative Commons licences. The respective author and licence are credited beneath each image. We research factual information from publicly available, preferably official sources.",
+    en: "Unless otherwise stated, images are sourced from Wikimedia Commons under Creative Commons licenses. The respective author and license are credited beneath each image. We research factual information from publicly available, preferably official sources.",
   },
   "about.affiliateHeading": { de: "Transparenz bei Affiliate-Links", en: "Transparency about affiliate links" },
   "about.affiliateBody": {
@@ -308,7 +308,7 @@ export const ui = {
   "imprint.copyrightHeading": { de: "Urheberrecht & Bilder", en: "Copyright & images" },
   "imprint.copyrightBody": {
     de: "Bilder auf {site} stammen, sofern nicht anders ausgewiesen, von Wikimedia Commons unter Creative-Commons-Lizenzen. Der jeweilige Autor und die Lizenz werden unter jedem Bild ausgewiesen.",
-    en: "Unless otherwise stated, images on {site} are sourced from Wikimedia Commons under Creative Commons licences. The respective author and licence are credited beneath each image.",
+    en: "Unless otherwise stated, images on {site} are sourced from Wikimedia Commons under Creative Commons licenses. The respective author and license are credited beneath each image.",
   },
   "imprint.affiliateHeading": { de: "Affiliate-Hinweis", en: "Affiliate disclosure" },
   "imprint.affiliateBody": {
@@ -407,7 +407,7 @@ export const ui = {
   "terms.copyrightHeading": { de: "5. Urheberrecht", en: "5. Copyright" },
   "terms.copyrightBody": {
     de: "Alle Inhalte unterliegen dem Urheberrecht. Bilder werden, sofern nicht anders ausgewiesen, unter Creative-Commons-Lizenzen von Wikimedia Commons verwendet und entsprechend gekennzeichnet.",
-    en: "All content is subject to copyright. Unless otherwise stated, images are used under Creative Commons licences from Wikimedia Commons and credited accordingly.",
+    en: "All content is subject to copyright. Unless otherwise stated, images are used under Creative Commons licenses from Wikimedia Commons and credited accordingly.",
   },
   "terms.finalHeading": { de: "6. Schlussbestimmungen", en: "6. Final provisions" },
   "terms.finalBody": {

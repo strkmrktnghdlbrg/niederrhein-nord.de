@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SightCard from "../../../components/SightCard.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import GetYourGuideWidget from "../../../components/GetYourGuideWidget.astro";
+import { sights } from "../../../data/sights";
+import { sightsEn } from "../../../i18n/en/sights";
+import { getGygPlacement } from "../../../data/gyg";
+import { city } from "../../../data/city";
+import { t, tf } from "../../../i18n/ui";
+import { indexUrl, homeUrl } from "../../../i18n/config";
+
+const locale = "en" as const;
+const sorted = [...sights].sort((a, b) =>
+  sightsEn[a.slug].name.localeCompare(sightsEn[b.slug].name, "en")
+);
+---
+
+<BaseLayout
+  title={`Attractions on the Lower Rhine`}
+  description={`All ${sights.length} attractions on the Lower Rhine: the Xanten Archaeological Park, Kleve's Swan Castle, the Basilica of Kevelaer, Moyland Castle, the wild geese of the Rhine meadows and more.`}
+  locale={locale}
+  alternateUrls={{ de: indexUrl("sights", "de"), en: indexUrl("sights", "en") }}
+>
+  <div class="container-page py-12">
+    <Breadcrumbs locale={locale} items={[{label: t(locale, "nav.home"), href: homeUrl(locale)}, {label: t(locale, "nav.sights")}]} />
+    <header class="mb-12">
+      <p class="eyebrow mb-3">{tf(locale, "sights.entries", { n: sights.length })}</p>
+      <h1 class="text-4xl sm:text-6xl font-medium tracking-tight mb-4" style="color: var(--color-text);">{t(locale, "sights.heading")}</h1>
+      <p class="text-lg max-w-3xl" style="color: var(--color-text-body);">
+        {t(locale, "sights.intro")}
+      </p>
+    </header>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {sorted.map((s) => <SightCard sight={s} locale={locale} />)}
+    </div>
+
+    <GetYourGuideWidget placement={getGygPlacement("page:sights-index")} />
+  </div>
+</BaseLayout>

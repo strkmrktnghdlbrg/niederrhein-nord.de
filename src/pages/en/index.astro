@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { city } from "../data/city";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { city } from "../../data/city";
 
 const IMG = "/images/niederrhein";
 
@@ -11,95 +11,95 @@ type Hotel = { t: string; m: string; r: string; p: string; c: [string, string]; 
 type News = { cat: string; t: string; d: string; date: string; c: [string, string]; u: string; href: string };
 
 const sights: Sight[] = [
-  { t: "LVR-Archäologischer Park Xanten", m: "Römisches Reich · Hafentempel & Amphitheater", r: "4.8", n: "5.6k", b: "Wahrzeichen", steel: true, c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/xanten.jpg`, href: "/sehenswuerdigkeiten/archaeologischer-park-xanten/" },
-  { t: "Schwanenburg Kleve", m: "Lohengrin-Sage · Schwanenturm", r: "4.6", n: "2.3k", b: "Top bewertet", c: ["#9E4A38", "#6F3327"], u: `${IMG}/kleve.jpg`, href: "/sehenswuerdigkeiten/schwanenburg-kleve/" },
-  { t: "Marienbasilika Kevelaer", m: "Größter Wallfahrtsort Nordwesteuropas", r: "4.7", n: "3.1k", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/kevelaer.jpg`, href: "/sehenswuerdigkeiten/marienbasilika-kevelaer/" },
-  { t: "Schloss Moyland", m: "Wasserschloss · Museum Joseph Beuys", r: "4.6", n: "2.8k", b: "Familienfavorit", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/moyland.jpg`, href: "/sehenswuerdigkeiten/schloss-moyland/" },
-  { t: "Dom St. Viktor, Xanten", m: "„Kölner Dom des Niederrheins“ · Gotik", r: "4.7", n: "1.9k", c: ["#1E5E87", "#2A7DB1"], u: `${IMG}/xantendom.jpg`, href: "/sehenswuerdigkeiten/dom-st-viktor-xanten/" },
-  { t: "Historische Stadt Kalkar", m: "Rathaus & Hochaltäre von St. Nicolai", r: "4.5", n: "1.2k", c: ["#9E4A38", "#4E9A3E"], u: `${IMG}/kalkar.jpg`, href: "/sehenswuerdigkeiten/rathaus-kalkar/" },
+  { t: "LVR Archaeological Park Xanten", m: "Roman Empire · harbor temple & amphitheater", r: "4.8", n: "5.6k", b: "Landmark", steel: true, c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/xanten.jpg`, href: "/en/attractions/xanten-archaeological-park/" },
+  { t: "Swan Castle Kleve", m: "Lohengrin legend · Swan Tower", r: "4.6", n: "2.3k", b: "Top rated", c: ["#9E4A38", "#6F3327"], u: `${IMG}/kleve.jpg`, href: "/en/attractions/swan-castle-kleve/" },
+  { t: "Marian Basilica Kevelaer", m: "Northwest Europe's largest pilgrimage site", r: "4.7", n: "3.1k", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/kevelaer.jpg`, href: "/en/attractions/basilica-kevelaer/" },
+  { t: "Moyland Castle", m: "Moated castle · Joseph Beuys Museum", r: "4.6", n: "2.8k", b: "Family favorite", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/moyland.jpg`, href: "/en/attractions/moyland-castle/" },
+  { t: "St. Victor's Cathedral, Xanten", m: "\"Cologne Cathedral of the Lower Rhine\" · Gothic", r: "4.7", n: "1.9k", c: ["#1E5E87", "#2A7DB1"], u: `${IMG}/xantendom.jpg`, href: "/en/attractions/xanten-cathedral-st-victor/" },
+  { t: "Historic Town of Kalkar", m: "Town hall & the high altars of St. Nicholas", r: "4.5", n: "1.2k", c: ["#9E4A38", "#4E9A3E"], u: `${IMG}/kalkar.jpg`, href: "/en/attractions/kalkar-town-hall/" },
 ];
 
 const gyg: Gyg[] = [
-  { t: "APX Xanten – Eintritt & Führung", m: "Römerpark · 2,5 Std", p: "14", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/gyg-apx.jpg`, href: "/reiseplaner/" },
-  { t: "Rheinschifffahrt Niederrhein", m: "Panorama-Fahrt ab Emmerich · 90 Min", p: "19", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/gyg-schiff.jpg`, href: "/reiseplaner/" },
-  { t: "Knotenpunkt-Radtour", m: "Geführte E-Bike-Tour · Auen & Höfe", p: "29", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/gyg-rad.jpg`, href: "/reiseplaner/" },
-  { t: "Wallfahrtsstadt Kevelaer", m: "Stadtführung & Kerzenkapelle · 1,5 Std", p: "12", c: ["#F4B400", "#D89A00"], u: `${IMG}/gyg-wallfahrt.jpg`, href: "/reiseplaner/" },
+  { t: "APX Xanten - Admission & Tour", m: "Roman park · 2.5 hrs", p: "14", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/gyg-apx.jpg`, href: "/en/travel-planner/" },
+  { t: "Lower Rhine River Cruise", m: "Panorama trip from Emmerich · 90 min", p: "19", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/gyg-schiff.jpg`, href: "/en/travel-planner/" },
+  { t: "Node-Network Cycling Tour", m: "Guided e-bike tour · meadows & farms", p: "29", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/gyg-rad.jpg`, href: "/en/travel-planner/" },
+  { t: "Pilgrimage Town of Kevelaer", m: "City tour & Candle Chapel · 1.5 hrs", p: "12", c: ["#F4B400", "#D89A00"], u: `${IMG}/gyg-wallfahrt.jpg`, href: "/en/travel-planner/" },
 ];
 
 const districts: District[] = [
-  { t: "Xanten", d: "Römerstadt · APX & Dom · Südsee", tag: "Stadt", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/gyg-apx.jpg`, href: "/bezirke/xanten/" },
-  { t: "Kleve", d: "Schwanenburg · Forstgarten · Hochschule", tag: "Kreisstadt", c: ["#9E4A38", "#6F3327"], u: `${IMG}/kleve.jpg`, href: "/bezirke/kleve/" },
-  { t: "Geldern", d: "Gelderland · Straßenmaler-Festival", tag: "Stadt", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/geldern.jpg`, href: "/bezirke/geldern/" },
-  { t: "Emmerich am Rhein", d: "Längste Rheinpromenade · Hängebrücke", tag: "am Rhein", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/emmerich.jpg`, href: "/bezirke/emmerich/" },
-  { t: "Rees", d: "Älteste Stadt am unteren Niederrhein", tag: "am Rhein", c: ["#9E4A38", "#2A7DB1"], u: `${IMG}/rees.jpg`, href: "/bezirke/rees/" },
-  { t: "Goch & Weeze", d: "Steintor · Airport Weeze · Kermisdahl", tag: "Region", c: ["#4E9A3E", "#2A7DB1"], u: `${IMG}/goch.jpg`, href: "/bezirke/goch/" },
+  { t: "Xanten", d: "Roman town · APX & cathedral · South Lake", tag: "Town", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/gyg-apx.jpg`, href: "/en/districts/xanten/" },
+  { t: "Kleve", d: "Swan Castle · Forest Garden · university", tag: "District town", c: ["#9E4A38", "#6F3327"], u: `${IMG}/kleve.jpg`, href: "/en/districts/kleve/" },
+  { t: "Geldern", d: "Gelderland · street-painting festival", tag: "Town", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/geldern.jpg`, href: "/en/districts/geldern/" },
+  { t: "Emmerich am Rhein", d: "Longest Rhine promenade · suspension bridge", tag: "On the Rhine", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/emmerich.jpg`, href: "/en/districts/emmerich/" },
+  { t: "Rees", d: "The oldest town on the lower Lower Rhine", tag: "On the Rhine", c: ["#9E4A38", "#2A7DB1"], u: `${IMG}/rees.jpg`, href: "/en/districts/rees/" },
+  { t: "Goch & Weeze", d: "Stone Gate · Weeze Airport · Kermisdahl", tag: "Region", c: ["#4E9A3E", "#2A7DB1"], u: `${IMG}/goch.jpg`, href: "/en/districts/goch/" },
 ];
 
 const hotels: Hotel[] = [
-  { t: "Parkhotel Kleve", m: "4★ · Forstgarten / Tiergarten", r: "4.5", p: "112", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/hotel1.jpg`, href: "/hotels/parkhotel-kleve/" },
-  { t: "Hotel van Bebber, Xanten", m: "Historisch · Altstadt", r: "4.6", p: "119", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/hotel3.jpg`, href: "/hotels/hotel-van-bebber-xanten/" },
-  { t: "Landhaus am Reichswald", m: "4★ · Natur & Wellness", r: "4.7", p: "139", c: ["#3C7A30", "#2A7DB1"], u: `${IMG}/hotel4.jpg`, href: "/hotels/landhaus-am-reichswald/" },
-  { t: "Hotel Kevelaerer Hof", m: "3★ · Nähe Basilika", r: "4.4", p: "89", c: ["#F4B400", "#D89A00"], u: `${IMG}/hotel2.jpg`, href: "/hotels/hotel-kevelaerer-hof/" },
+  { t: "Parkhotel Kleve", m: "4★ · Forest Garden / zoo", r: "4.5", p: "112", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/hotel1.jpg`, href: "/en/hotels/parkhotel-kleve/" },
+  { t: "Hotel van Bebber, Xanten", m: "Historic · old town", r: "4.6", p: "119", c: ["#2A7DB1", "#1E5E87"], u: `${IMG}/hotel3.jpg`, href: "/en/hotels/hotel-van-bebber-xanten/" },
+  { t: "Country House by the Reichswald", m: "4★ · nature & wellness", r: "4.7", p: "139", c: ["#3C7A30", "#2A7DB1"], u: `${IMG}/hotel4.jpg`, href: "/en/hotels/country-house-reichswald/" },
+  { t: "Hotel Kevelaerer Hof", m: "3★ · near the basilica", r: "4.4", p: "89", c: ["#F4B400", "#D89A00"], u: `${IMG}/hotel2.jpg`, href: "/en/hotels/hotel-kevelaerer-hof/" },
 ];
 
 const news: News[] = [
-  { cat: "Natur", t: "Wildgänse-Saison: 180.000 Gäste am Unteren Niederrhein", d: "Von Oktober bis Februar rasten die arktischen Wildgänse in den Rheinauen - die besten Beobachtungsspots.", date: "6. Juni 2026", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/wildgaense.jpg`, href: "/news/wildgaense-saison-2026/" },
-  { cat: "Genuss", t: "Spargel- & Erdbeerzeit: Hofläden zwischen Kleve und Kevelaer", d: "Der Niederrhein ist Spargelland - wo es jetzt frisch vom Feld auf den Teller kommt.", date: "2. Juni 2026", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/spargel.jpg`, href: "/news/spargel-erdbeerzeit-hoflaeden/" },
-  { cat: "Events", t: "Radsaison startet: Der Niederrhein per Knotenpunkt", d: "Selbstpflücke-Felder, Hofcafés und die schönsten Rundtouren für den Sommer 2026.", date: "28. Mai 2026", c: ["#9E4A38", "#4E9A3E"], u: `${IMG}/erdbeere.jpg`, href: "/news/radsaison-knotenpunkte/" },
+  { cat: "Nature", t: "Wild-Geese Season: 180,000 Guests on the Lower Rhine", d: "From October to February the Arctic wild geese rest in the Rhine meadows - the best observation spots.", date: "6 June 2026", c: ["#2A7DB1", "#4E9A3E"], u: `${IMG}/wildgaense.jpg`, href: "/en/news/wild-geese-season-2026/" },
+  { cat: "Food", t: "Asparagus & Strawberry Season: Farm Shops Between Kleve and Kevelaer", d: "The Lower Rhine is asparagus country - where it now comes fresh from the field to the plate.", date: "2 June 2026", c: ["#4E9A3E", "#3C7A30"], u: `${IMG}/spargel.jpg`, href: "/en/news/asparagus-strawberry-farm-shops/" },
+  { cat: "Events", t: "Cycling Season Begins: The Lower Rhine by Node Network", d: "Pick-your-own fields, farm cafés and the loveliest round tours for summer 2026.", date: "28 May 2026", c: ["#9E4A38", "#4E9A3E"], u: `${IMG}/erdbeere.jpg`, href: "/en/news/cycling-season-node-network/" },
 ];
 
 const cats = [
   "★ Highlights",
-  "Sehenswürdigkeiten",
-  "Rhein & Auen",
-  "Radwege",
-  "Kultur & Wallfahrt",
-  "Touren & Tickets",
+  "Attractions",
+  "Rhine & Meadows",
+  "Cycling",
+  "Culture & Pilgrimage",
+  "Tours & Tickets",
   "Hotels",
-  "Genuss & Hofläden",
+  "Food & Farm Shops",
   "Events",
 ];
 ---
 
-<BaseLayout title={city.name} description={city.description.long} alternateUrls={{ de: "/", en: "/en/" }}>
+<BaseLayout title={city.name} description={city.description.longEn} locale="en" alternateUrls={{ de: "/", en: "/en/" }}>
   <!-- HERO -->
   <section class="du-hero">
     <div class="du-hero-bg" style={`background-image:url('${IMG}/hero.jpg')`}></div>
     <div class="du-hero-scrim"></div>
     <div class="container-page du-hero-inner">
-      <span class="du-kicker">✦ Dein Reiseportal für den nördlichen Niederrhein</span>
-      <h1 class="du-hero-h1">Entdecke den Niederrhein - <br />flaches Land, <span class="du-hl">weiter Himmel.</span></h1>
-      <p class="du-hero-sub">Sehenswürdigkeiten, Touren &amp; Tickets, Hotels und die schönsten Ecken zwischen Rhein, Reichswald und niederländischer Grenze - von Xanten über Kleve bis Kevelaer, alles an einem Ort.</p>
+      <span class="du-kicker">✦ Your travel guide to the northern Lower Rhine</span>
+      <h1 class="du-hero-h1">Discover the Lower Rhine - <br />flat land, <span class="du-hl">wide skies.</span></h1>
+      <p class="du-hero-sub">Sights, tours &amp; tickets, hotels and the loveliest corners between the Rhine, the Reichswald forest and the Dutch border - from Xanten and Kleve to Kevelaer, all in one place.</p>
 
-      <form class="du-search" action="/suche/" method="get" role="search">
-        <label class="du-seg du-who">
-          <div class="du-segfill">
-            <div class="du-lab">Wohin</div>
-            <input type="search" name="q" class="du-input" placeholder="Stadt, Ort oder Sehenswürdigkeit" autocomplete="off" aria-label="Suchbegriff" />
-          </div>
-          <button type="submit" class="du-go" aria-label="Suchen">
+      <a class="du-search" href="/en/attractions/" role="search" aria-label="Browse attractions">
+        <span class="du-seg du-who">
+          <span class="du-segfill">
+            <span class="du-lab">Where</span>
+            <span class="du-ph">Town, place or sight</span>
+          </span>
+          <span class="du-go" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-          </button>
-        </label>
-      </form>
+          </span>
+        </span>
+      </a>
     </div>
   </section>
 
-  <!-- KATEGORIE-PILLS -->
+  <!-- CATEGORY PILLS -->
   <div class="container-page">
     <div class="du-cats">
-      {cats.map((c, i) => <a href="/kategorien/" class={`du-cat ${i === 0 ? "on" : ""}`}>{c}</a>)}
+      {cats.map((c, i) => <a href="/en/categories/" class={`du-cat ${i === 0 ? "on" : ""}`}>{c}</a>)}
     </div>
   </div>
 
-  <!-- TOP-SEHENSWÜRDIGKEITEN -->
+  <!-- TOP ATTRACTIONS -->
   <section class="container-page section">
     <div class="du-shead">
       <div>
         <p class="du-eyebrow">Highlights</p>
-        <h2 class="du-h2">Top-Sehenswürdigkeiten am Niederrhein</h2>
+        <h2 class="du-h2">Top attractions on the Lower Rhine</h2>
       </div>
-      <a href="/sehenswuerdigkeiten/" class="du-all">Alle ansehen →</a>
+      <a href="/en/attractions/" class="du-all">See all →</a>
     </div>
     <div class="du-grid">
       {sights.map((s) => (
@@ -125,9 +125,9 @@ const cats = [
       <div class="du-shead">
         <div>
           <p class="du-eyebrow" style="color:#FF5533">Powered by GetYourGuide</p>
-          <h2 class="du-h2">Touren, Tickets &amp; Erlebnisse</h2>
+          <h2 class="du-h2">Tours, tickets &amp; experiences</h2>
         </div>
-        <a href="/reiseplaner/" class="du-all">Alle Aktivitäten →</a>
+        <a href="/en/travel-planner/" class="du-all">All activities →</a>
       </div>
       <div class="du-grid du-grid-4">
         {gyg.map((g) => (
@@ -136,7 +136,7 @@ const cats = [
               <div class="du-tile" style={`background:linear-gradient(135deg,${g.c[0]},${g.c[1]})`}></div>
               <img src={g.u} alt={g.t} loading="lazy" onerror="this.style.display='none'" />
               <span class="du-gygtag">GetYourGuide</span>
-              <span class="du-price-pill">ab €{g.p}</span>
+              <span class="du-price-pill">from €{g.p}</span>
             </div>
             <div class="du-body">
               <div class="du-ttl">{g.t}</div>
@@ -148,14 +148,14 @@ const cats = [
     </div>
   </section>
 
-  <!-- STÄDTE & ORTE -->
+  <!-- TOWNS & PLACES -->
   <section class="container-page section">
     <div class="du-shead">
       <div>
-        <p class="du-eyebrow">Zwischen Rhein &amp; Reichswald</p>
-        <h2 class="du-h2">Städte &amp; Orte am Niederrhein</h2>
+        <p class="du-eyebrow">Between the Rhine &amp; the Reichswald</p>
+        <h2 class="du-h2">Towns &amp; places on the Lower Rhine</h2>
       </div>
-      <a href="/bezirke/" class="du-all">Alle Orte →</a>
+      <a href="/en/districts/" class="du-all">All towns →</a>
     </div>
     <div class="du-dgrid">
       {districts.map((d) => (
@@ -170,17 +170,17 @@ const cats = [
     </div>
   </section>
 
-  <!-- TOP-HOTELS -->
+  <!-- TOP HOTELS -->
   <section class="du-band">
     <div class="container-page section">
       <div class="du-shead">
         <div>
-          <p class="du-eyebrow">Übernachten</p>
-          <h2 class="du-h2">Top-Hotels am Niederrhein</h2>
+          <p class="du-eyebrow">Where to stay</p>
+          <h2 class="du-h2">Top hotels on the Lower Rhine</h2>
         </div>
-        <a href="/hotels/" class="du-all">Alle Hotels →</a>
+        <a href="/en/hotels/" class="du-all">All hotels →</a>
       </div>
-      <p class="du-live"><span class="du-dot"></span> Live von Booking.com - aktuelle Preise &amp; Verfügbarkeit, täglich aktualisiert <span class="du-muted">· Stay22</span></p>
+      <p class="du-live"><span class="du-dot"></span> Live from Booking.com - current prices &amp; availability, updated daily <span class="du-muted">· Stay22</span></p>
       <div class="du-grid du-grid-4">
         {hotels.map((h) => (
           <a href={h.href} class="du-card">
@@ -192,7 +192,7 @@ const cats = [
             <div class="du-body">
               <div class="du-row1"><span class="du-ttl">{h.t}</span><span class="du-rate">★ {h.r}</span></div>
               <div class="du-meta">{h.m}</div>
-              <div class="du-pricel"><b>€{h.p}</b> <span class="du-muted">/ Nacht</span></div>
+              <div class="du-pricel"><b>€{h.p}</b> <span class="du-muted">/ night</span></div>
             </div>
           </a>
         ))}
@@ -200,14 +200,14 @@ const cats = [
     </div>
   </section>
 
-  <!-- MAGAZIN / NEWS -->
+  <!-- MAGAZINE / NEWS -->
   <section class="container-page section">
     <div class="du-shead">
       <div>
-        <p class="du-eyebrow">Magazin</p>
-        <h2 class="du-h2">Aktuelles vom Niederrhein</h2>
+        <p class="du-eyebrow">Magazine</p>
+        <h2 class="du-h2">Latest from the Lower Rhine</h2>
       </div>
-      <a href="/news/" class="du-all">Alle Beiträge →</a>
+      <a href="/en/news/" class="du-all">All articles →</a>
     </div>
     <div class="du-grid">
       {news.map((n) => (
@@ -231,12 +231,12 @@ const cats = [
   <section class="container-page section">
     <div class="du-cta">
       <div>
-        <h2 class="du-cta-h2">Bleib am Puls des Niederrheins.</h2>
-        <p class="du-cta-p">Events, frische Touren, Radrouten und Insider-Spots zwischen Rhein und Reichswald - einmal pro Woche direkt in dein Postfach.</p>
+        <h2 class="du-cta-h2">Stay in touch with the Lower Rhine.</h2>
+        <p class="du-cta-p">Events, fresh tours, cycle routes and insider spots between the Rhine and the Reichswald - once a week, straight to your inbox.</p>
       </div>
       <form class="du-cta-form" onsubmit="return false">
-        <input type="email" placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse" />
-        <button type="submit">Abonnieren</button>
+        <input type="email" placeholder="Your email address" aria-label="Email address" />
+        <button type="submit">Subscribe</button>
       </form>
     </div>
   </section>
@@ -279,12 +279,10 @@ const cats = [
   .du-search { margin-top: 34px; background: #fff; border-radius: 26px; box-shadow: rgba(0,0,0,.02) 0 0 0 1px, rgba(0,0,0,.04) 0 2px 6px 0, rgba(0,0,0,.1) 0 4px 8px 0; display: flex; align-items: stretch; max-width: 880px; overflow: hidden; }
   .du-seg { flex: 1; padding: 16px 22px; border-right: 1px solid #ebebeb; cursor: pointer; }
   .du-seg:hover { background: #f7f7f7; }
-  .du-lab { font-size: 12px; font-weight: 600; letter-spacing: .3px; }
+  .du-lab { display: block; font-size: 12px; font-weight: 600; letter-spacing: .3px; color: #222; }
   .du-ph { font-size: 14px; color: var(--du-stahl); margin-top: 3px; }
-  .du-who { flex: 1.1; border-right: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: text; }
+  .du-who { flex: 1.1; border-right: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; }
   .du-segfill { flex: 1; min-width: 0; }
-  .du-input { width: 100%; border: none; outline: none; background: transparent; font-size: 14px; color: #222; margin-top: 3px; padding: 0; font-family: inherit; }
-  .du-input::placeholder { color: var(--du-stahl); }
   .du-go { flex: 0 0 auto; align-self: center; width: 54px; height: 54px; border-radius: 50%; background: var(--du-grad-brand); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -4px rgba(78,154,62,.45); transition: transform .15s ease; border: none; cursor: pointer; }
   .du-go:hover { transform: scale(1.06); }
 

@@ -1,19 +1,28 @@
 ---
 import type { Hotel } from "../data/hotels";
-interface Props { hotel: Hotel }
-const { hotel } = Astro.props;
+import type { Locale } from "../i18n/config";
+interface Props { hotel: Hotel; locale?: Locale }
+const { hotel, locale = "de" } = Astro.props;
+
+const en = locale === "en";
+const eyebrow = en ? "Book direct" : "Direkt buchen";
+const perNight = en ? "/ from per night" : "/ Nacht ab";
+const cta = en ? "Check on Booking.com" : "Auf Booking.com pruefen";
+const disclaimer = en
+  ? "* Affiliate link: if you book through this link we earn a commission, and you pay nothing extra."
+  : "* Affiliate-Link: Beim Buchen ueber diesen Link erhalten wir eine Provision, du zahlst keinen Cent mehr.";
 ---
 
 <div class="p-5 sm:p-6 border" style="background: var(--color-surface); border-color: var(--color-border); border-radius: var(--radius-card);">
-  <p class="eyebrow mb-2">Direkt buchen</p>
+  <p class="eyebrow mb-2">{eyebrow}</p>
   <div class="flex items-baseline gap-2 mb-4">
     <span class="text-3xl font-bold" style="color: var(--color-text);">{hotel.priceFrom} EUR</span>
-    <span class="text-sm" style="color: var(--color-text-muted);">/ Nacht ab</span>
+    <span class="text-sm" style="color: var(--color-text-muted);">{perNight}</span>
   </div>
   <a href={hotel.bookingUrl} rel="nofollow noopener sponsored" target="_blank" class="btn-primary w-full">
-    Auf Booking.com pruefen &rarr;
+    {cta} &rarr;
   </a>
   <p class="text-[11px] mt-3 leading-relaxed" style="color: var(--color-text-muted);">
-    * Affiliate-Link: Beim Buchen ueber diesen Link erhalten wir eine Provision, du zahlst keinen Cent mehr.
+    {disclaimer}
   </p>
 </div>
