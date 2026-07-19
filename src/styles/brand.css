@@ -68,12 +68,6 @@
   --shadow-lift: 0 18px 40px -12px rgba(30, 70, 40, 0.26);
 
   /* === Orts-Hues (Grün / Rhein-Blau / Raps / Backstein) === */
-  --hue-1: linear-gradient(135deg, #4e9a3e 0%, #3c7a30 100%);
-  --hue-2: linear-gradient(135deg, #2a7db1 0%, #1e5e87 100%);
-  --hue-3: linear-gradient(135deg, #f4b400 0%, #d89a00 100%);
-  --hue-4: linear-gradient(135deg, #9e4a38 0%, #6f3327 100%);
-  --hue-5: linear-gradient(135deg, #2a7db1 0%, #4e9a3e 100%);
-
   /* === Hero-Verlauf (Wiesen-/Rhein-Schimmer) === */
   --hero-faecher: radial-gradient(
     ellipse 80% 60% at 50% 0%,
@@ -112,4 +106,15 @@
     padding: 24px 0;
     box-shadow: var(--shadow-subtle);
   }
+}
+
+/* HUE-Palette bewusst in :root statt @theme: Tailwind 4 entfernt
+   @theme-Variablen ohne Utility-Nutzung aus dem Build; diese Variablen
+   werden nur zur Laufzeit via Inline-Style (HueGradient) referenziert. */
+:root {
+  --hue-1: linear-gradient(135deg, #4e9a3e 0%, #3c7a30 100%);
+  --hue-2: linear-gradient(135deg, #2a7db1 0%, #1e5e87 100%);
+  --hue-3: linear-gradient(135deg, #f4b400 0%, #d89a00 100%);
+  --hue-4: linear-gradient(135deg, #9e4a38 0%, #6f3327 100%);
+  --hue-5: linear-gradient(135deg, #2a7db1 0%, #4e9a3e 100%);
 }
