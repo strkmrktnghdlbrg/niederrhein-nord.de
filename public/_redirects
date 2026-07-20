@@ -7,7 +7,7 @@
 /page/*                                     /                               301
 
 # Alt-Gastbeiträge (off-topic) → thematisch nächste Seite (301)
-/traumberuf-immobilienmakler                /immobilien-niederrhein/        301
+# /traumberuf-immobilienmakler liefert jetzt wieder eine eigene Seite aus (Top-5-Makler-Artikel)
 /wie-finde-ich-einen-guten-fliesenverleger  /unternehmen-niederrhein/       301
 /ausbildungsanforderungen-fuer-elektriker   /unternehmen-niederrhein/       301
 /wie-finden-sie-eine-umzugsfirma            /unternehmen-niederrhein/       301
