@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Faktische Google-Standort-Aggregate (gewichteter Durchschnitt, Anzahl
+// Bewertungen) und öffentliche Filialadressen, erhoben über die Google
+// Places API. Es werden ausschließlich Kennzahlen und Adressen dargestellt,
+// keine Rezensionstexte. Quelle je Bank: die verlinkte bankscore.de-Seite.
+const stadt = "Kleve";
+const banken = [
+  { name: "Sparkasse Rhein-Maas", rating: 4.5, count: 247, adresse: "Hagsche Str. 33, 47533 Kleve", stadtteil: "Innenstadt / regionsweit", url: "https://bankscore.de/filialen/kleve/sparkasse/",
+    text: "Die Sparkasse Rhein-Maas ist am unteren Niederrhein das mit Abstand dichteste Filialnetz und betreibt rund um Kleve und den Kreis etwa 15 Standorte. Die zentrale Adresse an der Hagschen Straße liegt mitten in der Klever Innenstadt, wenige Schritte von der Fußgängerzone entfernt. Der starke Schnitt aus über zweihundert Bewertungen spiegelt vor allem die gute Erreichbarkeit und die Beratung vor Ort wider. Für die laufende Kontoführung fallen je nach Modell allerdings Gebühren an." },
+  { name: "Volksbank Kleverland", rating: 4.2, count: 69, adresse: "Minoritenstraße 2, 47533 Kleve", stadtteil: "Innenstadt", url: "https://bankscore.de/filialen/kleve/volksbank-raiffeisenbank/",
+    text: "Die genossenschaftliche Volksbank Kleverland ist in Kleve die zweite regionale Säule und führt ihr Kundenzentrum an der Minoritenstraße nahe der Stiftskirche. Mit rund drei Standorten im Kleverland ist das Netz kleiner als das der Sparkasse, dafür ist die Bank fest im Vereinsleben verwurzelt. Genossenschaftsmodell heißt: als Mitglied bist du Miteigentümer und stimmst mit ab." },
+  { name: "Deutsche Bank", rating: 4.4, count: 215, adresse: "Herzogstraße 30, 47533 Kleve", stadtteil: "Innenstadt", url: "https://bankscore.de/filialen/kleve/deutsche-bank/",
+    text: "Die Deutsche Bank bündelt ihr Klever Geschäft an der Herzogstraße unterhalb der Schwanenburg, zentral zwischen Innenstadt und Hochschule Rhein-Waal. Der Standort erreicht mit über zweihundert Bewertungen einen der besten Werte im Filialvergleich der Stadt, ist als einzelne Filiale aber auf zentrale Beratungs- und Laufkundschaft ausgelegt." },
+  { name: "Commerzbank", rating: 3.3, count: 58, adresse: "Große Str. 47 / 49, 47533 Kleve", stadtteil: "Innenstadt", url: "https://bankscore.de/filialen/kleve/commerzbank/",
+    text: "Die Commerzbank sitzt an der Großen Straße mitten in der Klever Fußgängerzone und ist mit einem Standort vertreten. Die Bewertung liegt hier spürbar unter dem Klever Durchschnitt, die Datenbasis ist mit knapp sechzig Stimmen überschaubar. Für Filialkundschaft, die Wert auf ein bundesweites Netz und eine bei Gehaltseingang kostenfreie Kontoführung legt, bleibt sie dennoch eine gängige Wahl." },
+  { name: "Postbank", rating: 4.1, count: 178, adresse: "Bahnhofspl. 10-14, 47533 Kleve", stadtteil: "am Bahnhof", url: "https://bankscore.de/filialen/kleve/postbank/",
+    text: "Die Postbank-Filiale am Bahnhofsplatz verbindet Bank- und Postschalter, entsprechend hoch ist die Frequenz. Trotz des typischen Schalterbetriebs kommt sie in Kleve auf eine solide Bewertung. Praktisch für alle, die Bankgeschäft und Paketservice in einem Gang erledigen wollen, mit den bei Andrang üblichen Wartezeiten." },
+  { name: "Targobank", rating: 4.8, count: 123, adresse: "Hagsche Str. 30, 47533 Kleve", stadtteil: "Innenstadt", url: "https://bankscore.de/filialen/kleve/targobank/",
+    text: "Die Targobank an der Hagschen Straße erreicht in Kleve die beste Bewertung im gesamten Filialvergleich, gestützt auf über hundert Stimmen. Ihr Schwerpunkt liegt traditionell auf Konsumentenkrediten und Ratenfinanzierung, dazu Giro- und Anlageberatung direkt gegenüber der Sparkasse in der Innenstadt." },
+];
+
+const fmt = (n) => n.toLocaleString("de-DE");
+const komma = (n) => n.toFixed(1).replace(".", ",");
+const ratingSum = banken.reduce((s, b) => s + b.count, 0);
+
+const faqs = [
+  { q: "Welche Bank hat in Kleve die beste Bewertung?", a: "Unter den Filialbanken in Kleve liegt die Targobank an der Hagschen Straße mit rund 4,8 von 5 Sternen vorn, gefolgt von der Sparkasse Rhein-Maas und der Deutschen Bank mit jeweils etwa 4,4 bis 4,5 Sternen. Die Werte sind nach Bewertungsanzahl gewichtete Durchschnitte der öffentlich bei Google gelisteten Standorte." },
+  { q: "Welche Bank hat in Kleve die meisten Filialen?", a: "Das mit Abstand dichteste Netz hat die Sparkasse Rhein-Maas mit rund fünfzehn Standorten im Kreis Kleve, gefolgt von der Volksbank Kleverland mit etwa drei Filialen. Deutsche Bank, Commerzbank, Postbank und Targobank konzentrieren ihr Geschäft dagegen auf jeweils eine zentrale Filiale in der Klever Innenstadt." },
+  { q: "Gibt es in Kleve auch Banken für Kundschaft aus den Niederlanden?", a: "Kleve liegt nur wenige Kilometer von der niederländischen Grenze und von Nimwegen entfernt, viele Institute vor Ort sind grenznahen Alltag gewohnt. Für den Zahlungsverkehr innerhalb der Eurozone gelten SEPA-Standards, sodass Überweisungen zwischen Deutschland und den Niederlanden ohne Zusatzkosten laufen. Für konkrete Fragen zu grenzüberschreitenden Konten lohnt der direkte Termin in der jeweiligen Filiale." },
+  { q: "Lohnt sich neben dem Filialkonto ein kostenloses Online-Konto?", a: "Für viele ja. Die klassischen Filialkonten von Sparkasse und Volksbank kosten je nach Modell eine monatliche Grundgebühr. Wer die Filiale in Kleve nur noch selten braucht, kann ein gebührenfreies Online-Girokonto parallel führen und die laufenden Kosten sparen, ohne die Hausbank ganz aufzugeben." },
+  { q: "Woher stammen die Bewertungen und Adressen?", a: "Die Sterne-Werte sind nach Bewertungsanzahl gewichtete Durchschnitte der öffentlich bei Google gelisteten Standorte der jeweiligen Marke in Kleve. Die Adressen stammen aus den öffentlichen Standortdaten. Es werden ausschließlich Kennzahlen und Adressen dargestellt, keine Rezensionstexte. Die vollständige Filialübersicht je Bank findest du auf der jeweils verlinkten bankscore.de-Seite." },
+];
+
+const itemListLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `Banken in ${stadt}`,
+  itemListElement: banken.map((b, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: b.name,
+    url: b.url,
+  })),
+};
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+const articleLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: `Banken in ${stadt}: Filialen, Adressen und Bewertungen`,
+  about: `Filialbanken in ${stadt}`,
+  author: { "@type": "Organization", name: "Niederrhein-Nord-Interaktiv" },
+  publisher: { "@type": "Organization", name: "Niederrhein-Nord-Interaktiv" },
+};
+---
+
+<BaseLayout title="Banken in Kleve: Filialen, Adressen & Bewertungen" description="Die Filialbanken in Kleve im Überblick: Sparkasse Rhein-Maas, Volksbank Kleverland, Deutsche Bank, Commerzbank, Postbank und Targobank mit zentraler Adresse, Google-Bewertung und Filialnetz. Ratgeber von Niederrhein-Nord-Interaktiv.">
+  <div class="bnk-wrap">
+    <div class="bnk-surface" style="--color-accent:#4e9a3e;--color-accent-hover:#3c7a30;">
+      <h1>Banken in Kleve: Filialen, Adressen &amp; Bewertungen</h1>
+      <p class="bnk-lead">Welche Filialbank passt in Kleve zu dir? Von der Sparkasse Rhein-Maas mit dem dichtesten Netz bis zur bestbewerteten Targobank: Hier findest du die großen Banken der Schwanenstadt mit zentraler Adresse, Google-Bewertung und einer ehrlichen Einordnung, sortiert nach Bekanntheit.</p>
+      <p class="bnk-meta">Redaktion Niederrhein-Nord-Interaktiv</p>
+
+      <p>Kleve ist die Kreisstadt am unteren Niederrhein, geprägt von der Schwanenburg, den Parkanlagen des Fürsten Johann Moritz und der jungen Hochschule Rhein-Waal, die viele Studierende und internationale Kundschaft in die Stadt bringt. Nur wenige Kilometer trennen Kleve von der niederländischen Grenze und von Nimwegen, entsprechend grenznah ist der Alltag. Das Bankangebot verteilt sich fast vollständig auf die kompakte Innenstadt rund um Hagsche und Große Straße. Die beiden regionalen Institute, Sparkasse Rhein-Maas und Volksbank Kleverland, teilen sich das dichteste Filialnetz, während die überregionalen Häuser ihr Geschäft auf je eine zentrale Filiale konzentrieren. Die folgende Übersicht beruht auf über {fmt(ratingSum)} öffentlichen Google-Bewertungen und den öffentlich gelisteten Filialadressen.</p>
+
+      <h2>Die Banken in Kleve auf einen Blick</h2>
+      <div class="bnk-tablewrap">
+        <table>
+          <thead>
+            <tr><th>Bank</th><th>Ø Google</th><th>Bewertungen</th><th>Zentrale Adresse</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            {banken.map((b) => (
+              <tr>
+                <td data-l="Bank"><strong>{b.name}</strong></td>
+                <td data-l="Ø Google"><span class="bnk-star">{komma(b.rating)}</span></td>
+                <td data-l="Bewertungen">{fmt(b.count)}</td>
+                <td data-l="Adresse">{b.adresse}</td>
+                <td data-l="Details"><a href={b.url} target="_blank" rel="noopener">Filialen &amp; Bewertungen &rarr;</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="bnk-note">Ø Google = nach Bewertungsanzahl gewichteter Durchschnitt der öffentlich gelisteten Standorte der Marke in Kleve. Stand der Erhebung: Juli 2026. Es werden nur Kennzahlen und Adressen dargestellt, keine Rezensionstexte.</p>
+
+      <h2>Die Banken im Einzelnen</h2>
+      {banken.map((b) => (
+        <div class="bnk-card">
+          <div class="bnk-cardhead">
+            <h3>{b.name}</h3>
+            <span class="bnk-badge">{komma(b.rating)} &#9733; · {fmt(b.count)} Bew.</span>
+          </div>
+          <p class="bnk-addr">{b.adresse} · Stadtteil: {b.stadtteil}</p>
+          <p>{b.text}</p>
+          <p class="bnk-src">Quelle und vollständige Filialübersicht: <a href={b.url} target="_blank" rel="noopener">{b.name} in Kleve auf bankscore.de</a></p>
+        </div>
+      ))}
+
+      <h2>Filialbank oder kostenloses Online-Konto?</h2>
+      <p>Die klassischen Filialkonten von Sparkasse Rhein-Maas und Volksbank Kleverland punkten mit Beratung vor Ort und einem Automaten um die Ecke, kosten je nach Modell aber eine monatliche Grundgebühr. Wer ohnehin fast alles per App erledigt, kombiniert die Klever Hausbank häufig mit einem gebührenfreien Online-Girokonto und spart so die laufenden Kosten. Einen neutralen Vergleich der Konditionen samt Bewertungsmethodik findest du im <a href="https://bankscore.de/girokonto/" target="_blank" rel="noopener">Girokonto-Vergleich auf bankscore.de</a>.</p>
+
+      <h2>Häufige Fragen zu Banken in Kleve</h2>
+      {faqs.map((f) => (
+        <div class="faq-item">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+</BaseLayout>
+
+<style>
+  .bnk-wrap { max-width: 900px; margin: 0 auto; padding: 2.5rem 1rem 3rem; }
+  .bnk-surface {
+    background: #ffffff; color: #33313f; border-radius: 16px;
+    padding: clamp(20px, 4vw, 40px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.05);
+    font-size: 16.5px; line-height: 1.7;
+  }
+  .bnk-surface h1 { color: #20233a; font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; margin: 0 0 1rem; }
+  .bnk-lead { font-size: 1.12rem; color: #4a4858; margin: 0 0 1.6rem; }
+  .bnk-meta { font-size: 13px; color: #8a8896; margin: 0 0 1.6rem; }
+  .bnk-surface h2 { color: #20233a; font-size: 1.55rem; font-weight: 800; line-height: 1.25; letter-spacing: -0.3px; margin: 2.2rem 0 0.8rem; }
+  .bnk-surface h3 { color: #20233a; font-size: 1.2rem; font-weight: 700; line-height: 1.3; margin: 0; }
+  .bnk-surface p { margin: 0 0 1.05rem; }
+  .bnk-surface strong { color: #20233a; font-weight: 700; }
+  .bnk-surface a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+  .bnk-note { font-size: 13px; color: #8a8896; margin: 0.6rem 0 0; }
+  .bnk-tablewrap { overflow-x: auto; margin: 0 0 0.4rem; }
+  .bnk-surface table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  .bnk-surface th, .bnk-surface td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #ececf3; vertical-align: top; }
+  .bnk-surface th { color: #6b7280; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .bnk-star { display: inline-block; background: #eef7ee; color: #237a37; font-weight: 800; border-radius: 6px; padding: 1px 8px; }
+  .bnk-card { border: 1px solid #ececf3; border-radius: 12px; padding: 18px 20px; margin: 1rem 0; }
+  .bnk-cardhead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 0.3rem; }
+  .bnk-badge { background: #f6f6fb; color: #20233a; font-weight: 700; font-size: 13px; border-radius: 999px; padding: 3px 12px; white-space: nowrap; }
+  .bnk-addr { font-size: 14px; color: #6b7280; margin: 0 0 0.7rem; }
+  .bnk-src { font-size: 14px; color: #6b7280; margin: 0.6rem 0 0; }
+  .faq-item { border-top: 1px solid #e6e6ef; padding-top: 1.1rem; margin-top: 1.1rem; }
+  .faq-item:first-of-type { border-top: none; }
+  .faq-item h3 { font-size: 18px; }
+  @media (max-width: 640px) {
+    .bnk-surface table, .bnk-surface thead, .bnk-surface tbody, .bnk-surface tr, .bnk-surface th, .bnk-surface td { display: block; }
+    .bnk-surface thead { display: none; }
+    .bnk-surface tr { border: 1px solid #ececf3; border-radius: 10px; margin-bottom: 10px; padding: 6px 4px; }
+    .bnk-surface td { border: none; padding: 5px 12px; }
+    .bnk-surface td::before { content: attr(data-l) ": "; color: #8a8896; font-size: 12px; font-weight: 700; }
+    .bnk-surface td[data-l="Bank"]::before { content: ""; }
+  }
+</style>
